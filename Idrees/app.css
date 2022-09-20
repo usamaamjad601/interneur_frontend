@@ -57,12 +57,12 @@
   }
   
   /* Active/current link */
-  .sidebar a.active {
+  /* .sidebar a.active {
     background-color: black;
     color: var(--white);
     margin: 2px;
 
-  }
+  } */
   
   /* Links on mouse-over */
   /* .sidebar a:hover:not(.active):not(.logo) {
