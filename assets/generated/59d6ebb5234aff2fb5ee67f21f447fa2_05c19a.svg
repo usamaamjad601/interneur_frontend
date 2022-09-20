@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Testflight</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="stroked" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Brands" sketch:type="MSLayerGroup" transform="translate(-357.000000, -716.000000)" stroke="#05c19a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <g id="Testflight" transform="translate(362.000000, 722.000000)" sketch:type="MSShapeGroup">
+                <circle id="Oval-1958" cx="25" cy="25" r="25"></circle>
+                <circle id="Oval-1957" cx="25" cy="25" r="4"></circle>
+                <path d="M22.1359052,2.85400851 C22.0608468,1.27778313 23.2724457,0 24.8594208,0 L25.1405792,0 C26.7197937,0 27.9389509,1.28203212 27.8640948,2.85400851 L27,21 L23,21 L22.1359052,2.85400851 Z M45.6110294,33.5926222 C47.0136098,34.3157325 47.514403,36.0038994 46.7209154,37.3782602 L46.5803362,37.6217505 C45.790729,38.9893904 44.070878,39.4041954 42.7469345,38.55338 L27.4640924,28.7320562 L29.4640924,25.2679545 L45.6110294,33.5926222 Z M7.25304694,38.5533693 C5.92552489,39.4064844 4.21313281,38.9961006 3.41964526,37.6217398 L3.27906604,37.3782495 C2.48945879,36.0106096 2.9901526,34.3137725 4.3889521,33.5926115 L20.5358891,25.2679438 L22.5358891,28.7320455 L7.25304694,38.5533693 Z" id="Rectangle-2717"></path>
+            </g>
+        </g>
+    </g>
+</svg>
