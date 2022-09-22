@@ -51,9 +51,8 @@
     background-color: rgb(242, 238, 238);
   }
   .profile{
-      border-top: 1px solid black;
+      /* border-top: 1px solid black; */
       border-bottom: 1px solid black;
-
   }
   
   /* Active/current link */
@@ -61,7 +60,6 @@
     background-color: black;
     color: var(--white);
     margin: 2px;
-
   } */
   
   /* Links on mouse-over */
@@ -73,8 +71,8 @@
   
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   .content {
-    margin-left: 200px; 
-    padding: 1px 16px;
+    margin-left: 16vw; 
+    /* padding: 1px 16px; */
     /* height: 1000px; */
   }
   
