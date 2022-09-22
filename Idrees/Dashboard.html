@@ -14,8 +14,38 @@
         <!-- Custom links -->
         <link rel="stylesheet" href="app.css">
 
-        <style></style>
-
+        <style>
+            .Dashboard-btn{
+                border: 5px solid blue;
+                border-radius:2rem;
+                width: 13vw;
+                padding: 0.5rem 0.5rem;
+            }
+            .Dashboard-btn2{
+                border: 1px solid black;
+                border-radius:2rem;
+                width: 10vw;
+                padding: 0.2rem 0.5rem;
+            }
+            .d-card{
+                border: 5px solid maroon;
+                border-radius: 1rem;
+                background-color: rgb(243, 190, 190);
+                width:10vw;
+            }
+            .Dashboard-3{
+                border: 1px solid black;
+                border-radius: 5px
+            }
+            .dashboard-table > span{
+                font-size: 4rem;
+                font-weight: 700;
+                width: 25%;
+                text-align: center;
+                border: 1px solid black;
+                padding: 2rem 0;
+            }
+        </style>
     </head>
     <body>
         <!-- The sidebar -->
@@ -26,7 +56,7 @@
             </div>
             <a href="#profile" class="profile d-flex gap-2 p-0">
                 <img
-                    src="../assets/Employer_icons/Apply icon.svg"
+                    src="../assets/Employer_icons/profile.svg"
                     alt="Profile"
                     height="60px"
                     width="70px">
@@ -46,7 +76,7 @@
 
 
         <!-- Page content -->
-        <div class="content container p-3">
+        <div class="content container p-5">
 
 
 
@@ -56,24 +86,90 @@
             <div class="col-md-12 d-flex">
 
                 <div class="col-md-8 align-items-center">
-                    <div class="d-flex">
+                    <div class="d-flex align-items-end">
                         <h3>Good AfterNoon,</h3>
                         <h2>Fahad</h2>
                     </div>
                     <p class="col-md-8">Lorem ipsum, dolor sit amet
                         consectetur adipisicing
                         elit.orem ipsum, dolor sit amet consectetur
-                        adipisicing
-                        elit.orem ipsum, dolor sit amet consectetur
-                        adipisicing
+                        a
                         elit.
                         Labore, </p>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col-md-4 ">
+                    <div class="d-flex gap-2 align-items-center m-0
+                        Dashboard-btn">
+
+                        <embed width="20px" height="20px"
+                            src="../assets/Employer_icons/Plus icon.svg"
+                            type="" class="p-0">
+                        <p class="f-18 p-0 m-0">Create Internship</p>
+                    </div>
 
                 </div>
             </div>
+            <div class="col-md-12 Dashboard-2">
+                <div class="d-flex align-items-center gap-1">
+                    <h4>You have</h4>
+                    <h2>16</h2>
+                    <a href="#new">New Notifications</a>
+                </div>
+                <h2 class="col-md-12">
+                    At a Glance
+                </h2>
+                <div class="d-flex Dahsboard-cards gap-5
+                    justify-content-left">
+                    <div class="d-card d-flex flex-column
+                        align-items-center p-1">
+                        <h1>5</h1>
+                        <h4>Job Posted</h4>
+                    </div>
+                    <div class="d-card d-flex flex-column
+                        align-items-center p-1">
+                        <h1>5</h1>
+                        <h4>Job Posted</h4>
+                    </div>
+                    <div class="d-card d-flex flex-column
+                        align-items-center p-1">
+                        <h1>5</h1>
+                        <h4>Job Posted</h4>
+                    </div>
+                    <div class="d-card d-flex flex-column
+                        align-items-center p-1">
+                        <h1>5</h1>
+                        <h4>Job Posted</h4>
+                    </div>
+                </div>
+
+            </div>
+            <div class="Dashboard-3 col-md-12 mt-5 p-2">
+                <h6 class="col-md-12">5 hours ago</h6>
+                <div class="col-md-12 d-flex align-items-center gap-5">
+                    <h4>Python Django Internship</h4>
+                    <div class="d-flex gap-1 text-align-center">
+                        <embed class="my-icon"
+                            src="../assets/Employer_icons/Views_Eye_icon.svg">
+                        <p class="
+                            mt-1">42</p>
+                    </div>
+                </div>
+                <div class="d-flex col-md-12 p-3 justify-content-between">
+                    <p class="f-18 Dashboard-btn2">Sourcing Stage</p>
+                    <p class="underline"><u>View Job Post</u></p>
+                </div>
+                <div class="dashboard-table d-flex p-0 m-0">
+                    <span>60</span>
+                    <span>39</span>
+                    <span>60</span>
+                    <span>39</span>
+                </div>
+
+
+
+            </div>
+
 
 
         </div>
