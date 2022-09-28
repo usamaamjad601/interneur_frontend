@@ -1,4 +1,3 @@
-import './App.css';
 import './bootstrap/css/bootstrap.css'
 import Dashboard from './Pages/Dashboard';
 
