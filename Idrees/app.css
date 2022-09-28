@@ -74,7 +74,8 @@
   }
   .profile{
       /* border-top: 1px solid black; */
-      border-bottom: 1px solid black;
+      /* border-bottom: 1px solid black; */
+      text-decoration: none;
   }
   
   /* Active/current link */
@@ -94,7 +95,7 @@
   /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
   .content {
     margin-left: 15vw; 
-    overflow: hidden;
+    /* overflow: hidden; */
     width: 84%;
     
     /* padding: 1px 16px; */
