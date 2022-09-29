@@ -1,25 +1,24 @@
 import React from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import { Button, Avatar } from '@mui/material'
+
 
 const DashboardNav = (props) => {
     return (
         <div>
             <div class="dashboard1-navbar d-flex col-md-12">
-                <div class="col-md-7">
+                <div class="col-md-7 p-2">
                     <h1>{props.title}</h1>
                     <h4>{props.applicants} Applicants</h4>
                     <br />
-                    <div class="d-flex">
+                    <div class="d-flex gap-2">
                         <p>Bulk Action</p>
                         <div class="dropdown">
-                            <img
-                                src="../"
-                                alt="Profile"
-                                height="30px"
-                                width="40px" />
-                            <div class="dropdown-content">
-                                <p>sdfsad</p>
-                                <p>sdfsad</p>
-                                <p>sdfsad</p>
+                            <MenuIcon />
+                            <div class="dropdown-content ">
+                                <a href="#">Shortlisted</a>
+                                <a href="#">Declined</a>
+
                             </div>
 
                         </div>
@@ -27,7 +26,7 @@ const DashboardNav = (props) => {
                     </div>
 
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 p-2">
                     <div class="d-flex justify-content-end gap-5 pt-5 px-5">
                         <button type="button" class="nav-btn nav-btn1 p-3
                                 ">{props.btn1} (6)</button>
@@ -36,7 +35,6 @@ const DashboardNav = (props) => {
 
                     </div>
                 </div>
-
             </div>
         </div>
     )
