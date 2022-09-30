@@ -1,7 +1,8 @@
 import React from 'react'
-import profile from '../assets/icons/profile.svg'
+import profile from '../../assets/icons/profile.svg'
 import HomeIcon from '@mui/icons-material/Home';
 import WorkIcon from '@mui/icons-material/Work';
+import { Link } from 'react-router-dom';
 
 const sidebar = (props) => {
 
@@ -11,7 +12,7 @@ const sidebar = (props) => {
             <div className="sidebar d-flex flex-column justify-content-between">
                 <div className="">
                     <div className="logo sidebar-logo">
-                        <a className="" href="./Dashboard.html">LOGO</a>
+                        <Link to="/Dashboard1">LOGO</Link>
                     </div>
                     <a href="#profile" className="profile d-flex gap-2 p-0 py-4">
                         <img
@@ -25,12 +26,12 @@ const sidebar = (props) => {
                         </div>
                     </a>
                     <a className="d-flex gap-3" href="./Dashboard.html">
-                        <HomeIcon sx={{ color: 'blue' }} />
+                        <HomeIcon sx={{ color: '#0D6EFD' }} />
                         <p>Home</p>
                     </a>
                     <a className="d-flex gap-3" href="./RecentPateints.html">
 
-                        <WorkIcon sx={{ color: 'blue' }} />
+                        <WorkIcon sx={{ color: '#0D6EFD' }} />
                         <p>Internships</p>
                     </a>
                 </div>

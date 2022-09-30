@@ -1,7 +1,7 @@
 import React from 'react'
-import prof from '../assets/img/profile.png'
+import prof from '../../assets/img/profile.png'
 import DInfoAbout from './DInfoAbout'
-import DAcoordion from '../components/DAcoordion'
+import DAcoordion from './DAcoordion'
 
 
 const DashboardInfo = () => {

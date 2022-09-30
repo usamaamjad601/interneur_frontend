@@ -9,6 +9,7 @@
   --white : #FFFFFF;
   --black : #000000;
   --grey : #a5a5a5;
+  --blue: #0D6EFD;
 }
 body{
   font-family: 'Arial ', sans-serif;
@@ -90,7 +91,7 @@ h1, h2,h3,h4,h5,h6,p{
 
 /* //////////////////////////MY-CSS----------///////// */
 .Dashboard-btn{
-  border: 5px solid blue;
+  border: 5px solid var(--blue);
   border-radius:2rem;
   width: 13vw;
   padding: 0.5rem 0.5rem;
@@ -179,7 +180,6 @@ h1, h2,h3,h4,h5,h6,p{
 .nav-btn1:hover{
   background-color: var(--light-green);
   color: var(--black);
-
 }
 .nav-btn2{
   background-color: var(--red);
@@ -187,6 +187,15 @@ h1, h2,h3,h4,h5,h6,p{
 .nav-btn2:hover{
   background-color: var(--light-red);
   color: var(--black);
+}
+.nav-btn3{
+  background-color: transparent;
+  color: var(--dark-grey);
+  border: 1px solid var(--dark-grey);
+}
+.nav-btn3:hover{
+  background-color: var(--dark-grey);
+  color: var(--white);
 }
 .profile-img{
   border-radius: 50px;
@@ -288,7 +297,7 @@ h1, h2,h3,h4,h5,h6,p{
       padding: 0 10px;
     }
      .profile-td{
-      width: 200px;
+      width: 10vw;
       overflow: hidden;
       word-wrap: break-word;
      }
@@ -313,18 +322,12 @@ h1, h2,h3,h4,h5,h6,p{
       border: none;
       outline: none;
       border-radius: 1rem;
-      /* padding: 5px 0; */
-      /* height: 4vh; */
-      width: 7vw;
+      width: 100%;
       font-weight: bold;
       color: var(--black);     
-      
     }
     .table-decision{
-     width: 10vw;
-    
-    
-     
+     width: 30%;
     }
     .table-check{
       width: 5vw;
@@ -343,7 +346,11 @@ h1, h2,h3,h4,h5,h6,p{
     }
     .reject{
       background-color: var(--light-red);
-      border: 2px solid var(--black);
+      border: 2px solid var(--red);
+    }
+    .unfit{
+      background-color: rgb(238, 213, 204);
+      border: 2px solid orange;
     }
     .table-cv{
       width: 7vw;

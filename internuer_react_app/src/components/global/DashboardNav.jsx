@@ -1,41 +1,44 @@
 import React from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
+import { Link } from 'react-router-dom';
 
 
 const DashboardNav = (props) => {
     return (
         <div>
             <div className="dashboard1-navbar d-flex col-md-12">
-                <div className="col-md-7 p-2">
+                <div className="col-md-7 p-4">
                     <h1>{props.title}</h1>
-                    <h4>{props.applicants} Applicants</h4>
+                    <h4>{props.applicants} {props.applicantstxt}</h4>
+                    <p>{props.navtxt}</p>
                     <br />
                     <div className="d-flex gap-2">
                         <p>Bulk Action</p>
                         <div className="dropdown">
                             <MenuIcon />
                             <div className="dropdown-content ">
-                                <a href="#">Shortlisted</a>
-                                <a href="#">Declined</a>
-
+                                <Link to="/Dashboard1" >Shortlisted</Link>
+                                <Link to="/Dashboard1">Declined</Link>
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
+
                 <div className="col-md-5 p-2">
                     <div className="d-flex justify-content-end gap-5 pt-5 px-5">
-                        <button type="button" className="nav-btn nav-btn1 p-3
-                                ">{props.btn1} (6)</button>
-                        <button type="button" className="nav-btn nav-btn2 p-3
-                                ">{props.btn2} (10)</button>
+                        <Link to={props.link1}>
+                            <button type="button" className={`nav-btn  p-3 + ${props.btn1class}
+                                `}>{props.btn1} (6)</button>
+                        </Link>
+                        <Link to={props.link2}>
+                            <button type="button" className={`nav-btn  p-3 + ${props.btn2class}
+                                `}>{props.btn2} (10)</button>
+                        </Link>
 
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

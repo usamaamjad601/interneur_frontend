@@ -1,14 +1,18 @@
 import './bootstrap/css/bootstrap.css'
-import Dashboard from './Pages/Dashboard';
-// import 'https://use.fontawesome.com/a4af5f90c1.js'
 import React, { Component } from 'react';
+import { Routes, Route } from "react-router-dom";
+import Dashboard from './Pages/Dashboard';
+import Dashboard1 from './Pages/Dashboard1';
 
 
 
 function App() {
   return (
     <div>
-      <Dashboard />
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="Dashboard1" element={<Dashboard1 />} />
+      </Routes>
     </div>
   );
 }

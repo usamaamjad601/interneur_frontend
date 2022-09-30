@@ -1,7 +1,7 @@
 import React from 'react'
-import prof from '../assets/img/profile.png'
+import prof from '../../assets/img/profile.png'
 import StarIcon from '@mui/icons-material/Star';
-import cv1 from '../assets/files/cv1.pdf'
+import cv1 from '../../assets/files/cv1.pdf'
 
 
 
@@ -103,7 +103,6 @@ const DashboardTable = () => {
                                     <button className="cv-btn">
                                         <a href={cv1} target='_blank'>View CV</a>
                                     </button>
-
                                 </div>
                             </td>
                         </tr>
