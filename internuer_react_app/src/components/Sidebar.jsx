@@ -1,5 +1,7 @@
 import React from 'react'
 import profile from '../assets/icons/profile.svg'
+import HomeIcon from '@mui/icons-material/Home';
+import WorkIcon from '@mui/icons-material/Work';
 
 const sidebar = (props) => {
 
@@ -23,13 +25,13 @@ const sidebar = (props) => {
                         </div>
                     </a>
                     <a className="d-flex gap-3" href="./Dashboard.html">
-                        {/* <embed src="../assets/Employer_icons/back_button.svg "
-                        type=""/>  */}
-                        Home</a>
-                    <a href="./RecentPateints.html">
-                        {/* <embed src="../assets/Employer_icons/back_button.svg "
-                type="">  */}
-                        Internships
+                        <HomeIcon sx={{ color: 'blue' }} />
+                        <p>Home</p>
+                    </a>
+                    <a className="d-flex gap-3" href="./RecentPateints.html">
+
+                        <WorkIcon sx={{ color: 'blue' }} />
+                        <p>Internships</p>
                     </a>
                 </div>
 

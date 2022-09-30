@@ -20,10 +20,10 @@ const Dashboard = () => {
                 <DashboardNav title="UI/UX Designing" applicants={31} btn1="Shortlisted" btn2="Declined" />
                 <div className="col-md-12">
                     <div className="d-flex">
-                        <div className="col-md-7">
+                        <div className="col-md-8">
                             <DashboardTable />
                         </div>
-                        <div className="col-md-5">
+                        <div className="col-md-4">
                             <DashboardInfo />
                         </div>
                     </div>
