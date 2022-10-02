@@ -5,23 +5,26 @@ import cv1 from '../../assets/files/cv1.pdf'
 
 
 
-const DashboardTable = () => {
-    const [Decision, setDecision] = React.useState(-1)
-    const [Decision1, setDecision1] = React.useState()
-    const changeBorder = (i, e) => {
-        var x = document.getElementById(`td${i}`)
-        console.log(x.id, 'id')
-        console.log(x.className, 'class')
-        console.log(e.target.value, 'value');
-        setDecision(i)
-        if (e.target.value === 'ShortList') {
-            x.className = "d-flex decision align-items-center shortlist"
-        } else if (e.target.value === 'Reject') {
-            x.className = "d-flex decision align-items-center reject"
-        }
-        else {
-            x.className = "d-flex decision align-items-center"
-        }
+const DashboardTable = ({ handleClick, handleClick2 }) => {
+    // 
+    // var rejected = 0;
+    // var decision2 = '';
+    const [shortlist, setShortlist] = React.useState(0);
+    const [rejected, setRejected] = React.useState(0);
+    const [Decision, setDecision] = React.useState(-1);
+    const [Decision1, setDecision1] = React.useState('');
+    const [statusArray, setStatusArray] = React.useState([]);
+
+
+    const changeBorder1 = (i, e) => {
+        console.log(e.target.value, i)
+        console.log(statusArray)
+        const tempArray = [...statusArray];
+        tempArray[i] = e.target.value;
+        setStatusArray(tempArray);
+        console.log(tempArray)
+        handleClick(tempArray.filter((item) => item === 'ShortList').length);
+        handleClick2(tempArray.filter((item) => item === 'Reject').length);
     }
 
 
@@ -37,9 +40,7 @@ const DashboardTable = () => {
                         <th>
                             Applicant Name
                         </th>
-
                         <th>
-
                             Rating
                         </th>
                         <th>
@@ -68,7 +69,7 @@ const DashboardTable = () => {
                                         className="profile-img"
                                         w />
                                     <div>
-                                        <p>Fahad Hussain</p>
+                                        <p>Fahash Hussain</p>
 
                                     </div>
                                 </div>
@@ -86,7 +87,7 @@ const DashboardTable = () => {
                                     id={`td${i}`}>
 
                                     <select className="decision-select"
-                                        name="sd" id="" onChange={(e) => changeBorder(i, e)}>
+                                        name="sd" id={`select`} onChange={(e) => changeBorder1(i, e)}>
                                         <option value="Moveto">Move
                                             to
                                         </option>
