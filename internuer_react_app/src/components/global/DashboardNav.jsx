@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 
 
 const DashboardNav = (props) => {
+
+
+
     return (
         <div>
             <div className="dashboard1-navbar d-flex col-md-12">
@@ -26,13 +29,13 @@ const DashboardNav = (props) => {
 
                 <div className="col-md-5 p-2">
                     <div className="d-flex justify-content-end gap-5 pt-5 px-5">
-                        <Link to={props.link1}>
+                        <Link>
                             <button type="button" className={`nav-btn  p-3 + ${props.btn1class}
-                                `}>{props.btn1} ({props.shortlist})</button>
+                                `} onClick={props.handleClick3} >{props.btn1} ({props.shortlist})</button>
                         </Link>
                         <Link to={props.link2}>
                             <button type="button" className={`nav-btn  p-3 + ${props.btn2class}
-                                `}>{props.btn2} ({props.reject})</button>
+                                `}  >{props.btn2} ({props.reject})</button>
                         </Link>
 
                     </div>
@@ -42,4 +45,5 @@ const DashboardNav = (props) => {
     )
 }
 
+// to={props.link1}
 export default DashboardNav
