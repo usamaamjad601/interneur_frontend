@@ -2,7 +2,8 @@ import './bootstrap/css/bootstrap.css'
 import React, { Component } from 'react';
 import { Routes, Route } from "react-router-dom";
 import Dashboard from './Pages/Dashboard';
-import Dashboard1 from './Pages/Dashboard1';
+import DashDeclined from './Pages/DashDeclined';
+import DashShortlisted from './Pages/DashShortlisted';
 
 
 
@@ -11,7 +12,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Dashboard />} />
-        <Route path="Dashboard1" element={<Dashboard1 />} />
+        <Route path="DashDeclined" element={<DashDeclined />} />
+        <Route path="DashShortlisted" element={<DashShortlisted />} />
       </Routes>
     </div>
   );

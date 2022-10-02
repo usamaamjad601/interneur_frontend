@@ -10,6 +10,8 @@
   --black : #000000;
   --grey : #a5a5a5;
   --blue: #0D6EFD;
+  --blue1: #4794ec;
+  --light-blue1: #5f9bdd;
 }
 body{
   font-family: 'Arial ', sans-serif;
@@ -196,6 +198,13 @@ h1, h2,h3,h4,h5,h6,p{
 .nav-btn3:hover{
   background-color: var(--dark-grey);
   color: var(--white);
+}
+.nav-btn4{
+  background-color: var(--blue1);
+}
+.nav-btn4:hover{
+  background-color: var(--light-blue1);
+  color: var(--black);
 }
 .profile-img{
   border-radius: 50px;
@@ -411,3 +420,14 @@ h1, h2,h3,h4,h5,h6,p{
         transition: 0.3s;
     }
    
+
+  /* //////////DashShortlisted///////////////// */
+  .form-line{
+    display:block;
+    height:1px;
+    border:0;   	
+    border-top:3px solid #eeeeee;
+    margin:1em 0;
+    border-radius: 50%;
+    padding:0;
+  }
