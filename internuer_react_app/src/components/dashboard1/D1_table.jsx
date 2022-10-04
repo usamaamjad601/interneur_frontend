@@ -1,6 +1,5 @@
 import React from 'react'
 import prof from '../../assets/img/profile.png'
-import StarIcon from '@mui/icons-material/Star';
 import cv1 from '../../assets/files/cv1.pdf'
 
 
@@ -12,7 +11,6 @@ const D1_table = () => {
         console.log(x.id, 'id')
         console.log(x.className, 'class')
         console.log(e.target.value, 'value');
-        setDecision(i)
         if (e.target.value === 'ShortList') {
             x.className = "d-flex decision align-items-center shortlist"
         } else if (e.target.value === 'Reject') {

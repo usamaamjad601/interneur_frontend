@@ -6,12 +6,7 @@ import DashboardInfo from '../components/dashboard/DashboardInfo';
 import D1_table from '../components/dashboard1/D1_table';
 
 // ----MUI----
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import { Button, DialogContentText, DialogTitle, DialogContent, Dialog, DialogActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 // --------------------------------------------
@@ -22,7 +17,6 @@ const DashDeclined = () => {
         name: "John Doe",
         img: profile_img,
     }
-
 
 
     ///Page relaod

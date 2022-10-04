@@ -43,7 +43,7 @@ const Dashboard = () => {
         <div>
             <Sidebar user={profile} />
             <div class="content">
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class="nav-btn1" btn2class="nav-btn2" link1="/DashDeclined" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} />
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class="nav-btn1" btn2class="nav-btn2" link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">

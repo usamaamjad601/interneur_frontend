@@ -6,25 +6,27 @@ import cv1 from '../../assets/files/cv1.pdf'
 
 
 const DashboardTable = ({ handleClick, handleClick2 }) => {
-    // 
-    // var rejected = 0;
-    // var decision2 = '';
-    const [shortlist, setShortlist] = React.useState(0);
-    const [rejected, setRejected] = React.useState(0);
-    const [Decision, setDecision] = React.useState(-1);
-    const [Decision1, setDecision1] = React.useState('');
+
+
     const [statusArray, setStatusArray] = React.useState([]);
 
 
     const changeBorder1 = (i, e) => {
-        console.log(e.target.value, i)
-        console.log(statusArray)
+        var x = document.getElementById(`td${i}`)
+        // console.log(e.target.value, i)
+        // console.log(statusArray)
         const tempArray = [...statusArray];
         tempArray[i] = e.target.value;
         setStatusArray(tempArray);
-        console.log(tempArray)
+        // console.log(tempArray)
         handleClick(tempArray.filter((item) => item === 'ShortList').length);
         handleClick2(tempArray.filter((item) => item === 'Reject').length);
+
+        if (e.target.value === 'ShortList') {
+            x.className = "d-flex decision align-items-center shortlist"
+        } else if (e.target.value === 'Reject') {
+            x.className = "d-flex decision align-items-center reject"
+        }
     }
 
 

@@ -39,6 +39,12 @@ h1, h2,h3,h4,h5,h6,p{
 .f-18{
   font-size: 18px;
 }
+.display-none{
+  display: none !important;
+}
+.display-block{
+  display: block !important;
+}
 
 .myCard{
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -61,20 +67,8 @@ h1, h2,h3,h4,h5,h6,p{
 }
 .logo{
   
-  /* font-family: 'Passion One', cursive; */
-  font-size: 2rem;
-  text-align: center;
-  text-decoration: dashed;
+}
 
-  cursor: pointer;
-  /* margin: 0; */
-  padding: 0.5rem 0;
-}
-.logo > a{
-  text-decoration: none;
-  color: var(--black);;
-  font-weight: bolder;
-}
 
 /* Sidebar links */
 .sidebar a {
@@ -85,9 +79,7 @@ h1, h2,h3,h4,h5,h6,p{
   /* border-radius: 5px; */
 }
 .sidebar-logo{
-  /* border-top: 1px solid var(--black);
-  border-bottom: 1px solid var(--black); */
-  background-color: rgb(242, 238, 238);
+  width: 200px;
 }
 
 
@@ -237,7 +229,7 @@ h1, h2,h3,h4,h5,h6,p{
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 .content {
   margin-left: 15vw; 
-  width: 83.5vw;
+  /* width: 83.5vw; */
 }
 
 
@@ -294,7 +286,7 @@ h1, h2,h3,h4,h5,h6,p{
      }
      
      .d-table-head{
-      border-top: 1px solid var(--black);
+      /* border-top: 1px solid var(--black); */
       border-bottom: 1px solid var(--black);
       /* position: ; */
      }
@@ -430,4 +422,30 @@ h1, h2,h3,h4,h5,h6,p{
     margin:1em 0;
     border-radius: 50%;
     padding:0;
+  }
+  .google-map-btn{
+    background-color: transparent;
+    font-weight: bold;
+    color: var(--grey);
+    /* height: 55px; */
+    padding: 0.9rem 0.5rem;
+    border: 1px solid var(--grey);
+    border-radius: 4px;
+    width: 150px;
+
+  }
+  .inoffice-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 1rem;
+  }
+  .whatsapp-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+    gap: 1rem;
+
   }
