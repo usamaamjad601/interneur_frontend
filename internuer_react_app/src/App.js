@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Dashboard from './Pages/Dashboard';
 import DashDeclined from './Pages/DashDeclined';
 import DashShortlisted from './Pages/DashShortlisted';
+import Skider from './Pages/Skider';
 
 
 
@@ -14,6 +15,8 @@ function App() {
         <Route path="/" element={<Dashboard />} />
         <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
+        <Route path='slider' element={<Skider />} />
+
       </Routes>
     </div>
   );

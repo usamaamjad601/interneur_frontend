@@ -9,7 +9,10 @@ import D1_table from '../components/dashboard1/D1_table';
 import { Button, DialogContentText, DialogTitle, DialogContent, Dialog, DialogActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+
 // --------------------------------------------
+
+import Decline from '../css/App.module.css';
 
 
 const DashDeclined = () => {
@@ -20,16 +23,16 @@ const DashDeclined = () => {
 
 
     ///Page relaod
-    useEffect(() => {
-        window.addEventListener("beforeunload", alertUser);
-        return () => {
-            window.removeEventListener("beforeunload", alertUser);
-        };
-    }, []);
-    const alertUser = (e) => {
-        e.preventDefault();
-        e.returnValue = "kkk";
-    };
+    // useEffect(() => {
+    //     window.addEventListener("beforeunload", alertUser);
+    //     return () => {
+    //         window.removeEventListener("beforeunload", alertUser);
+    //     };
+    // }, []);
+    // const alertUser = (e) => {
+    //     e.preventDefault();
+    //     e.returnValue = "kkk";
+    // };
 
     ///popup function
     const [open, setOpen] = useState(false);
@@ -44,8 +47,8 @@ const DashDeclined = () => {
     return (
         <div>
             <Sidebar user={profile} />
-            <div class="content">
-                <DashboardNav title="UI/UX Designing" applicants={28} applicantstxt="Declined Applicants" navtxt="Lorem, ipsum dolor sit amet conpisicingis, eos, voluptates possimus voluptas aliquid laborpisicingis, eos, voluptates possimus" btn1="Go Back" btn2="Shorlisted" btn1class="nav-btn3" btn2class="nav-btn1" link1="#back" link2="#Dashboard3" handleClick3={handleClick3}
+            <div class={Decline.content}>
+                <DashboardNav title="UI/UX Designing" applicants={28} applicantstxt="Declined Applicants" navtxt="Lorem, ipsum dolor sit amet conpisicingis, eos, voluptates possimus voluptas aliquid laborpisicingis, eos, voluptates possimus" btn1="Go Back" btn2="Shorlisted" btn1class={Decline.navBtn3} btn2class={Decline.navBtn1} link1="#back" link2="#Dashboard3" handleClick3={handleClick3}
                 />
                 <div className="col-md-12">
                     <div className="d-flex">

@@ -5,13 +5,13 @@ import { Radio, RadioGroup, FormControlLabel, FormControl, TextField, InputLabel
 import { Link } from 'react-router-dom';
 import logo from '../../assets/logos/Logo.png'
 
+import Dform from '../../css/App.module.css'
+
 
 
 const DS_form = () => {
 
-    useEffect(() => {
-        document.getElementById('check1').checked = true;
-    });
+
 
     const [form, setform] = useState('In-office');
 
@@ -53,9 +53,9 @@ const DS_form = () => {
                         <FormControlLabel value="Recorded" control={<Radio />} label="Recorded Interview" onClick={() => formHandler('Recorded')} />
                     </RadioGroup>
                 </FormControl>
-                <div className="form-line "></div>
+                <div className={Dform.formline}></div>
                 {/* /////////In-Office-Form/////css class : inoffice-form// */}
-                <div className={` ${form === 'In-office' ? 'inoffice-form' : 'display-none'}`} >
+                <div className={` ${form === 'In-office' ? Dform.inofficeForm : Dform.displayNone}`} >
                     <TextField id="outlined-basic" label="Contact Person Name" variant="outlined" fullWidth={true} />
                     <TextField id="outlined-basic" label="Phone Number" variant="outlined" fullWidth={true} />
                     <TextField id="outlined-basic" label="Address" variant="outlined" fullWidth={true} multiline={true} />
@@ -86,13 +86,13 @@ const DS_form = () => {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
                         </FormControl>
-                        <button className='google-map-btn'>Google Map</button>
+                        <button className={Dform.googleMapBtn}>Google Map</button>
                     </div>
                     <Button variant="outlined" sx={{ width: '33%', margin: 'auto', fontWeight: 'bolder', border: '2px solid #4794ec', color: '#4794ec' }} onClick={handleClick3}>Preview</Button>
                 </div>
 
                 {/* //////Live Interview Form//////// */}
-                <div className={` ${form === 'Live' ? 'inoffice-form' : 'display-none'}`} >
+                <div className={` ${form === 'Live' ? Dform.inofficeForm : Dform.displayNone}`} >
 
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus harum autem accusamus a eligendi ea, veritatis est nemo dicta error esse explicabo sint dolorem voluptatum necessitatibus hic reiciendis numquam labore?</p>
                     <div className="d-flex flex-column">
@@ -106,12 +106,12 @@ const DS_form = () => {
                         </RadioGroup>
                     </div>
                     {/* ////////Whatsapp Form////// */}
-                    <div className={`${liveform === 'Whatsapp' ? 'whatsapp-form' : 'display-none'}`}>
+                    <div className={`${liveform === 'Whatsapp' ? Dform.whatsappForm : Dform.displayNone}`}>
                         <TextField id="outlined-basic" label="Contact Person Name" variant="outlined" fullWidth={true} />
                         <TextField id="outlined-basic" label="Whatsapp Number" variant="outlined" fullWidth={true} helperText="(include country code without '+' symbol. Eg.92)" />
                     </div>
                     {/* /////////////Cloud Form//////////////// */}
-                    <div className={`${liveform === 'Cloud' ? 'display-block' : 'display-none'}`}>
+                    <div className={`${liveform === 'Cloud' ? Dform.displayBlock : Dform.displayNone}`}>
                         <TextField id="outlined-basic" label="Video meeting link" variant="outlined" fullWidth={true} helperText="(Paste the link here)" />
                     </div>
                     <TextField
@@ -143,7 +143,7 @@ const DS_form = () => {
 
                 </div>
 
-                <div className={`${form === 'Recorded' ? 'inoffice-form' : 'display-none'}`} >
+                <div className={`${form === 'Recorded' ? Dform.inofficeForm : Dform.displayNone}`} >
                     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus harum autem accusamus a eligendi ea, veritatis est nemo dicta error esse explicabo sint dolorem voluptatum necessitatibus hic reiciendis numquam labore?</p>
 
                     <div className="d-flex flex-column gap-4 mt-3">
@@ -183,7 +183,7 @@ const DS_form = () => {
                 aria-describedby="alert-dialog-description"
             >
                 <DialogTitle sx={{ fontWeight: 'bolder', textAlign: 'center' }} id="alert-dialog-title">
-                    <img src={logo} className='sidebar-logo' alt="" />
+                    <img src={logo} className={Dform.sidebarLogo} alt="" />
                 </DialogTitle>
                 <DialogContent sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                     <p>Your Interview is sheduled</p>

@@ -5,6 +5,10 @@ import DashboardNav from '../components/global/DashboardNav';
 import DashboardTable from '../components/dashboard/DashboardTable'
 import DashboardInfo from '../components/dashboard/DashboardInfo';
 
+import Dash from '../css/App.module.css';
+
+// import Layout from '../layout/Layout'
+
 
 
 const Dashboard = () => {
@@ -41,9 +45,10 @@ const Dashboard = () => {
     // console.log(count, 'count');
     return (
         <div>
+            {/* <Layout user={profile} /> */}
             <Sidebar user={profile} />
-            <div class="content">
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class="nav-btn1" btn2class="nav-btn2" link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} />
+            <div class={Dash.content}>
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
@@ -55,9 +60,6 @@ const Dashboard = () => {
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     )
 }

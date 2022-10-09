@@ -2,32 +2,32 @@ import React from 'react'
 import prof from '../../assets/img/profile.png'
 import cv1 from '../../assets/files/cv1.pdf'
 
+import D1table from '../../css/App.module.css'
+
 
 const D1_table = () => {
-    const [Decision, setDecision] = React.useState(-1)
-    const [Decision1, setDecision1] = React.useState()
     const changeBorder = (i, e) => {
         var x = document.getElementById(`td${i}`)
         console.log(x.id, 'id')
         console.log(x.className, 'class')
         console.log(e.target.value, 'value');
         if (e.target.value === 'ShortList') {
-            x.className = "d-flex decision align-items-center shortlist"
+            x.className = `${D1table.shortlist} ${D1table.decision} d-flex align-items-center`
         } else if (e.target.value === 'Reject') {
-            x.className = "d-flex decision align-items-center reject"
+            x.className = `${D1table.decision}  ${D1table.reject} d-flex  align-items-center `
         }
         else if (e.target.value === 'unfit') {
-            x.className = "d-flex decision align-items-center unfit"
+            x.className = `${D1table.decision} ${D1table.unfit} d-flex decision align-items-center `
         }
         else {
-            x.className = "d-flex decision align-items-center"
+            x.className = `${D1table.decision} d-flex decision align-items-center`
         }
     }
 
     return (
-        <div className='dashboard-table'>
+        <div className={D1table.dashboardTable}>
             <table className='col-md-12'>
-                <thead className='d-table-head'>
+                <thead className={D1table.dTableHead}>
                     <tr >
                         <th className='p-2'>
                             <input type="checkbox" />
@@ -44,21 +44,21 @@ const D1_table = () => {
 
                     </tr>
                 </thead>
-                <tbody className='d-table-body'>
+                <tbody className={D1table.dTableBody}>
                     {[...Array(20)].map((x, i) =>
-                        <tr className='d-table-body' key={i}>
-                            <td className='table-check'>
+                        <tr className={D1table.dTableBody} key={i}>
+                            <td className={D1table.tableCheck}>
                                 <input type="checkbox" name=""
                                     id="" />
                             </td>
-                            <td className='profile-td'>
+                            <td className={D1table.profileTd}>
                                 <div href="#profile" className="
                                         d-flex
                                         align-items-center">
                                     <img
                                         src={prof}
                                         alt="Profile"
-                                        className="profile-img"
+                                        className={D1table.profileImg}
                                         w />
                                     <div>
                                         <p>Fahad Hussain</p>
@@ -67,12 +67,11 @@ const D1_table = () => {
                                 </div>
                             </td>
 
-                            <td className='table-decision'>
-                                <div className={`d-flex decision align-items-center`}
-                                    // ${(Decision === i && Decision1) ? "" : ""}
+                            <td className={D1table.tableDecision}>
+                                <div className={`${D1table.decision} d-flex  align-items-center`}
                                     id={`td${i}`}>
 
-                                    <select className="decision-select"
+                                    <select className={D1table.decisionSelect}
                                         name="sd" id="" onChange={(e) => changeBorder(i, e)}>
                                         <option value="select">
                                             Select
@@ -86,10 +85,10 @@ const D1_table = () => {
                                     </select>
                                 </div>
                             </td>
-                            <td className='table-cv'>
-                                <div className=" d-flex resume
-                                        align-items-center">
-                                    <button className="cv-btn">
+                            <td className={D1table.tableCV}>
+                                <div className={`${D1table.resume} d-flex 
+                                        align-items-center`}>
+                                    <button className={D1table.CVbtn}>
                                         <a href={cv1} target='_blank'>View CV</a>
                                     </button>
                                 </div>

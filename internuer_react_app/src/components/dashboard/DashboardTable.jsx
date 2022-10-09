@@ -2,6 +2,8 @@ import React from 'react'
 import prof from '../../assets/img/profile.png'
 import StarIcon from '@mui/icons-material/Star';
 import cv1 from '../../assets/files/cv1.pdf'
+import DTable from '../../css/App.module.css'
+
 
 
 
@@ -23,18 +25,18 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
         handleClick2(tempArray.filter((item) => item === 'Reject').length);
 
         if (e.target.value === 'ShortList') {
-            x.className = "d-flex decision align-items-center shortlist"
+            x.className = `${DTable.shortlist} ${DTable.decision} d-flex align-items-center`
         } else if (e.target.value === 'Reject') {
-            x.className = "d-flex decision align-items-center reject"
+            x.className = `${DTable.decision}  ${DTable.reject} d-flex  align-items-center `
         }
     }
 
 
 
     return (
-        <div className='dashboard-table'>
+        <div className={DTable.dashboardTable}>
             <table className='col-md-12'>
-                <thead className='d-table-head'>
+                <thead className={DTable.dTableHead}>
                     <tr >
                         <th className='p-2'>
                             <input type="checkbox" />
@@ -54,41 +56,41 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
 
                     </tr>
                 </thead>
-                <tbody className='d-table-body'>
+                <tbody className={DTable.dTableBodyy}>
                     {[...Array(20)].map((x, i) =>
-                        <tr className='d-table-body' key={i}>
-                            <td className='table-check'>
+                        <tr className={DTable.dTableBody} key={i}>
+                            <td className={DTable.tableCheck}>
                                 <input type="checkbox" name=""
                                     id="" />
                             </td>
-                            <td className='profile-td'>
+                            <td className={DTable.profileTd}>
                                 <div href="#profile" className="
                                         d-flex
                                         align-items-center">
                                     <img
                                         src={prof}
                                         alt="Profile"
-                                        className="profile-img"
+                                        className={DTable.profileImg}
                                         w />
                                     <div>
-                                        <p>Fahash Hussain</p>
+                                        <p>Naveed Akhtar</p>
 
                                     </div>
                                 </div>
                             </td>
-                            <td className='table-rating'>
-                                <div className="rating d-flex gap-2 align-items-center
-                                            ">
+                            <td className={DTable.tableRating}>
+                                <div className={`${DTable.rating} d-flex gap-2 align-items-center
+                                            `}>
                                     <StarIcon sx={{ color: 'orange' }} />
                                     <p>3.5</p>
                                 </div>
                             </td>
-                            <td className='table-decision'>
-                                <div className={`d-flex decision align-items-center`}
+                            <td className={DTable.tableDecision}>
+                                <div className={`${DTable.decision} d-flex  align-items-center`}
                                     // ${(Decision === i && Decision1) ? "" : ""}
                                     id={`td${i}`}>
 
-                                    <select className="decision-select"
+                                    <select className={DTable.decisionSelect}
                                         name="sd" id={`select`} onChange={(e) => changeBorder1(i, e)}>
                                         <option value="Moveto">Move
                                             to
@@ -100,24 +102,18 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
                                     </select>
                                 </div>
                             </td>
-                            <td className='table-cv'>
-                                <div className=" d-flex resume
-                                        align-items-center">
-                                    <button className="cv-btn">
+                            <td className={DTable.tableCV}>
+                                <div className={`${DTable.decision} d-flex 
+                                        align-items-center`}>
+                                    <button className={DTable.CVbtn}>
                                         <a href={cv1} target='_blank'>View CV</a>
                                     </button>
                                 </div>
                             </td>
                         </tr>
                     )}
-
-
-
-
                 </tbody>
             </table>
-
-
         </div >
     )
 }
