@@ -1,14 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import prof from '../../assets/img/profile.png'
 import StarIcon from '@mui/icons-material/Star';
 import cv1 from '../../assets/files/cv1.pdf'
 import DTable from '../../css/App.module.css'
 
+import MyContext from '../../Context/MyContext';
 
 
 
-const DashboardTable = ({ handleClick, handleClick2 }) => {
 
+
+const DashboardTable = ({ handleClick, handleClick2, button1, button2 }) => {
+
+    const user = useContext(MyContext);
+    console.log(user, 'username here plz ')
 
     const [statusArray, setStatusArray] = React.useState([]);
 
@@ -24,11 +29,44 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
         handleClick(tempArray.filter((item) => item === 'ShortList').length);
         handleClick2(tempArray.filter((item) => item === 'Reject').length);
 
+        button1(tempArray.filter((item) => item === 'ShortList').length);
+
+        if (tempArray.filter((item) => item === 'ShortList').length !== 0) {
+            button1(1)
+        }
+        if (tempArray.filter((item) => item === 'Reject').length !== 0) {
+            button2(1)
+        }
+
         if (e.target.value === 'ShortList') {
             x.className = `${DTable.shortlist} ${DTable.decision} d-flex align-items-center`
         } else if (e.target.value === 'Reject') {
             x.className = `${DTable.decision}  ${DTable.reject} d-flex  align-items-center `
         }
+    }
+    const [rowArray, setRowArray] = React.useState([]);
+
+    const rowFunction = (i) => {
+        var row = document.getElementById(`tr${i}`)
+        console.log(i);
+
+        var tempRowArray = [...rowArray];
+
+
+        if (tempRowArray.includes(`tr${i}`) === true) {
+            row.classList.remove(DTable.trActive);
+            document.getElementById(`check${i}`).checked = false;
+            tempRowArray.splice(i)
+        }
+        else {
+            row.classList.add(DTable.trActive);
+            document.getElementById(`check${i}`).checked = true;
+            tempRowArray[i] = `tr${i}`
+            setRowArray(tempRowArray);
+        }
+        console.log(tempRowArray, 'Row Ids')
+
+
     }
 
 
@@ -58,12 +96,12 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
                 </thead>
                 <tbody className={DTable.dTableBodyy}>
                     {[...Array(20)].map((x, i) =>
-                        <tr className={DTable.dTableBody} key={i}>
-                            <td className={DTable.tableCheck}>
+                        <tr className={`${DTable.dTableBody}`} key={i} id={`tr${i}`}>
+                            <td className={DTable.tableCheck} onClick={() => rowFunction(i)}>
                                 <input type="checkbox" name=""
-                                    id="" />
+                                    id={`check${i}`} onChange={() => rowFunction(i)} />
                             </td>
-                            <td className={DTable.profileTd}>
+                            <td className={DTable.profileTd} onClick={() => rowFunction(i)}>
                                 <div href="#profile" className="
                                         d-flex
                                         align-items-center">
@@ -78,7 +116,7 @@ const DashboardTable = ({ handleClick, handleClick2 }) => {
                                     </div>
                                 </div>
                             </td>
-                            <td className={DTable.tableRating}>
+                            <td className={DTable.tableRating} onClick={() => rowFunction(i)}>
                                 <div className={`${DTable.rating} d-flex gap-2 align-items-center
                                             `}>
                                     <StarIcon sx={{ color: 'orange' }} />

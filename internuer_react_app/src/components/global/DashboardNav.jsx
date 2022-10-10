@@ -6,6 +6,8 @@ import nav from '../../css/App.module.css';
 
 const DashboardNav = (props) => {
 
+    // console.log(props.shortbutton, 'ShortButton in Nav')
+
 
 
     return (
@@ -32,14 +34,15 @@ const DashboardNav = (props) => {
 
                 <div className="col-md-5 p-1">
                     <div className="d-flex justify-content-end gap-5 pt-5 px-5">
-                        <Link to={props.link1}>
-                            <button type="button" className={`${nav.navbtn} p-3 + ${props.btn1class}
+                        <Link to={props.shortbutton === 0 ? null : props.link1}>
+                            <button type="button" className={`${nav.navbtn} p-3 + ${props.shortbutton === 0 ? nav.disableClass : props.btn1class}
                                 `} onClick={props.handleClick3} >{props.btn1} {props.shortlist}</button>
                         </Link>
-                        <Link to={props.link2}>
-                            <button type="button" className={`${nav.navbtn}  p-3 + ${props.btn2class}
+                        <Link to={props.rejectbutton === 0 ? null : props.link2}>
+                            <button type="button" className={`${nav.navbtn}  p-3 + ${props.rejectbutton === 0 ? nav.disableClass : props.btn2class}
                                 `}  >{props.btn2} {props.reject}</button>
                         </Link>
+                        {console.log(props.button1, 'Button 1 TXT')}
                     </div>
                 </div>
             </div>

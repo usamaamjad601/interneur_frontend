@@ -35,7 +35,7 @@ const DashShortlisted = () => {
         <div>
             <Sidebar user={profile} />
             <div className={Short.content}>
-                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Shortlisted Applicants" btn1="Go Back" btn2="Interviews" btn1class={Short.navBtn3} btn2class={Short.navBtn4} link1="#back" link2="#Dashboard3" reject={`(${count})`} handleClick3={handleClick3}
+                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Shortlisted Applicants" btn1="Go Back" btn2="Interviews" btn1class={Short.navBtn3} btn2class={Short.navBtn4} link1="#back" link2="#Dashboard3" reject={`(${count})`} handleClick3={handleClick3} shortbutton={1}
                 />
 
                 <div className="col-md-12">

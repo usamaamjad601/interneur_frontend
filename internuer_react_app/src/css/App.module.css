@@ -153,6 +153,10 @@
     border: 1px solid var(--black);
     
   }
+  .disableClass{
+    background-color: var(--grey);   
+    pointer-events: none;    
+  }
   
   .dropdown:hover .dropdowncontent {
     display: flex;
@@ -304,6 +308,9 @@
         top : 0;
         background-color: var(--white);
        }
+       .trActive{
+          background-color: var(--light-red);
+       }
        .dTableHead th{
         text-align: center;
        }
@@ -399,7 +406,7 @@
       }
       .dInfoProfile{
         display: flex;
-        justify-content: flex-start;
+        justify-content: center;
         margin-left: 1rem;
       }
       .about h6{
@@ -434,6 +441,17 @@
       .infoBtn1:hover , .infoBtn2:hover{
           transform: scale(1.1);
           transition: 0.3s;
+      }
+      .sliderArrows{
+        position: absolute;
+        z-index: 2;
+        top: 21vh;
+        
+      }
+      .innerArrows{
+        display: flex;
+        gap: 23vw;
+        margin-left: 1vw;
       }
      
   

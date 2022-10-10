@@ -40,6 +40,17 @@ const Dashboard = () => {
         // 👇️ take parameter passed from Child component
         setCount2(num);
     };
+    const [firstButton, setFirstButton] = useState(0);
+    const button1 = (num) => {
+        setFirstButton(num);
+    }
+
+    // console.log(firstButton, 'First button');
+
+    const [secondButton, setSecondButton] = useState(0);
+    const button2 = (num) => {
+        setSecondButton(num);
+    }
 
 
     // console.log(count, 'count');
@@ -47,12 +58,12 @@ const Dashboard = () => {
         <div>
             {/* <Layout user={profile} /> */}
             <Sidebar user={profile} />
-            <div class={Dash.content}>
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} />
+            <div className={Dash.content}>
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <DashboardTable handleClick={handleClick} handleClick2={handleClick2} />
+                            <DashboardTable handleClick={handleClick} handleClick2={handleClick2} button1={button1} button2={button2} />
                         </div>
                         <div className="col-md-4">
                             <DashboardInfo />
