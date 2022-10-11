@@ -404,10 +404,20 @@
       .dInfoWrapper{
         justify-content: center;
       }
+      .InfoParent{
+        height: 83vh;
+        overflow-y: scroll;
+      }
       .dInfoProfile{
         display: flex;
         justify-content: center;
         margin-left: 1rem;
+      }
+      .readMore{
+        border: none;
+        color: var(--blue);
+        background-color: transparent;
+        cursor: pointer;
       }
       .about h6{
         font-weight: bold;
@@ -415,6 +425,8 @@
       .about p{
         font-size: 14px !important;
       }
+      #more {display: none;}
+
       
       .dInfoAboutBtn{
         border-top: 1px solid var(--black);

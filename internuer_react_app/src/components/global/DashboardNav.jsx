@@ -5,11 +5,6 @@ import nav from '../../css/App.module.css';
 
 
 const DashboardNav = (props) => {
-
-    // console.log(props.shortbutton, 'ShortButton in Nav')
-
-
-
     return (
         <div>
             <div className={`${nav.dashboard1navbar} d-flex col-md-12 pb-2`}>

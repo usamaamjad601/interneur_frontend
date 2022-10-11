@@ -52,21 +52,21 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2 }) => {
 
         var tempRowArray = [...rowArray];
 
-
         if (tempRowArray.includes(`tr${i}`) === true) {
             row.classList.remove(DTable.trActive);
             document.getElementById(`check${i}`).checked = false;
-            tempRowArray.splice(i)
+            const index = tempRowArray.indexOf(`tr${i}`)
+            tempRowArray.splice(index, 1)
+            console.log('Exists');
         }
         else {
             row.classList.add(DTable.trActive);
             document.getElementById(`check${i}`).checked = true;
-            tempRowArray[i] = `tr${i}`
-            setRowArray(tempRowArray);
+            tempRowArray.push(`tr${i}`);
+            console.log('Not Exists');
         }
-        console.log(tempRowArray, 'Row Ids')
-
-
+        setRowArray(tempRowArray);
+        console.log(tempRowArray, 'tempArray')
     }
 
 

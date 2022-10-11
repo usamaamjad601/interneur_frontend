@@ -5,24 +5,26 @@ import DAcoordion from './DAcoordion'
 import DInfo from '../../css/App.module.css'
 
 
-import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
-import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+// import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
+// import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import 'keen-slider/keen-slider.min.css'
 import { useKeenSlider } from 'keen-slider/react'
 
 
 import MyContext from '../../Context/MyContext';
-import DashboardTable from './DashboardTable'
+// import DashboardTable from './DashboardTable'
 
 
 const DashboardInfo = (props) => {
 
     const [user, setUser] = useState("Jesse Hall");
+    const provid = () => {
+        <MyContext.Provider value="Hello">
 
-    <MyContext.Provider value={user}>
-        console.log(user);
-        <DashboardTable />
-    </MyContext.Provider>
+        </MyContext.Provider>
+    }
+
+
 
     const [currentSlide, setCurrentSlide] = React.useState(0)
     const [loaded, setLoaded] = useState(false)
@@ -63,7 +65,7 @@ const DashboardInfo = (props) => {
                     </div>
                 </div>
             )}
-            <div className="navigation-wrapper">
+            <div className={DInfo.InfoParent}>
                 <div ref={sliderRef} className="keen-slider">
                     {[...Array(20)].map((x, i) =>
                         <div className="keen-slider__slide number-slide1" id={`slide${i}`}>
@@ -81,62 +83,17 @@ const DashboardInfo = (props) => {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="mt-2">
                                     <DInfoAbout />
                                 </div>
                                 <div className="mt-2">
                                     <DAcoordion />
+                                    <button onClick={provid}>Click me</button>
                                 </div>
                             </div>
                         </div>
                     )}
-                    <div className="keen-slider__slide number-slide2"><div className={`${DInfo.dInfoWrapper} col-md-12 p-3 d-flex flex-column`}>
-                        <div className={`${DInfo.dInfoProfile}  d-flex gap-2`}>
-                            <div className="d-flex gap-3 align-items-center">
-                                <img
-                                    src={prof}
-                                    alt="Profile"
-                                    className={DInfo.profileImg}
-                                />
-                                <div>
-                                    <h4>Dsh Kaneria</h4>
-                                    <p>Ui Designer</p>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div className="mt-2">
-                            <DInfoAbout />
-                        </div>
-                        <div className="mt-2">
-                            <DAcoordion />
-                        </div>
-                    </div>
-                    </div>
-                    <div className="keen-slider__slide number-slide3"><div className={`${DInfo.dInfoWrapper} col-md-12 p-3 d-flex flex-column`}>
-                        <div className={`${DInfo.dInfoProfile}  d-flex gap-2`}>
-                            <div className="d-flex gap-3 align-items-center">
-                                <img
-                                    src={prof}
-                                    alt="Profile"
-                                    className={DInfo.profileImg}
-                                />
-                                <div>
-                                    <h4>Danisssh Kaneria</h4>
-                                    <p>Ui Designer</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="mt-2">
-                            <DInfoAbout />
-                        </div>
-                        <div className="mt-2">
-                            <DAcoordion />
-                        </div>
-                    </div>
-                    </div>
                 </div>
 
             </div>
