@@ -7,7 +7,6 @@ import DashboardInfo from '../components/dashboard/DashboardInfo';
 
 import Dash from '../css/App.module.css';
 
-// import Layout from '../layout/Layout'
 
 
 
@@ -45,25 +44,27 @@ const Dashboard = () => {
         setFirstButton(num);
     }
 
-    // console.log(firstButton, 'First button');
 
     const [secondButton, setSecondButton] = useState(0);
     const button2 = (num) => {
         setSecondButton(num);
     }
+    var optionsArray = ['Shorlist', 'Reject'];
 
+    const [drop, setdrop] = useState(() => () => console.log("default ooops"));
+    const dropFunction = (i) => {
+        setdrop(i);
+    }
 
-    // console.log(count, 'count');
     return (
         <div>
-            {/* <Layout user={profile} /> */}
             <Sidebar user={profile} />
             <div className={Dash.content}>
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} />
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} optionsArray={optionsArray} dropFunction={dropFunction} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <DashboardTable handleClick={handleClick} handleClick2={handleClick2} button1={button1} button2={button2} />
+                            <DashboardTable handleClick={handleClick} handleClick2={handleClick2} button1={button1} button2={button2} dropFucntion={drop} />
                         </div>
                         <div className="col-md-4">
                             <DashboardInfo />

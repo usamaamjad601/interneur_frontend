@@ -114,6 +114,10 @@
     padding: 2rem 0;
 
   }
+  .checkBoxes{
+    height: 15px;
+    width: 15px;
+  }
   .sidebar-card{
     border-radius: 5px;
     background-color: #e1e1e1;
@@ -139,6 +143,7 @@
   .dropdown {
     position: relative;
     display: inline-block;
+
   }
   
   .dropdowncontent {
@@ -146,9 +151,9 @@
     position: absolute;
     background-color: #fff;
     min-width: 160px;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    /* padding: 12px 16px; */
-    /* padding-bottom: 4px; */
+    border-radius: 5px;
+    left: 20px;
+    top: 20px;
     z-index: 1;
     border: 1px solid var(--black);
     
@@ -162,13 +167,16 @@
     display: flex;
     flex-direction: column;
   }
-  .dropdowncontent a{
+  .dropdowncontent p{
     text-decoration: none;
     color: var(--black);
     padding: 0.5rem 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+
     
   }
-  .dropdowncontent a:hover{
+  .dropdowncontent p:hover{
     background-color: #e1e1e1;
   }
   
@@ -323,7 +331,7 @@
         padding: 0 10px;
       }
        .profileTd{
-        width: 10vw;
+        width: 25%;
         overflow: hidden;
         word-wrap: break-word;
        }
@@ -341,7 +349,7 @@
   
       }
       .tableRating{
-        width: 6vw;
+        width: 15%;
       }
       .decisionSelect{
         background-color: transparent;
@@ -353,10 +361,16 @@
         color: var(--black);     
       }
       .tableDecision{
-       width: 30%;
+       width: 25%;
+      }
+      .interviewTime{
+        width: 20%;
+      }
+      .interviewTime p{
+        font-weight: bolder ;
       }
       .tableCheck{
-        width: 5vw;
+        width: 7%;
       }
       .decision{
         border-radius: 1rem;
@@ -379,7 +393,7 @@
         border: 2px solid orange;
       }
       .tableCV{
-        width: 7vw;
+        width: 20%;
       }
       .resume{
         border: 2px solid var(--grey);
@@ -457,15 +471,21 @@
       .sliderArrows{
         position: absolute;
         z-index: 2;
-        top: 21vh;
+        top: 9.4rem;
+        cursor: pointer;
         
       }
       .innerArrows{
         display: flex;
         gap: 23vw;
         margin-left: 1vw;
+        color: red;
       }
-     
+     .innerArrows > Arrow{
+      color: red;
+      background-color: #0D6EFD;
+      display: none;
+     }
   
     /* //////////DashShortlisted///////////////// */
   

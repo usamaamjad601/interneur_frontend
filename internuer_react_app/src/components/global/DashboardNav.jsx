@@ -20,8 +20,9 @@ const DashboardNav = (props) => {
                         <div className={nav.dropdown}>
                             <MenuIcon />
                             <div className={nav.dropdowncontent}>
-                                <Link to="/Dashboard1" >Shortlisted</Link>
-                                <Link to="/Dashboard1">Declined</Link>
+                                {props.optionsArray.map((x, i) =>
+                                    <p onClick={() => props.dropFunction(i)} key={i}>{x}</p>
+                                )}
                             </div>
                         </div>
                     </div>

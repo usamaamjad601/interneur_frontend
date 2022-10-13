@@ -38,7 +38,7 @@ const DS_form = () => {
     };
     return (
         <div>
-            <div className="container p-4 pt-2">
+            <div className={`container p-4 pt-2 ${Dform.InfoParent}`}>
                 <h4>Let's Invite them for interviews</h4>
                 <p>Choose how you want to interview them?</p>
                 <p>Send emails to selected candidates</p>

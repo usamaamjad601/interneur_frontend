@@ -1,6 +1,7 @@
 import React from 'react'
 import prof from '../../assets/img/profile.png'
 import cv1 from '../../assets/files/cv1.pdf'
+import StarIcon from '@mui/icons-material/Star';
 
 import D1table from '../../css/App.module.css'
 
@@ -36,7 +37,10 @@ const D1_table = () => {
                             Applicant Name
                         </th>
                         <th>
-                            Reason
+                            Rating
+                        </th>
+                        <th>
+                            Interview
                         </th>
                         <th>
                             CV/Resume
@@ -66,8 +70,15 @@ const D1_table = () => {
                                     </div>
                                 </div>
                             </td>
+                            <td className={D1table.tableRating}>
+                                <div className={`${D1table.rating} d-flex gap-2 align-items-center
+                                            `}>
+                                    <StarIcon sx={{ color: 'orange' }} />
+                                    <p>3.5</p>
+                                </div>
+                            </td>
 
-                            <td className={D1table.tableDecision}>
+                            {/* <td className={D1table.tableDecision}>
                                 <div className={`${D1table.decision} d-flex  align-items-center`}
                                     id={`td${i}`}>
 
@@ -84,6 +95,9 @@ const D1_table = () => {
                                         </option>
                                     </select>
                                 </div>
+                            </td> */}
+                            <td className={D1table.interviewTime}>
+                                <p>Sun, 11:30 PM</p>
                             </td>
                             <td className={D1table.tableCV}>
                                 <div className={`${D1table.resume} d-flex 

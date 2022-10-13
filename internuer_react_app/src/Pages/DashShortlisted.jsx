@@ -13,6 +13,9 @@ import { Link } from 'react-router-dom';
 
 
 const DashShortlisted = () => {
+    var optionsArray = ['Irrelevent CV', 'Different Location', 'Weak or Unfit Portfolio', 'Unsatisfactory Interview', 'High Salary Expectations', 'Move to Shortlist'];
+
+
     var profile = {
         name: "John Doe",
         img: profile_img,
@@ -35,7 +38,7 @@ const DashShortlisted = () => {
         <div>
             <Sidebar user={profile} />
             <div className={Short.content}>
-                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Shortlisted Applicants" btn1="Go Back" btn2="Interviews" btn1class={Short.navBtn3} btn2class={Short.navBtn4} link1="#back" link2="#Dashboard3" reject={`(${count})`} handleClick3={handleClick3} shortbutton={1}
+                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Shortlisted Applicants" btn1="Go Back" btn2="Interviews" btn1class={Short.navBtn3} btn2class={Short.navBtn4} link1="#back" link2="#Dashboard3" reject={`(${count})`} handleClick3={handleClick3} shortbutton={1} optionsArray={optionsArray}
                 />
 
                 <div className="col-md-12">

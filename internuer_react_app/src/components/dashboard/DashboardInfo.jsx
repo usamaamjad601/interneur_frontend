@@ -47,6 +47,7 @@ const DashboardInfo = (props) => {
                 <div className={DInfo.sliderArrows} >
                     <div className={DInfo.innerArrows}>
                         <Arrow
+                            style={{ color: 'red' }}
                             left
                             onClick={(e) =>
                                 e.stopPropagation() || instanceRef.current?.prev()
@@ -68,7 +69,7 @@ const DashboardInfo = (props) => {
             <div className={DInfo.InfoParent}>
                 <div ref={sliderRef} className="keen-slider">
                     {[...Array(20)].map((x, i) =>
-                        <div className="keen-slider__slide number-slide1" id={`slide${i}`}>
+                        <div className="keen-slider__slide number-slide1" id={`slide${i}`} key={i}>
                             <div className={`${DInfo.dInfoWrapper} col-md-12 p-3 d-flex flex-column`}>
                                 <div className={`${DInfo.dInfoProfile}  d-flex`}>
                                     <div className="d-flex gap-1 align-items-center">
@@ -88,56 +89,13 @@ const DashboardInfo = (props) => {
                                 </div>
                                 <div className="mt-2">
                                     <DAcoordion />
-                                    <button onClick={provid}>Click me</button>
                                 </div>
                             </div>
                         </div>
                     )}
 
                 </div>
-
             </div>
-            {/* {loaded && instanceRef.current && (
-                <div className="dots">
-                    {[
-                        ...Array(instanceRef.current.track.details.slides.length).keys(),
-                    ].map((idx) => {
-                        return (
-                            <button
-                                key={idx}
-                                onClick={() => {
-                                    instanceRef.current?.moveToIdx(idx)
-                                }}
-                                className={"dot" + (currentSlide === idx ? " active" : "")}
-                            ></button>
-                        )
-                    })}
-                </div>
-            )} */}
-            {/* <div className={`${DInfo.dInfoWrapper} col-md-12 p-3 d-flex flex-column`}>
-                <div className={`${DInfo.dInfoProfile}  d-flex gap-2`}>
-                    <div className="d-flex gap-3 align-items-center">
-                        <ArrowCircleLeftIcon fontSize="large" sx={{ cursor: "pointer" }} />
-                        <ArrowCircleRightIcon fontSize="large" sx={{ cursor: "pointer" }} />
-                        <img
-                            src={prof}
-                            alt="Profile"
-                            className={DInfo.profileImg}
-                        />
-                        <div>
-                            <h4>Danish Kaneria</h4>
-                            <p>Ui Designer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="mt-2">
-                    <DInfoAbout />
-                </div>
-                <div className="mt-2">
-                    <DAcoordion />
-                </div>
-            </div> */}
         </div>
     )
 }
@@ -145,7 +103,7 @@ const DashboardInfo = (props) => {
 function Arrow(props) {
     const disabeld = props.disabled ? " arrow--disabled" : ""
     return (
-        <svg style={{ width: '20px', hight: '20px' }}
+        <svg style={{ width: '20px', hight: '20px', fill: 'green' }}
             onClick={props.onClick}
             className={`arrow ${props.left ? "arrow--left" : "arrow--right"
                 } ${disabeld}`}
