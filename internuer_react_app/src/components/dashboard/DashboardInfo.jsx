@@ -15,7 +15,7 @@ import MyContext from '../../Context/MyContext';
 // import DashboardTable from './DashboardTable'
 
 
-const DashboardInfo = (props) => {
+const DashboardInfo = ({ slideMap }) => {
 
     const [user, setUser] = useState("Jesse Hall");
     const provid = () => {
@@ -34,6 +34,9 @@ const DashboardInfo = (props) => {
             initial: 0,
             slideChanged(slider) {
                 setCurrentSlide(slider.track.details.rel)
+                // console.log(currentSlide, 'current	');
+                // console.log(slider.track.details.rel, 'slidef');
+                slideMap(slider.track.details.rel);
             },
             created() {
                 setLoaded(true)
@@ -93,7 +96,6 @@ const DashboardInfo = (props) => {
                             </div>
                         </div>
                     )}
-
                 </div>
             </div>
         </div>

@@ -38,7 +38,7 @@ const DashboardNav = (props) => {
                             <button type="button" className={`${nav.navbtn}  p-3 + ${props.rejectbutton === 0 ? nav.disableClass : props.btn2class}
                                 `}  >{props.btn2} {props.reject}</button>
                         </Link>
-                        {console.log(props.button1, 'Button 1 TXT')}
+                        {/* {console.log(props.button1, 'Button 1 TXT')} */}
                     </div>
                 </div>
             </div>

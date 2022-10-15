@@ -4,9 +4,11 @@ import cv1 from '../../assets/files/cv1.pdf'
 import StarIcon from '@mui/icons-material/Star';
 
 import D1table from '../../css/App.module.css'
+import PlayNew from '../../assets/icons/play_new.svg'
 
 
-const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
+
+const SubmitedTable = ({ handleClick, handleClick2, button1, button2, drop }) => {
     const [statusArray, setStatusArray] = React.useState([]);
 
     const changeBorder1 = (i, e) => {
@@ -136,7 +138,7 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
 
 
                             <td className={D1table.interviewTime} onClick={() => rowFunction(i)}    >
-                                <p>Sun, 11:30 PM</p>
+                                <img src={PlayNew} alt="" className={D1table.Playbtn} />
                             </td>
                             <td className={D1table.tableCV}>
                                 <div className={`${D1table.resume} d-flex 
@@ -157,4 +159,4 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
     )
 }
 
-export default D1_table
+export default SubmitedTable

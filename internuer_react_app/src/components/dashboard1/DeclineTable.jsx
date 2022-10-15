@@ -6,7 +6,7 @@ import StarIcon from '@mui/icons-material/Star';
 import D1table from '../../css/App.module.css'
 
 
-const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
+const DeclineTable = ({ handleClick, handleClick2, button1, button2, drop }) => {
     const [statusArray, setStatusArray] = React.useState([]);
 
     const changeBorder1 = (i, e) => {
@@ -92,9 +92,7 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
                         <th>
                             Applicant Name
                         </th>
-                        <th>
-                            Rating
-                        </th>
+
                         <th>
                             Interview
                         </th>
@@ -126,18 +124,35 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
                                     </div>
                                 </div>
                             </td>
-                            <td className={D1table.tableRating} onClick={() => rowFunction(i)}>
+                            {/* <td className={D1table.tableRating} onClick={() => rowFunction(i)}>
                                 <div className={`${D1table.rating} d-flex gap-2 align-items-center
                                             `}>
                                     <StarIcon sx={{ color: 'orange' }} />
                                     <p>3.5</p>
                                 </div>
+                            </td> */}
+
+                            <td className={D1table.tableDecision}>
+                                <div className={`${D1table.decision} d-flex  align-items-center`}
+                                    id={`td${i}`}>
+
+                                    <select className={D1table.decisionSelect}
+                                        name="sd" id="" onChange={(e) => changeBorder1(i, e)}>
+                                        <option value="select">
+                                            Select
+                                        </option>
+                                        <option value="ShortList">Unsatisfactory Interview
+                                        </option>
+                                        <option value="Reject">Week or unfit portfolio
+                                        </option>
+                                        <option value="unfit">Irrelevant CV
+                                        </option>
+                                    </select>
+                                </div>
                             </td>
-
-
-                            <td className={D1table.interviewTime} onClick={() => rowFunction(i)}    >
+                            {/* <td className={D1table.interviewTime} onClick={() => rowFunction(i)}    >
                                 <p>Sun, 11:30 PM</p>
-                            </td>
+                            </td> */}
                             <td className={D1table.tableCV}>
                                 <div className={`${D1table.resume} d-flex 
                                         align-items-center`}>
@@ -157,4 +172,4 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
     )
 }
 
-export default D1_table
+export default DeclineTable

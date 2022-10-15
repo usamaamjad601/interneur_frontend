@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
 import DashboardNav from '../components/global/DashboardNav'
-import D1_table from '../components/dashboard1/D1_table'
 import DS_form from '../components/dashShortlisted/DS_form'
 
 import Short from '../css/App.module.css'
@@ -10,9 +9,11 @@ import Short from '../css/App.module.css'
 import { Button, DialogContentText, DialogTitle, DialogContent, Dialog, DialogActions } from '@mui/material';
 import { Link } from 'react-router-dom';
 
+import SubmitedTable from '../components/DashSubmited/SubmitedTable'
+import SubmitedForm from '../components/DashSubmited/SubmitedForm'
 
+const DashSubmited = () => {
 
-const DashShortlisted = () => {
     var optionsArray = ['Move to declined list', 'Send interview invites'];
 
 
@@ -38,16 +39,16 @@ const DashShortlisted = () => {
         <div>
             <Sidebar user={profile} />
             <div className={Short.content}>
-                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Shortlisted Applicants" btn1="Go Back" btn2="Interviews" btn1class={Short.navBtn3} btn2class={Short.navBtn4} link1="#back" link2="#Dashboard3" reject={`(${count})`} handleClick3={handleClick3} shortbutton={1} optionsArray={optionsArray}
+                <DashboardNav title="UI/UX Designing" applicants={10} applicantstxt="Interviews Submited" btn1="Close job" btn2="Declined list" btn1class={Short.navBtn3} btn2class={Short.navBtn5} link1="#back" link2="#Dashboard3" handleClick3={handleClick3} shortbutton={1} optionsArray={optionsArray}
                 />
 
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <D1_table />
+                            <SubmitedTable />
                         </div>
                         <div className="col-md-4">
-                            <DS_form />
+                            <SubmitedForm />
                         </div>
                     </div>
                 </div>
@@ -81,8 +82,7 @@ const DashShortlisted = () => {
                     </DialogActions>
                 </Dialog>
             </div>
-        </div>
-    )
+        </div>)
 }
 
-export default DashShortlisted
+export default DashSubmited

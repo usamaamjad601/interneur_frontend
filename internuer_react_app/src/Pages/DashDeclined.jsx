@@ -13,6 +13,7 @@ import { Link } from 'react-router-dom';
 // --------------------------------------------
 
 import Decline from '../css/App.module.css';
+import DeclineTable from '../components/dashboard1/DeclineTable';
 
 
 const DashDeclined = () => {
@@ -47,13 +48,13 @@ const DashDeclined = () => {
     return (
         <div>
             <Sidebar user={profile} />
-            <div class={Decline.content}>
+            <div className={Decline.content}>
                 <DashboardNav title="UI/UX Designing" applicants={28} applicantstxt="Declined Applicants" navtxt="Lorem, ipsum dolor sit amet conpisicingis, eos, voluptates possimus voluptas aliquid laborpisicingis, eos, voluptates possimus" btn1="Go Back" btn2="Shorlisted" btn1class={Decline.navBtn3} btn2class={Decline.navBtn1} link1="#back" link2="#Dashboard3" handleClick3={handleClick3} optionsArray={optionsArray}
                 />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <D1_table />
+                            <DeclineTable />
                         </div>
                         <div className="col-md-4">
                             <DashboardInfo />
