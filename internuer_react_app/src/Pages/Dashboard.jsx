@@ -172,7 +172,7 @@ const Dashboard = () => {
     const slideMap = (i) => {
         var row = document.getElementById(`tr${i}`)
         setSlide(i);
-        if (slide === i) {
+        if (slide === 0) {
             row.classList.add(Dash.trActive);
             document.getElementById(`check${i}`).checked = true;
         }
