@@ -20,15 +20,15 @@ const sidebar = (props) => {
                             <img src={logo} alt="" className={side.sidebarLogo} />
                         </Link>
                     </div>
-                    <a href="#profile" className={`${side.profile} d-flex gap-2 p-0 py-4`}>
+                    <a href="#profile" className={`${side.profile} d-flex gap-2 p-0 py-4 align-items-center`}>
                         <img
-                            // src={props.user.img}
+                            src={props.user.img}
                             alt="Profile"
                             height="60px"
                             width="70px" />
                         <div>
-                            {/* <h4>{props.user.name}</h4> */}
-                            <h6>Admin</h6>
+                            <h4>{props.user.name}</h4>
+                            <strong>Admin</strong>
                         </div>
                     </a>
                     <a className="d-flex gap-3" href="./Dashboard.html">

@@ -3,7 +3,7 @@ import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
 import DashboardNav from '../components/global/DashboardNav';
 import DashboardInfo from '../components/dashboard/DashboardInfo';
-import D1_table from '../components/dashboard1/D1_table';
+// import D1_table from '../components/dashboard1/D1_table';
 
 // ----MUI----
 import { Button, DialogContentText, DialogTitle, DialogContent, Dialog, DialogActions } from '@mui/material';
@@ -13,10 +13,85 @@ import { Link } from 'react-router-dom';
 // --------------------------------------------
 
 import Decline from '../css/App.module.css';
-import DeclineTable from '../components/dashboard1/DeclineTable';
+import DeclineTable from '../components/DashDeclined/DeclineTable';
 
 
 const DashDeclined = () => {
+    const [statusArray, setStatusArray] = React.useState([]);
+
+    const changeBorder1 = (i, e) => {
+        var x = document.getElementById(`td${i}`)
+        // console.log(e.target.value, i)
+        // console.log(statusArray)
+        const tempArray = [...statusArray];
+        tempArray[i] = e.target.value;
+        setStatusArray(tempArray);
+        // console.log(tempArray)
+        // handleClick(tempArray.filter((item) => item === 'ShortList').length);
+        // handleClick2(tempArray.filter((item) => item === 'Reject').length);
+
+        // button1(tempArray.filter((item) => item === 'ShortList').length);
+
+        if (tempArray.filter((item) => item === 'ShortList').length !== 0) {
+            // button1(1)
+        }
+        if (tempArray.filter((item) => item === 'Reject').length !== 0) {
+            // button2(1)
+        }
+        if (e.target.value === 'ShortList') {
+            x.className = `${Decline.shortlist} ${Decline.decision} d-flex align-items-center`
+        } else if (e.target.value === 'Reject') {
+            x.className = `${Decline.decision}  ${Decline.reject} d-flex  align-items-center `
+        }
+    }
+    const [rowArray, setRowArray] = React.useState([]);
+    var tempRowArray = [];
+
+    const rowFunction = (i) => {
+        var row = document.getElementById(`tr${i}`)
+        // console.log(i);
+
+        tempRowArray = [...rowArray];
+
+        if (tempRowArray.includes(`tr${i}`) === true || row.checked) {
+            row.classList.remove(Decline.trActive);
+            document.getElementById(`check${i}`).checked = false;
+            const index = tempRowArray.indexOf(`tr${i}`)
+            tempRowArray.splice(index, 1)
+            // console.log("exist")
+        }
+        else {
+            row.classList.add(Decline.trActive);
+            document.getElementById(`check${i}`).checked = true;
+            tempRowArray.push(`tr${i}`);
+            // console.log("not exist")
+        }
+        setRowArray(tempRowArray);
+        // console.log(tempRowArray, 'tempArray')
+    }
+    const selectAll = () => {
+        var check = document.getElementById('Allcheck');
+        for (var i = 0; i < 20; i++) {
+            if (check.checked) {
+                document.getElementById(`check${i}`).checked = true;
+                document.getElementById(`tr${i}`).classList.add(Decline.trActive);
+                // console.log("cheked");
+                tempRowArray.push(`tr${i}`);
+
+
+            }
+            else {
+                document.getElementById(`check${i}`).checked = false;
+                document.getElementById(`tr${i}`).classList.remove(Decline.trActive);
+                // console.log("not cheked");
+                const index = tempRowArray.indexOf(`tr${i}`)
+                tempRowArray.splice(index, 1)
+            }
+            setRowArray(tempRowArray);
+        }
+    }
+
+
     var profile = {
         name: "John Doe",
         img: profile_img,
@@ -54,7 +129,7 @@ const DashDeclined = () => {
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <DeclineTable />
+                            <DeclineTable selectAll={selectAll} changeBorder1={changeBorder1} rowFunction={rowFunction} />
                         </div>
                         <div className="col-md-4">
                             <DashboardInfo />

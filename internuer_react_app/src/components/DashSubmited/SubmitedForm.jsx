@@ -28,11 +28,8 @@ const SubmitedForm = (props) => {
     }
 
 
-
-
     return (
         <div className={SForm.InfoParent}>
-
             <div className={`${SForm.dInfoWrapper} col-md-12 p-3 d-flex flex-column`}>
                 <div className={`${SForm.dInfoProfile}  d-flex`}>
                     <div className="d-flex gap-1 align-items-center">
@@ -112,7 +109,7 @@ const SubmitedForm = (props) => {
                             ':hover': {
                                 bgcolor: '#dd4e67',
                                 color: 'white',
-                                border: 'none'
+                                border: 'none',
                             },
                             width: '33%', margin: 'auto', fontWeight: 'bolder', border: '2px solid #dd4e67', color: '#dd4e67'
                         }} >Decline</Button>

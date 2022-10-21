@@ -48,16 +48,16 @@ export default function ControlledAccordions() {
 
                 </AccordionSummary>
                 <AccordionDetails sx={{ padding: '5px 15px' }}>
-                    <Typography>
+                    <div>
                         <strong>Quid-e-Azam University, Islamabad</strong>
-                        <p>BS-Software Engineering</p>
-                        <p>(2018-2020)</p>
-                    </Typography>
-                    <Typography className='mt-3'>
+                        <Typography>BS-Software Engineering</Typography>
+                        <Typography>(2018-2020)</Typography>
+                    </div>
+                    <div className='mt-3'>
                         <strong>Quid-e-Azam University, Islamabad</strong>
-                        <p>MS-Software Engineering</p>
-                        <p>(2020-2022)</p>
-                    </Typography>
+                        <Typography>MS-Software Engineering</Typography>
+                        <Typography>(2020-2022)</Typography>
+                    </div>
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')} sx={{ margin: 0 }}>
@@ -72,16 +72,16 @@ export default function ControlledAccordions() {
 
                 </AccordionSummary>
                 <AccordionDetails sx={{ padding: '5px 15px' }}>
-                    <Typography>
+                    <div>
                         <strong>Quid-e-Azam University, Islamabad</strong>
-                        <p>BS-Software Engineering</p>
-                        <p>(2018-2020)</p>
-                    </Typography>
-                    <Typography className='mt-3'>
+                        <Typography>BS-Software Engineering</Typography>
+                        <Typography>(2018-2020)</Typography>
+                    </div>
+                    <div className='mt-3'>
                         <strong>Quid-e-Azam University, Islamabad</strong>
-                        <p>MS-Software Engineering</p>
-                        <p>(2020-2022)</p>
-                    </Typography>
+                        <Typography>MS-Software Engineering</Typography>
+                        <Typography>(2020-2022)</Typography>
+                    </div>
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
@@ -116,12 +116,8 @@ export default function ControlledAccordions() {
                             </ul>
                         </div>
                     </div>
-
-
-
                 </AccordionDetails>
             </Accordion>
-
             {/* <div class="accordion accordion-flush" id="accordionFlushExample">
                 <div class="accordion-item">
                     <h2 class="accordion-header p-0" id="flush-headingOne">

@@ -5,7 +5,7 @@ import Dashboard from './Pages/Dashboard';
 import DashDeclined from './Pages/DashDeclined';
 import DashShortlisted from './Pages/DashShortlisted';
 import DashSubmited from './Pages/DashSubmited';
-// import Skider from './Pages/Skider';
+import './css/Styles.css'
 
 
 
@@ -17,7 +17,6 @@ function App() {
         <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
-
       </Routes>
     </div>
   );

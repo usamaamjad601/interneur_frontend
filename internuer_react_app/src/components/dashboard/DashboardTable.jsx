@@ -5,6 +5,7 @@ import cv1 from '../../assets/files/cv1.pdf'
 import DTable from '../../css/App.module.css'
 
 import MyContext from '../../Context/MyContext';
+import { Link } from 'react-router-dom';
 
 
 
@@ -62,7 +63,7 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBor
                                         src={prof}
                                         alt="Profile"
                                         className={DTable.profileImg}
-                                        w />
+                                    />
                                     <div>
                                         <p>Naveed Akhtar</p>
 
@@ -97,7 +98,7 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBor
                                 <div className={`${DTable.decision} d-flex 
                                         align-items-center`}>
                                     <button className={DTable.CVbtn}>
-                                        <a href={cv1} target='_blank'>View CV</a>
+                                        <Link to={cv1} target='_blank'>View CV</Link>
                                     </button>
                                 </div>
                             </td>

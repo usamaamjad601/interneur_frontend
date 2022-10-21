@@ -23,14 +23,14 @@ const Dashboard = () => {
     //     e.returnValue = "";
     // };
 
-
     var profile = {
         name: "John Doe",
         img: profile_img,
     }
+
     const [count, setCount] = useState(0);
+
     const handleClick = num => {
-        // 👇️ take parameter passed from Child component
         setCount(num);
     };
 
@@ -44,17 +44,17 @@ const Dashboard = () => {
         setFirstButton(num);
     }
 
-
     const [secondButton, setSecondButton] = useState(0);
     const button2 = (num) => {
         setSecondButton(num);
     }
+
     var optionsArray = ['Shorlist', 'Reject'];
 
-    const [drop, setdrop] = useState(() => () => console.log("default ooops"));
-    const dropFunction = (i) => {
-        setdrop(i);
-    }
+    // const [drop, setdrop] = useState(() => () => console.log("default ooops"));
+    // const dropFunction = (i) => {
+    //     setdrop(i);
+    // }
 
     const [statusArray, setStatusArray] = React.useState([]);
 
@@ -167,30 +167,33 @@ const Dashboard = () => {
         }
     }
 
-    const [slide, setSlide] = useState(0);
+    useEffect(() => {
+        document.getElementById(`tr${0}`).classList.add(Dash.trActive);
+        document.getElementById(`check${0}`).checked = true;
+    })
+    /// From Backend
 
+    var j = 0;
     const slideMap = (i) => {
-        var row = document.getElementById(`tr${i}`)
-        setSlide(i);
-        if (slide === 0) {
-            row.classList.add(Dash.trActive);
-            document.getElementById(`check${i}`).checked = true;
+        document.getElementById(`tr${i}`).classList.add(Dash.trActive);
+        document.getElementById(`check${i}`).checked = true;
+        if (i > j) {
+            document.getElementById(`tr${i - 1}`).classList.remove(Dash.trActive);
+            document.getElementById(`check${i - 1}`).checked = false;
         }
-        else {
-            // row.classList.remove(Dash.trActive);
-
+        else if (i < j) {
+            document.getElementById(`tr${i + 1}`).classList.remove(Dash.trActive);
+            document.getElementById(`check${i + 1}`).checked = false;
         }
-
+        j = i;
     }
-
 
 
     return (
         <div>
             <Sidebar user={profile} />
             <div className={Dash.content}>
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} optionsArray={optionsArray} dropFunction={dropFunction} />
-
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} optionsArray={optionsArray} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">

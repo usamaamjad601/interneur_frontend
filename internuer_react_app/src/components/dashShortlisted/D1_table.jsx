@@ -4,82 +4,10 @@ import cv1 from '../../assets/files/cv1.pdf'
 import StarIcon from '@mui/icons-material/Star';
 
 import D1table from '../../css/App.module.css'
+import { Link } from 'react-router-dom';
 
 
-const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
-    const [statusArray, setStatusArray] = React.useState([]);
-
-    const changeBorder1 = (i, e) => {
-        var x = document.getElementById(`td${i}`)
-        // console.log(e.target.value, i)
-        // console.log(statusArray)
-        const tempArray = [...statusArray];
-        tempArray[i] = e.target.value;
-        setStatusArray(tempArray);
-        // console.log(tempArray)
-        handleClick(tempArray.filter((item) => item === 'ShortList').length);
-        handleClick2(tempArray.filter((item) => item === 'Reject').length);
-
-        button1(tempArray.filter((item) => item === 'ShortList').length);
-
-        if (tempArray.filter((item) => item === 'ShortList').length !== 0) {
-            button1(1)
-        }
-        if (tempArray.filter((item) => item === 'Reject').length !== 0) {
-            button2(1)
-        }
-        if (e.target.value === 'ShortList') {
-            x.className = `${D1table.shortlist} ${D1table.decision} d-flex align-items-center`
-        } else if (e.target.value === 'Reject') {
-            x.className = `${D1table.decision}  ${D1table.reject} d-flex  align-items-center `
-        }
-    }
-    const [rowArray, setRowArray] = React.useState([]);
-    var tempRowArray = [];
-
-    const rowFunction = (i) => {
-        var row = document.getElementById(`tr${i}`)
-        // console.log(i);
-
-        tempRowArray = [...rowArray];
-
-        if (tempRowArray.includes(`tr${i}`) === true || row.checked) {
-            row.classList.remove(D1table.trActive);
-            document.getElementById(`check${i}`).checked = false;
-            const index = tempRowArray.indexOf(`tr${i}`)
-            tempRowArray.splice(index, 1)
-            // console.log("exist")
-        }
-        else {
-            row.classList.add(D1table.trActive);
-            document.getElementById(`check${i}`).checked = true;
-            tempRowArray.push(`tr${i}`);
-            // console.log("not exist")
-        }
-        setRowArray(tempRowArray);
-        // console.log(tempRowArray, 'tempArray')
-    }
-    const selectAll = () => {
-        var check = document.getElementById('Allcheck');
-        for (var i = 0; i < 20; i++) {
-            if (check.checked) {
-                document.getElementById(`check${i}`).checked = true;
-                document.getElementById(`tr${i}`).classList.add(D1table.trActive);
-                // console.log("cheked");
-                tempRowArray.push(`tr${i}`);
-
-
-            }
-            else {
-                document.getElementById(`check${i}`).checked = false;
-                document.getElementById(`tr${i}`).classList.remove(D1table.trActive);
-                // console.log("not cheked");
-                const index = tempRowArray.indexOf(`tr${i}`)
-                tempRowArray.splice(index, 1)
-            }
-            setRowArray(tempRowArray);
-        }
-    }
+const D1_table = ({ selectAll, rowFunction }) => {
 
     return (
         <div className={D1table.dashboardTable}>
@@ -119,7 +47,7 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
                                         src={prof}
                                         alt="Profile"
                                         className={D1table.profileImg}
-                                        w />
+                                    />
                                     <div>
                                         <p>Naveed Akhtar</p>
 
@@ -142,7 +70,7 @@ const D1_table = ({ handleClick, handleClick2, button1, button2, drop }) => {
                                 <div className={`${D1table.resume} d-flex 
                                         align-items-center`}>
                                     <button className={D1table.CVbtn}>
-                                        <a href={cv1} target='_blank'>View CV</a>
+                                        <Link to={cv1} target='_blank'>View CV</Link>
                                     </button>
                                 </div>
                             </td>

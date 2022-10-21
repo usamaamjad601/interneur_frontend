@@ -478,24 +478,26 @@
           transform: scale(1.1);
           transition: 0.3s;
       }
-      .sliderArrows{
-        position: absolute;
-        z-index: 2;
-        top: 9.4rem;
-        cursor: pointer;
-        
-      }
-      .innerArrows{
-        display: flex;
-        gap: 23vw;
-        margin-left: 1vw;
-        color: red;
-      }
-     .innerArrows > Arrow{
-      color: red;
-      background-color: #0D6EFD;
-      display: none;
-     }
+
+     .arrow {
+      position: absolute;
+      color: #000000;
+      font-size: 2.5em;
+      font-weight: bold;
+      cursor: pointer;
+      z-index: 10;
+    }
+    
+    .nextArrow {
+      top: 5px;
+      right: 22px;
+    }
+    
+    .prevArrow {
+      top: 5px;
+      left: 10px;
+  
+    }
   
     /* //////////DashShortlisted///////////////// */
   

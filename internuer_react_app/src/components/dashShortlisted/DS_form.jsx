@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import OutlinedInput from '@mui/material/OutlinedInput';
+
 
 
 import { Radio, RadioGroup, FormControlLabel, FormControl, TextField, InputLabel, MenuItem, Select, Checkbox, Button, DialogContentText, DialogTitle, DialogContent, Dialog, DialogActions } from '@mui/material';
@@ -36,6 +38,8 @@ const DS_form = () => {
     const handleClose = () => {
         setOpen(false);
     };
+
+    const [showLink, setShowLink] = useState(false);
     return (
         <div>
             <div className={`container p-4 pt-2 ${Dform.InfoParent}`}>
@@ -86,7 +90,19 @@ const DS_form = () => {
                                 <MenuItem value={30}>Thirty</MenuItem>
                             </Select>
                         </FormControl>
-                        <button className={Dform.googleMapBtn}>Google Map</button>
+                        <button className={Dform.googleMapBtn} onClick={() => setShowLink(true)}>Google Map</button>
+                    </div>
+                    <div className={showLink ? Dform.displayBlock : Dform.displayNone}>
+                        <OutlinedInput
+                            fullWidth
+                            multiline={true}
+                            placeholder='Please Paste Google Map Link'
+                            id="outlined-adornment-weight"
+                            aria-describedby="outlined-weight-helper-text"
+                            inputProps={{
+                                'aria-label': 'weight',
+                            }}
+                        />
                     </div>
                     <Button variant="outlined" sx={{ width: '33%', margin: 'auto', fontWeight: 'bolder', border: '2px solid #4794ec', color: '#4794ec' }} onClick={handleClick3}>Preview</Button>
                 </div>
@@ -171,7 +187,7 @@ const DS_form = () => {
                                 shrink: true,
                             }}
                         />
-                        <Button variant="outlined" sx={{ width: '33%', margin: 'auto', fontWeight: 'bolder', border: '2px solid #4794ec', color: '#4794ec' }} onClick={handleClick3}>Preview</Button>
+                        <Button variant="outlined" sx={{ width: '33%', margin: 'auto', fontWeight: 'bolder', border: '2px solid #4794ec', color: '#4794ec' }} onClick={handleClick3} >Preview</Button>
                     </div>
                 </div>
             </div>
