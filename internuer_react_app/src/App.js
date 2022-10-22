@@ -6,6 +6,7 @@ import DashDeclined from './Pages/DashDeclined';
 import DashShortlisted from './Pages/DashShortlisted';
 import DashSubmited from './Pages/DashSubmited';
 import './css/Styles.css'
+import JobLive from './Pages/JobLive';
 
 
 
@@ -17,6 +18,8 @@ function App() {
         <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
+        <Route path='joblive' element={<JobLive />} />
+
       </Routes>
     </div>
   );
