@@ -2,7 +2,7 @@ import React from 'react'
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
 
-import DApproved from '../css/App.module.css';
+import Dash from '../css/App.module.css';
 import Nav2 from '../components/global/Nav2';
 import Deadline from '../components/JobLive/JobDeadline';
 import DateObject from "react-date-object";
@@ -13,11 +13,9 @@ import JobSchedule from '../components/JobLive/JobSchedule';
 
 
 
-const JobDisapproved = () => {
+const JobClosed = () => {
 
     var skillTags = ['HTML', 'CSS', 'Graphic Designing', 'UI/UX']
-    var moreActions = ['More Actions', 'Share on job boards', 'View as applicant', 'Re-open this position', 'Copy link']
-
 
     var profile = {
         name: "John Doe",
@@ -25,19 +23,21 @@ const JobDisapproved = () => {
     }
     var date = new DateObject();
 
+    var moreActions = ['More Actions', 'View as applicant', 'Re-open this position']
     return (
         <div>
             <Sidebar user={profile} />
-            <div className={DApproved.content}>
-                <Nav2 title="UI/UX Designing" btn2="Edit Job Post" btn2class={DApproved.navBtn4} status="Disapproved" color="#d55f73" days='12'
-                    views="0" candidates="0" jobtype="remote" stage="Declined" displayClass={DApproved.displayNone} moreActions={moreActions} />
+            <div className={Dash.content}>
+                <Nav2 title="UI/UX Designing" applicants={31} btn2="View Applicants" btn2class={Dash.navBtn4} status="Closed" color="grey" days='6'
+                    views="5" candidates="3" jobtype="remote" stage="closed " moreActions={moreActions} />
+
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8 p-4">
-                            <Deadline stipend="13000-20000" months="6" deadline={date.format("DD MMM YYYY")}
+                            <Deadline stipend="13000-20000" months="6" deadline={date.format("DD MMM YYYY")} displayClass={Dash.displayNone}
                             />
                             <div className='pt-4'>
-                                <JobDesc />
+                                <JobDesc displayClass={Dash.displayNone} />
                             </div>
                             <div className='pt-3 '>
                                 <JobSkills skillTags={skillTags} />
@@ -50,9 +50,18 @@ const JobDisapproved = () => {
                                 <div className='pt-3 d-flex flex-column gap-2'>
                                     <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#0D6EFD" Number="1" txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tempore quasi eligendi modi possimus stinctio pariatur" title="Job Submited" />
 
-                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#d55f73" Number='2' txt={`sit amet consectetur adipisicing elit. Qui tempora igendi modi 
-                                    possimus  stinctio pariatur`} title="Declined" linktxt="Whats app Support" link="https://wa.me/923125113231" />
+                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#5fb951" Number='2' txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tempore quasi eligendi modi possimus  autem exercitationem tempore quasi eligendi modi 
+                                     possimus  stinctio pariatur" title="Approved" />
+
+                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="orange" Number='3' txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tempore quasi  modi possimus stinctio pariatur" title="Shortlisting" />
+
+                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="purple" Number='4' txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tempore quasio pariatur" title="Interviews" />
+
+                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#5fb951" Number='5' txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tmus stinctio pariatur" title="Job Offer & Closing" />
+
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
@@ -62,4 +71,4 @@ const JobDisapproved = () => {
     )
 }
 
-export default JobDisapproved
+export default JobClosed
