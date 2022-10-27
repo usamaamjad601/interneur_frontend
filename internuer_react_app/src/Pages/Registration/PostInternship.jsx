@@ -33,15 +33,62 @@ const PostInternship = () => {
                                 <br />
                                 <h4 className='fw-bolder text-start p-2'>Internship details</h4>
                                 <div className={`${reg3.box} p-3`}>
-                                    <h6 className='fw-bolder'>Category</h6>
-                                    <div class="radioslct">
-                                        <p class="radioleft"></p>
-                                    </div>
-                                    <div class='d-flex gap-2 p-1'>
-                                        <input type="radio" id="rd" name="radio" />
-                                        <span class={reg3.checkmark}></span>Web Designing & Development
+                                    <div>
+                                        <h6 className='fw-bolder'>Category</h6>
+                                        <div className="pt-3">
+                                            <div className="d-flex gap-1">
+                                                <div className="col-md-6">
+                                                    {[...Array(5)].map((i) =>
+                                                        <div class='d-flex gap-2 p-1' key={i}>
+                                                            <input type="radio" id='rd' name="radio" />
+                                                            <label for='rd' class={reg3.checkmark}>Web Designing & Development</label>
+                                                        </div>
+                                                    )
+                                                    }
+                                                </div>
+                                                <div className="col-md-6">
+                                                    {[...Array(5)].map((i) =>
+                                                        <div class='d-flex gap-2 p-1' key={i}>
+                                                            <input type="radio" id='rd' name="radio" />
+                                                            <label for='rd' class={reg3.checkmark}>Web Designing & Development</label>
+                                                        </div>
+                                                    )
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
 
+                                    <div className='pt-5'>
+                                        <h6 className='fw-bolder'>Internship Type</h6>
+                                        <div className="pt-3">
+                                            <div className="d-flex gap-1 ">
+                                                <div className="col-md-6">
+
+                                                    <div class='d-flex gap-2 p-1' >
+                                                        <input type="radio" id='ed' name="radio" />
+                                                        <span class={reg3.checkmark}></span>Physical Onsite
+                                                    </div>
+                                                    <div class='d-flex gap-2 p-1' >
+                                                        <input type="radio" id='ed' name="radio" />
+                                                        <span class={reg3.checkmark}></span>Physical Onsite
+                                                    </div>
+
+                                                </div>
+                                                <div className="col-md-6">
+                                                    <div class='d-flex gap-2 p-1' >
+                                                        <input type="radio" id='ed' name="radio" />
+                                                        <span class={reg3.checkmark}></span>Full Time
+                                                    </div>
+                                                    <div class='d-flex gap-2 p-1' >
+                                                        <input type="radio" id='ed' name="radio" />
+                                                        <span class={reg3.checkmark}></span>Physical Onsite
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
