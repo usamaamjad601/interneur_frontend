@@ -2,6 +2,7 @@ import React from 'react'
 import JobDesc from '../JobLive/JobDesc'
 import JobSkills from '../JobLive/JobSkills'
 import ApplyNow from './ApplyNow'
+import Disclamer from './Disclamer'
 
 const PostDesc = (props) => {
     return (
@@ -30,6 +31,9 @@ const PostDesc = (props) => {
             </div>
             <div className="d-flex justify-content-center p-4">
                 <ApplyNow />
+            </div>
+            <div className='pb-3'>
+                <Disclamer />
             </div>
         </div>
     )

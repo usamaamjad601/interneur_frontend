@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import companyLogo1 from '../assets/img/companyLogo1.png'
 import Deadline from '../components/JobLive/JobDeadline'
 import LocationOnIcon from '@mui/icons-material/LocationOn';
@@ -10,6 +9,7 @@ import DateObject from "react-date-object";
 
 import Post from '../css/App.module.css'
 import PostDesc from '../components/JobPost/PostDesc';
+import OpenPosition from '../components/JobPost/OpenPosition';
 
 
 const JobPost = () => {
@@ -19,7 +19,6 @@ const JobPost = () => {
 
 
     return (
-
         <div className=''>
             <div className={`p-3 ${Post.Postnav} `}>
                 <div className='d-flex justify-content-center'>
@@ -27,11 +26,11 @@ const JobPost = () => {
                 </div>
                 <div className="col-md-12 d-flex pt-4">
                     <div className="col-md-2 d-flex justify-content-center">
-                        <img src={companyLogo1} className={Post.cmpLogo} />
+                        <img src={companyLogo1} className={Post.cmpLogo} alt="CmpLogo" />
                     </div>
                     <div className="col-md-8 d-flex flex-column gap-2 px-4">
                         <h4 className='fw-bolder'>UI/UX Designing</h4>
-                        <a href='https://10pearls.com/' target='_blank' rel='s' className='text-decoration-none color-primary'><strong> 10 Pearls</strong></a>
+                        <a href='https://10pearls.com/' target='_blank' rel='noreferrer' className='text-decoration-none color-primary'><strong> 10 Pearls</strong></a>
                         <div className="d-flex gap-3">
                             <LocationOnIcon />
                             <p>Islamabad</p>
@@ -39,7 +38,7 @@ const JobPost = () => {
                         <Deadline stipend="13000-20000" months="6" deadline={date.format("DD MMM YYYY")} displayClass={Post.displayNone}
                         />
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-2">
                         <div class={Post.dropdown}>
                             <span><ShareIcon sx={{ color: 'blue' }} xs={3} /></span>
                             <div class={Post.dropdowncontent}>
@@ -49,17 +48,17 @@ const JobPost = () => {
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
             <div className="col-md-12 d-flex pt-2 px-4">
                 <div className="col-md-2"></div>
                 <div className="col-md-8 px-4"><PostDesc cmpName='10 Pearls' Perks={Perks} skillTags={skillTags} title1="Skills Required" title2="Perks" /></div>
-                <div className="col-md-4"></div>
+                <div className="col-md-2 px-4 pt-5">
+                    <OpenPosition NumofPosition={2} />
+                </div>
             </div>
         </div>
-
     )
 }
 

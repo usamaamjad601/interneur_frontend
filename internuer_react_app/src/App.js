@@ -11,7 +11,10 @@ import JobDisapproved from './Pages/JobDisapproved';
 import JobInReview from './Pages/JobInReview';
 import JobClosed from './Pages/JobClosed';
 import JobPost from './Pages/JobPost';
-
+import EmpForms from './Pages/EmpForms';
+import ClientReg1 from './Pages/Registration/ClientReg1';
+import ClientReg2 from './Pages/Registration/ClientReg2';
+import PostInternship from './Pages/Registration/PostInternship';
 
 
 function App() {
@@ -27,6 +30,11 @@ function App() {
         <Route path='JobInReview' element={<JobInReview />} />
         <Route path='JobClosed' element={<JobClosed />} />
         <Route path='JobPost' element={<JobPost />} />
+        <Route path='EmpForms' element={<EmpForms />} />
+        <Route path='ClientReg1' element={<ClientReg1 />} />
+        <Route path='ClientReg2' element={<ClientReg2 />} />
+        <Route path='PostInternship' element={<PostInternship />} />
+
       </Routes>
     </div>
   );

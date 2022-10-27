@@ -12,6 +12,7 @@
     --blue: #0D6EFD;
     --blue1: #4794ec;
     --light-blue1: #5f9bdd;
+    --blue2 : #6598DB;
   }
   body{
     font-family: 'Arial ', sans-serif;
@@ -614,7 +615,6 @@
   height: 150px;
 }
 .Postnav{
-  position: sticky;
   border-bottom: 1px solid var(--grey);
 }
 
@@ -626,7 +626,48 @@
   font-weight: bolder;
   font-size: 20px;
   background-color: white;
+  display: flex;
+  gap: 1rem;
 }
 .applynowbtn:hover{
   border: 7px soild black;
+}
+.Disclamer{
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff5f6;
+}
+.Disclamer > h6{
+  color: var(--red);
+  font-weight: bolder;
+}
+
+.NoPosition{
+  border: 1px solid var(--dark-grey);
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+}
+
+
+/* ////////////////EmpFomrs///////////// */
+.EFormWrapper{
+  padding: 1rem 18%;
+}
+.EFormHead > h3{
+  text-align: center;
+  color: var(--white);
+  font-weight: bolder;
+  background-color: var(--blue2);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.filesubmit::file-selector-button{
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  background: var(--blue2);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
 }
