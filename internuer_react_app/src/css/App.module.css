@@ -1,576 +1,659 @@
 /* The side navigation menu */
 :root {
-    --green: #5fb951;
-    --light-green: #e1ffe0;
-    --dark-grey : #434343;
-    --light-grey: #8d8d8d;
-    --red : #fb5a90;
-    --light-red: #fbe3e2;
-    --white : #FFFFFF;
-    --black : #000000;
-    --grey : #a5a5a5;
-    --blue: #0D6EFD;
-    --blue1: #4794ec;
-    --light-blue1: #5f9bdd;
-  }
-  body{
-    font-family: 'Arial ', sans-serif;
-    /* background-color: rgb(214, 213, 213); */
-    color: var(--dark-grey);
-  }
-  h1, h2,h3,h4,h5,h6,p{
-    margin: 0 ;
-    padding: 0;
-  }
-  .f-10{
-    font-size: 10px;
-  
-  }
-  .f-12{
-    font-size: 12px;
-  }
-  .f-14{
-    font-size: 14px;
-  }
-  .f-16{
-    font-size: 16px;
-  }
-  .f-18{
-    font-size: 18px;
-  }
-  .displayNone{
-    display: none !important;
-  }
-  .displayBlock{
-    display: block !important;
-  }
-  
-  .myCard{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-      border-radius: 0.5rem;
-  }
-  /* The side navigation menu////////////////////////////// */
-  .sidebar {
-    margin: 0;
-    padding: 0;
-    width: 15vw;
-    background-color: var(--white);
-    position: fixed;
-    height: 100%;
-    overflow: auto;
-    border-right: 1px solid var(--black);
-  }
-  .my-icon{
-    width: 30px;
-    height: 30px;
-  }
-  .logo{
-    
-  }
-  
-  
-  /* Sidebar links */
-  .sidebar a {
-    display: block;
-    color: var(--black);
-    padding: 16px;
-    text-decoration: none;
-    /* border-radius: 5px; */
-  }
-  .sidebarLogo{
-    width: 200px;
-  }
-  
-  
-  /* //////////////////////////MY-CSS----------///////// */
-  .Dashboard-btn{
-    border: 5px solid var(--blue);
-    border-radius:2rem;
-    width: 13vw;
-    padding: 0.5rem 0.5rem;
-  }
-  .Dashboard-btn2{
-    border: 1px solid var(--black);
-    border-radius:2rem;
-    width: 10vw;
-    padding: 0.2rem 0.5rem;
-  }
-  .d-card{
-    border: 5px solid maroon;
-    border-radius: 1rem;
-    background-color: rgb(243, 190, 190);
-    width:10vw;
-  }
-  .Dashboard-3{
-    border: 1px solid var(--black);
-    border-radius: 5px
-  }
-  .dashboardTable > span{
-    font-size: 4rem;
-    font-weight: 700;
-    width: 25%;
-    text-align: center;
-    border: 1px solid var(--black);
-    padding: 2rem 0;
+  --green: #5fb951;
+  --light-green: #e1ffe0;
+  --dark-grey: #434343;
+  --light-grey: #8d8d8d;
+  --red: #fb5a90;
+  --light-red: #fbe3e2;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #a5a5a5;
+  --blue: #0D6EFD;
+  --blue1: #4794ec;
+  --light-blue1: #5f9bdd;
+}
 
-  }
-  .checkBoxes{
-    height: 15px;
-    width: 15px;
-  }
-  .sidebar-card{
-    border-radius: 5px;
-    background-color: #e1e1e1;
-  
-  }
-  .Playbtn{
-    width: 40px;
-  }
-  .heading h3{
-    color: var(--dark-grey);
-  }
-  .heading h6{
-    color:  var(--grey);
-    font-weight: bold;
-  }
-  
-  .sidebar-card p{
-    text-align: center;
-  }
-  .sidebar-btn{
-    border-radius: 1rem;
-  }
-  .dashboard1navbar{
-    border-bottom: 1px solid var(--black);
-  }
-  .dropdown {
-    position: relative;
-    display: inline-block;
+body {
+  font-family: 'Arial ', sans-serif;
+  /* background-color: rgb(214, 213, 213); */
+  color: var(--dark-grey);
+}
 
-  }
-  
-  .dropdowncontent {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    /* min-width: 160px; */
-    border-radius: 5px;
-    left: 20px;
-    top: 20px;
-    z-index: 1;
-    border: 1px solid var(--black);
-    
-  }
-  .disableClass{
-    background-color: var(--grey);   
-    pointer-events: none;    
-  }
-  
-  .dropdown:hover .dropdowncontent {
-    display: flex;
-    flex-direction: column;
-  }
-  .dropdowncontent p{
-    text-decoration: none;
-    color: var(--black);
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    border-radius: 5px;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
 
-    
-  }
-  .dropdowncontent p:hover{
-    background-color: #e1e1e1;
-  }
-  
-  .navbtn{
-    border: none;
-    color: white;
-    font-weight: bolder;
-    border-radius: 10px;
-    width: 10vw;
-  }
-  .navBtn1{
-    background-color: var(--green);
-  }
-  .navBtn1:hover{
-    background-color: var(--light-green);
-    color: var(--black);
-  }
-  .navBtn2{
-    background-color: var(--red);
-  }
-  .navBtn2:hover{
-    background-color: var(--light-red);
-    color: var(--black);
-  }
-  .navBtn3{
-    background-color: transparent;
-    color: var(--dark-grey);
-    border: 1px solid var(--dark-grey);
-  }
-  .navBtn3:hover{
-    background-color: var(--dark-grey);
-    color: var(--white);
-  }
-  .navBtn4{
-    background-color: var(--blue1);
-  }
-  .navBtn4:hover{
-    background-color: var(--light-blue1);
-    color: var(--black);
-  }
-  .navBtn5{
-    background-color: var(--red);
-  }
-  .navBtn5:hover{
-    background-color: var(--light-red);
-    color: var(--black);
-  }
-  .profileImg{
-    border-radius: 50px;
-    /* border: 1px solid var(--black); */
-    width: 70px;
-    /* height: 50px; */
-  }
+.f-10 {
+  font-size: 10px;
 
-  /* ///////////////////Navbar module 2//////////////// */
-  .statusClass{
-    color: red;
-  }
-  
-.stage{
+}
+
+.f-12 {
+  font-size: 12px;
+}
+
+.f-14 {
+  font-size: 14px;
+}
+
+.f-16 {
+  font-size: 16px;
+}
+
+.f-18 {
+  font-size: 18px;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+.displayBlock {
+  display: block !important;
+}
+
+.myCard {
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 0.5rem;
+}
+
+/* The side navigation menu////////////////////////////// */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 15vw;
+  background-color: var(--white);
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  /* border-right: 1px solid var(--black); */
+}
+
+.my-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: var(--black);
+  padding: 16px;
+  text-decoration: none;
+  /* border-radius: 5px; */
+}
+
+.sidebarLogo {
+  width: 200px;
+}
+
+
+/* //////////////////////////MY-CSS----------///////// */
+.Dashboard-btn {
+  border: 5px solid var(--blue);
+  border-radius: 2rem;
+  width: 13vw;
+  padding: 0.5rem 0.5rem;
+}
+
+.Dashboard-btn2 {
+  border: 1px solid var(--black);
+  border-radius: 2rem;
+  width: 10vw;
+  padding: 0.2rem 0.5rem;
+}
+
+.d-card {
+  border: 5px solid maroon;
+  border-radius: 1rem;
+  background-color: rgb(243, 190, 190);
+  width: 10vw;
+}
+
+.Dashboard-3 {
+  border: 1px solid var(--black);
+  border-radius: 5px
+}
+
+.dashboardTable>span {
+  font-size: 4rem;
+  font-weight: 700;
+  width: 25%;
+  text-align: center;
+  border: 1px solid var(--black);
+  padding: 2rem 0;
+
+}
+
+.checkBoxes {
+  height: 15px;
+  width: 15px;
+}
+
+.sidebar-card {
+  border-radius: 5px;
+  background-color: #e1e1e1;
+
+}
+
+.Playbtn {
+  width: 40px;
+}
+
+.heading h3 {
+  color: var(--dark-grey);
+}
+
+.heading h6 {
+  color: var(--grey);
+  font-weight: bold;
+}
+
+.sidebar-card p {
+  text-align: center;
+}
+
+.sidebar-btn {
+  border-radius: 1rem;
+}
+
+.dashboard1navbar {
+  border-bottom: 1px solid var(--black);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdowncontent {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  /* min-width: 160px; */
+  border-radius: 5px;
+  left: 20px;
+  top: 20px;
+  z-index: 1;
+  border: 1px solid var(--black);
+
+}
+
+.disableClass {
+  background-color: var(--grey);
+  pointer-events: none;
+}
+
+.dropdown:hover .dropdowncontent {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdowncontent p {
+  text-decoration: none;
+  color: var(--black);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+
+
+}
+
+.dropdowncontent p:hover {
+  background-color: #e1e1e1;
+}
+
+.navbtn {
+  border: none;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  width: 10vw;
+}
+
+.navBtn1 {
+  background-color: var(--green);
+}
+
+.navBtn1:hover {
+  background-color: var(--light-green);
+  color: var(--black);
+}
+
+.navBtn2 {
+  background-color: var(--red);
+}
+
+.navBtn2:hover {
+  background-color: var(--light-red);
+  color: var(--black);
+}
+
+.navBtn3 {
+  background-color: transparent;
+  color: var(--dark-grey);
+  border: 1px solid var(--dark-grey);
+}
+
+.navBtn3:hover {
+  background-color: var(--dark-grey);
+  color: var(--white);
+}
+
+.navBtn4 {
+  background-color: var(--blue1);
+}
+
+.navBtn4:hover {
+  background-color: var(--light-blue1);
+  color: var(--black);
+}
+
+.navBtn5 {
+  background-color: var(--red);
+}
+
+.navBtn5:hover {
+  background-color: var(--light-red);
+  color: var(--black);
+}
+
+.profileImg {
+  border-radius: 50px;
+  /* border: 1px solid var(--black); */
+  width: 70px;
+  /* height: 50px; */
+}
+
+/* ///////////////////Navbar module 2//////////////// */
+.statusClass {
+  color: red;
+}
+
+.stage {
   border: 2px solid var(--black);
   border-radius: 10px;
   font-size: 14px;
-  font-weight :bold;
+  font-weight: bold;
   padding: 2px;
   color: var(--black);
 }
-  .nav2btn{
-    border: none;
-    color: white;
-    font-weight: bolder;
-    border-radius: 10px;
-    /* width: 10vw; */
-  }
-  
-  .dahsboard1-sec1{
-    border: 1px solid var(--black);
-  }
-  .dahsboard1-sec2{
-    border: 1px solid var(--black);
-    border-left: none;
-  }
-  
-  
-  .dahsboard1-list-nav table{
-    width: 100%;
-    
-  }
-  .dahsboard1-list-nav thead{
-    border: 1px solid var(--black);
-    border-top: none;
-    border-left: none;
-  }
-  
-  /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
-  .content {
-    margin-left: 15vw; 
-    /* width: 83.5vw; */
-  }
-  
-  
-  
-    /* -------------------Navbar-------------- */
-    .nav-ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: var(--black);
-        display: flex;  
-        justify-content: space-between;
-        border-radius: 5px;
-        padding: 0.3rem 1rem;
-        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    
-      }
-      
-      .nav-heading{
-        color: var(--white);
-        margin: 0;
-      }
-      .nav-logout{
-        display: flex;
-        margin: 0;
-        color: var(--white);
-        gap: 1rem;
-        align-items: center;
-      }
-      .nav-a{
-        color: var(--white);
-        text-decoration: none;
-      }
-    
-      
-      li a:hover {
-        background-color: #111;
-      }
-  
-  
-      /* //Golbal Button/// */
-      .button{
-        padding: 0.5rem 1rem;
-      }
-  
-  
-      /* ////////////////Dashboard1//////////////
+
+.nav2btn {
+  border: none;
+  color: white;
+  font-weight: bolder;
+  border-radius: 10px;
+  /* width: 10vw; */
+}
+
+.dahsboard1-sec1 {
+  border: 1px solid var(--black);
+}
+
+.dahsboard1-sec2 {
+  border: 1px solid var(--black);
+  border-left: none;
+}
+
+
+.dahsboard1-list-nav table {
+  width: 100%;
+
+}
+
+.dahsboard1-list-nav thead {
+  border: 1px solid var(--black);
+  border-top: none;
+  border-left: none;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+.content {
+  margin-left: 15vw;
+  /* width: 83.5vw; */
+}
+
+
+
+/* -------------------Navbar-------------- */
+.nav-ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--black);
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+}
+
+.nav-heading {
+  color: var(--white);
+  margin: 0;
+}
+
+.nav-logout {
+  display: flex;
+  margin: 0;
+  color: var(--white);
+  gap: 1rem;
+  align-items: center;
+}
+
+.nav-a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+
+li a:hover {
+  background-color: #111;
+}
+
+
+/* //Golbal Button/// */
+.button {
+  padding: 0.5rem 1rem;
+}
+
+
+/* ////////////////Dashboard1//////////////
        */
-       .dashboardTable{
-        border-right: 1px solid var(--black);
-        height: 83vh;
-        /* overflow-y: scroll; */
-        /* height: 200px; */
-        overflow: auto;
-       }
-       
-       .dTableHead{
-        /* border-top: 1px solid var(--black); */
-        border-bottom: 1px solid var(--black);
-        
-       }
-       .dTableHead tr{
-        position: sticky;
-        top : 0;
-        background-color: var(--white);
-       }
-       .trActive{
-          background-color: var(--light-red);
-       }
-       .dTableHead th{
-        text-align: center;
-       }
-       .dTableBodyy{
-        height: 80vh;
-        overflow-y: scroll;
-       }
-       .dTableBody td{
-        text-align: center;
-        padding: 0 10px;
-      }
-       .profileTd{
-        width: 25%;
-        overflow: hidden;
-        word-wrap: break-word;
-       }
-       .profileTd p{
-        font-weight: bold;
-       }
-       .rating{
-        border: 2px solid orange;
-        border-radius: 1rem;
-        height: 4vh;
-        justify-content: center;
-      }
-      .rating p{
-        font-weight: bold;
-  
-      }
-      .tableRating{
-        width: 15%;
-      }
-      .decisionSelect{
-        background-color: transparent;
-        border: none;
-        outline: none;
-        border-radius: 1rem;
-        width: 100%;
-        font-weight: bold;
-        color: var(--black);     
-      }
-      .tableDecision{
-       width: 25%;
-      }
-      .interviewTime{
-        width: 20%;
-      }
-      .interviewTime p{
-        font-weight: bolder ;
-      }
-      .tableCheck{
-        width: 7%;
-      }
-      .decision{
-        border-radius: 1rem;
-        justify-content: center;
-        height: 4vh;
-        /* background-color: var(--light-grey); */
-        border: 2px solid var(--light-grey);
-        /* padding: 1vw 1vh; */
-      }
-      .shortlist{
-        background-color: var(--light-green);
-        border: 2px solid var(--green);
-      }
-      .reject{
-        background-color: var(--light-red);
-        border: 2px solid var(--red);
-      }
-      .unfit{
-        background-color: rgb(238, 213, 204);
-        border: 2px solid orange;
-      }
-      .tableCV{
-        width: 20%;
-      }
-      .resume{
-        border: 2px solid var(--grey);
-        border-radius: 1rem;
-        justify-content: center;
-        height: 4vh;
-      }
-      .CVbtn{
-        border: none;
-        background-color: transparent;
-        height: 4vh;
-      
-      }
-      .CVbtn a{
-        text-decoration: none;
-        color: var(--black);
-        font-weight: bold;
-      }
-  
-  
-      /* -----------------d-info------------------ */
-      .dInfoWrapper{
-        justify-content: center;
-      }
-      .InfoParent{
-        height: 83vh;
-        overflow-y: scroll;
-      }
-      .dInfoProfile{
-        display: flex;
-        justify-content: center;
-        margin-left: 1rem;
-      }
-      .readMore{
-        border: none;
-        color: var(--blue);
-        background-color: transparent;
-        cursor: pointer;
-      }
-      .about h6{
-        font-weight: bold;
-      }
-      .about p{
-        font-size: 14px !important;
-      }
-      #more {display: none;}
+.dashboardTable {
+  border-right: 1px solid var(--black);
+  height: 83vh;
+  /* overflow-y: scroll; */
+  /* height: 200px; */
+  overflow: auto;
+}
 
-      
-      .dInfoAboutBtn{
-        border-top: 1px solid var(--black);
-        justify-content: space-evenly;
-      }
-      .dInfoAboutBtn button{
-        border: none;
-        background-color: transparent;
-        font-weight: bold;
-        padding: 0.5rem;
-      }
-     
-      .infoLine{
-        border-right: 1px solid var(--black);
-      }
-      .infoBtn1 p{
-        font-weight: 800;
-        color: var(--green);
-      }
-      .infoBtn2 p{
-        font-weight: 800;
-        color: var(--red);
-      }
-      .infoBtn1:hover , .infoBtn2:hover{
-          transform: scale(1.1);
-          transition: 0.3s;
-      }
+.dTableHead {
+  /* border-top: 1px solid var(--black); */
+  border-bottom: 1px solid var(--black);
 
-     .arrow {
-      position: absolute;
-      color: #000000;
-      font-size: 2.5em;
-      font-weight: bold;
-      cursor: pointer;
-      z-index: 10;
-    }
-    
-    .nextArrow {
-      top: 5px;
-      right: 22px;
-    }
-    
-    .prevArrow {
-      top: 5px;
-      left: 10px;
-  
-    }
-  
-    /* //////////DashShortlisted///////////////// */
-  
-    
-    .formline{
-      display:block;
-      height:1px;
-      border:0;   	
-      border-top:3px solid #eeeeee;
-      margin:1em 0;
-      border-radius: 50%;
-      padding:0;
-    }
-    .googleMapBtn{
-      background-color: transparent;
-      font-weight: bold;
-      color: var(--grey);
-      /* height: 55px; */
-      padding: 0.9rem 0.5rem;
-      border: 1px solid var(--grey);
-      border-radius: 4px;
-      width: 150px;
-  
-    }
-    .inofficeForm{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      /* align-items: center; */
-      gap: 1rem;
-    }
-    .whatsappForm{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      /* align-items: center; */
-      gap: 1rem;
-  
-    }
+}
+
+.dTableHead tr {
+  position: sticky;
+  top: 0;
+  background-color: var(--white);
+}
+
+.trActive {
+  background-color: var(--light-red);
+}
+
+.dTableHead th {
+  text-align: center;
+}
+
+.dTableBodyy {
+  height: 80vh;
+  overflow-y: scroll;
+}
+
+.dTableBody td {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.profileTd {
+  width: 25%;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.profileTd p {
+  font-weight: bold;
+}
+
+.rating {
+  border: 2px solid orange;
+  border-radius: 1rem;
+  height: 4vh;
+  justify-content: center;
+}
+
+.rating p {
+  font-weight: bold;
+
+}
+
+.tableRating {
+  width: 15%;
+}
+
+.decisionSelect {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 1rem;
+  width: 100%;
+  font-weight: bold;
+  color: var(--black);
+}
+
+.tableDecision {
+  width: 25%;
+}
+
+.interviewTime {
+  width: 20%;
+}
+
+.interviewTime p {
+  font-weight: bolder;
+}
+
+.tableCheck {
+  width: 7%;
+}
+
+.decision {
+  border-radius: 1rem;
+  justify-content: center;
+  height: 4vh;
+  /* background-color: var(--light-grey); */
+  border: 2px solid var(--light-grey);
+  /* padding: 1vw 1vh; */
+}
+
+.shortlist {
+  background-color: var(--light-green);
+  border: 2px solid var(--green);
+}
+
+.reject {
+  background-color: var(--light-red);
+  border: 2px solid var(--red);
+}
+
+.unfit {
+  background-color: rgb(238, 213, 204);
+  border: 2px solid orange;
+}
+
+.tableCV {
+  width: 20%;
+}
+
+.resume {
+  border: 2px solid var(--grey);
+  border-radius: 1rem;
+  justify-content: center;
+  height: 4vh;
+}
+
+.CVbtn {
+  border: none;
+  background-color: transparent;
+  height: 4vh;
+
+}
+
+.CVbtn a {
+  text-decoration: none;
+  color: var(--black);
+  font-weight: bold;
+}
 
 
+/* -----------------d-info------------------ */
+.dInfoWrapper {
+  justify-content: center;
+}
 
-    /* ////////////////////////////////DashSubmited/////////////////////////// */
-    .SubmitForm{
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 1rem;
-    }
+.InfoParent {
+  height: 83vh;
+  overflow-y: scroll;
+}
+
+.dInfoProfile {
+  display: flex;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.readMore {
+  border: none;
+  color: var(--blue);
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.about h6 {
+  font-weight: bold;
+}
+
+.about p {
+  font-size: 14px !important;
+}
+
+#more {
+  display: none;
+}
 
 
-    /* ==============Module 2======================== */
-    /* ////////////////JobLive///////  /////////////// */
-    .jobCard{
-      border: 2px solid var(--grey);
-      border-radius: 10px;
-    }
+.dInfoAboutBtn {
+  border-top: 1px solid var(--black);
+  justify-content: space-evenly;
+}
+
+.dInfoAboutBtn button {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.infoLine {
+  border-right: 1px solid var(--black);
+}
+
+.infoBtn1 p {
+  font-weight: 800;
+  color: var(--green);
+}
+
+.infoBtn2 p {
+  font-weight: 800;
+  color: var(--red);
+}
+
+.infoBtn1:hover,
+.infoBtn2:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+.arrow {
+  position: absolute;
+  color: #000000;
+  font-size: 2.5em;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.nextArrow {
+  top: 5px;
+  right: 22px;
+}
+
+.prevArrow {
+  top: 5px;
+  left: 10px;
+
+}
+
+/* //////////DashShortlisted///////////////// */
+
+
+.formline {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 3px solid #eeeeee;
+  margin: 1em 0;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.googleMapBtn {
+  background-color: transparent;
+  font-weight: bold;
+  color: var(--grey);
+  /* height: 55px; */
+  padding: 0.9rem 0.5rem;
+  border: 1px solid var(--grey);
+  border-radius: 4px;
+  width: 150px;
+
+}
+
+.inofficeForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 1rem;
+}
+
+.whatsappForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+  gap: 1rem;
+
+}
+
+
+
+/* ////////////////////////////////DashSubmited/////////////////////////// */
+.SubmitForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+
+/* ==============Module 2======================== */
+/* ////////////////JobLive///////  /////////////// */
+.jobCard {
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+}

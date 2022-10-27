@@ -7,8 +7,7 @@ import DashShortlisted from './Pages/DashShortlisted';
 import DashSubmited from './Pages/DashSubmited';
 import './css/Styles.css'
 import JobLive from './Pages/JobLive';
-
-
+import EmpDash from './Pages/EmpDash';
 
 function App() {
   return (
@@ -19,7 +18,7 @@ function App() {
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
         <Route path='joblive' element={<JobLive />} />
-
+        <Route path='EmpDash' element={<EmpDash />} />
       </Routes>
     </div>
   );

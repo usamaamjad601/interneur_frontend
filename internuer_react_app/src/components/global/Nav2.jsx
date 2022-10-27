@@ -10,8 +10,6 @@ import Select from '@mui/material/Select';
 
 const Nav2 = (props) => {
 
-
-
     return (
         <div>
             <div className={`${nav.dashboard1navbar} d-flex col-md-12 pb-2`}>

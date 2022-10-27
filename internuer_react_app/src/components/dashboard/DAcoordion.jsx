@@ -4,9 +4,6 @@ import { Accordion, AccordionDetails, AccordionSummary, Typography } from '@mui/
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import LinkIcon from '@mui/icons-material/Link';
 
-
-
-
 export default function ControlledAccordions() {
     const [expanded, setExpanded] = React.useState(false);
 
