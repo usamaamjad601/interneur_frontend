@@ -15,6 +15,7 @@ import EmpForms from './Pages/EmpForms';
 import ClientReg1 from './Pages/Registration/ClientReg1';
 import ClientReg2 from './Pages/Registration/ClientReg2';
 import PostInternship from './Pages/Registration/PostInternship';
+import EmpDash from './Pages/EmpDash';
 
 
 function App() {

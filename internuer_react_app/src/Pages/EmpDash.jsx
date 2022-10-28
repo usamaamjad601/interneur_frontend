@@ -7,12 +7,12 @@ import profile_img from '../assets/img/profile.png'
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import jCard from '../css/App2.module.css';
+import jCard from '../css/app2.module.css';
 import Dash from '../css/App.module.css';
-import Mainbody from '../css/App2.module.css';
-import nameStyle from '../css/App2.module.css';
-import button from '../css/App2.module.css';
-import heading from '../css/App2.module.css';
+import Mainbody from '../css/app2.module.css';
+import nameStyle from '../css/app2.module.css';
+import button from '../css/app2.module.css';
+import heading from '../css/app2.module.css';
 import InfoCard from '../components/EmpDashboard/InfoCard';
 import { Link } from 'react-router-dom';
 import JobCard from '../components/EmpDashboard/JobCard';
@@ -20,7 +20,7 @@ import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GraphCard from '../components/EmpDashboard/GraphCard';
 import profileImg from '../assets/img/profile.png';
 import ReviewCard from '../components/EmpDashboard/ReviewCard';
-// import jCard2 from '../../css/App2.module.css';
+// import jCard2 from '../../css/app2.module.css';
 import IconButton from '@mui/material/IconButton';
 
 
