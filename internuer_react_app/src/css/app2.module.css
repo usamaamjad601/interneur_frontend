@@ -3,7 +3,8 @@
     background-color: #F3F8FF;
     border-radius: 20px;
     padding-right: 10vw;
-
+    /* color: black; */
+    /* float: right */
 }
 
 .uName {
@@ -72,3 +73,212 @@
     padding: 2rem 0rem;
     overflow: none;
 }
+
+
+/* Miss Aasma's CSS */
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&family=Grape+Nuts&family=Pacifico&family=Smooch&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comfortaa';
+}
+
+
+
+/* .container {
+      width: auto;
+      height: auto;
+      background-size: cover;
+      background: white;
+      padding: 2%;
+      text-align: centre;
+  } */
+
+
+/* Progress bar */
+.top .stepperWrapper {
+    /* width: 640px; */
+    /* margin-left: 23%; */
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.stepperItem {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.stepperItem::before {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepperItem::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #ccc;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepperItem .stepCounter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+}
+
+.stepperItem.active {
+    font-weight: bold;
+}
+
+.stepperItem.completed .stepCounter {
+    background-color: #5480c2;
+}
+
+.stepperItem.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 2px solid #4371b5;
+    width: 100%;
+    top: 20px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepperItem:first-child::before {
+    content: none;
+}
+
+.stepperItem:last-child::after {
+    content: none;
+}
+
+.stepperActive {
+    background: blue !important;
+    color: white;
+    font-weight: bolder;
+}
+
+
+/* details */
+
+.detail {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detail h1 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-weight: 900;
+}
+
+.detail .box {
+    height: auto;
+    padding: 5%;
+    /* margin-left: 21%; */
+    /* margin-top: 4%; */
+    border: 1px solid rgb(224, 221, 221);
+    box-sizing: border-box;
+    border-radius: 8px 8px;
+    text-align: left;
+    /* padding-left: 8%; */
+}
+
+
+.box form label {
+    color: rgb(27, 27, 27);
+    font-weight: 500;
+    font-size: 15px;
+    /* margin-bottom: 25px; */
+    text-align: left;
+}
+
+.box input {
+    background-color: rgb(241, 237, 237);
+    /* height: 40px; */
+    padding: 0.5rem 1rem;
+    border: none;
+    text-align: left;
+    border-radius: 8px;
+}
+
+.box textarea {
+    background-color: rgb(245, 241, 241);
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+}
+
+
+.Next {
+    /* height: 20px; */
+    /* margin-right: 330px; */
+    background-color: #4371b5;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    margin: auto;
+    text-decoration: none;
+}
+
+.Next:hover {
+    color: black;
+    background-color: #8096b8;
+}
+
+.uploadBtnWrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.uploadBtnWrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.uploadBtnWrapper button {
+    border: 2px dashed green;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+}
+
+/* ////Reg3 */
