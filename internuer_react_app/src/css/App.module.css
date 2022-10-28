@@ -1,6 +1,6 @@
 /* The side navigation menu */
 :root {
-  <<<<<<< HEAD --green: #5fb951;
+  --green: #5fb951;
   --light-green: #e1ffe0;
   --dark-grey: #434343;
   --light-grey: #8d8d8d;
@@ -12,21 +12,21 @@
   --blue: #0D6EFD;
   --blue1: #4794ec;
   --light-blue1: #5f9bdd;
-}
 
-=======--green: #5fb951;
---light-green: #e1ffe0;
---dark-grey : #434343;
---light-grey: #8d8d8d;
---red : #fb5a90;
---light-red: #fbe3e2;
---white : #FFFFFF;
---black : #000000;
---grey : #a5a5a5;
---blue: #0D6EFD;
---blue1: #4794ec;
---light-blue1: #5f9bdd;
---blue2 : #6598DB;
+
+  --green: #5fb951;
+  --light-green: #e1ffe0;
+  --dark-grey: #434343;
+  --light-grey: #8d8d8d;
+  --red: #fb5a90;
+  --light-red: #fbe3e2;
+  --white: #FFFFFF;
+  --black: #000000;
+  --grey: #a5a5a5;
+  --blue: #0D6EFD;
+  --blue1: #4794ec;
+  --light-blue1: #5f9bdd;
+  --blue2: #6598DB;
 }
 
 body {
@@ -205,6 +205,8 @@ p {
 .f-10 {
   font-size: 10px;
 }
+
+
 
 .f-12 {
   font-size: 12px;
@@ -821,125 +823,122 @@ li a:hover {
 }
 
 
-<<<<<<< HEAD
+/* ==============Module 2======================== */
+/* ////////////////JobLive///////  /////////////// */
+.jobCard {
+  border: 2px solid var(--grey);
+  border-radius: 10px;
+}
 
 /* ==============Module 2======================== */
 /* ////////////////JobLive///////  /////////////// */
 .jobCard {
   border: 2px solid var(--grey);
   border-radius: 10px;
-  =======
+}
 
-  /* ==============Module 2======================== */
-  /* ////////////////JobLive///////  /////////////// */
-  .jobCard {
-    border: 2px solid var(--grey);
-    border-radius: 10px;
-  }
+.skill>div {
+  border: 1px solid var(--grey);
+  border-radius: 20px;
+  padding: 0.3rem 1rem;
+  background-color: rgb(247, 247, 247);
+  color: var(--dark-grey);
+}
 
-  .skill>div {
-    border: 1px solid var(--grey);
-    border-radius: 20px;
-    padding: 0.3rem 1rem;
-    background-color: rgb(247, 247, 247);
-    color: var(--dark-grey);
-  }
+.edit {
+  width: 4%;
+}
 
-  .edit {
-    width: 4%;
-  }
+.deadlines {
+  width: 32%;
+  text-align: center;
+}
 
-  .deadlines {
-    width: 32%;
-    text-align: center;
-  }
+/* ///////////////Job Recruitment Schesule ///////////// */
+.NumberBullet {
+  border-radius: 50%;
 
-  /* ///////////////Job Recruitment Schesule ///////////// */
-  .NumberBullet {
-    border-radius: 50%;
+  padding: 0.1rem 0.5rem;
+}
 
-    padding: 0.1rem 0.5rem;
-  }
+.verticleLine {
+  border-left: 5px dashed var(--grey);
+  margin-left: 13px;
+  margin-top: 5px;
 
-  .verticleLine {
-    border-left: 5px dashed var(--grey);
-    margin-left: 13px;
-    margin-top: 5px;
+}
 
-  }
+.disableButton {
+  pointer-events: none;
+  opacity: 0.2;
+  cursor: none;
+}
 
-  .disableButton {
-    pointer-events: none;
-    opacity: 0.2;
-    cursor: none;
-  }
+/* ///////////////JobPost/////////////////// */
+.cmpLogo {
+  width: 150px;
+  height: 150px;
+}
 
-  /* ///////////////JobPost/////////////////// */
-  .cmpLogo {
-    width: 150px;
-    height: 150px;
-  }
+.Postnav {
+  border-bottom: 1px solid var(--grey);
+}
 
-  .Postnav {
-    border-bottom: 1px solid var(--grey);
-  }
+.applynowbtn {
+  padding: 1rem 3rem;
+  border: 3px solid #5ADBB5;
+  border-radius: 40px;
+  color: #5ADBB5;
+  font-weight: bolder;
+  font-size: 20px;
+  background-color: white;
+  display: flex;
+  gap: 1rem;
+}
 
-  .applynowbtn {
-    padding: 1rem 3rem;
-    border: 3px solid #5ADBB5;
-    border-radius: 40px;
-    color: #5ADBB5;
-    font-weight: bolder;
-    font-size: 20px;
-    background-color: white;
-    display: flex;
-    gap: 1rem;
-  }
+.applynowbtn:hover {
+  border: 7px soild black;
+}
 
-  .applynowbtn:hover {
-    border: 7px soild black;
-  }
+.Disclamer {
+  border: 1px solid var(--grey);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: #fff5f6;
+}
 
-  .Disclamer {
-    border: 1px solid var(--grey);
-    border-radius: 10px;
-    padding: 1rem;
-    background-color: #fff5f6;
-  }
+.Disclamer>h6 {
+  color: var(--red);
+  font-weight: bolder;
+}
 
-  .Disclamer>h6 {
-    color: var(--red);
-    font-weight: bolder;
-  }
-
-  .NoPosition {
-    border: 1px solid var(--dark-grey);
-    border-radius: 5px;
-    justify-content: center;
-    text-align: center;
-  }
+.NoPosition {
+  border: 1px solid var(--dark-grey);
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+}
 
 
-  /* ////////////////EmpFomrs///////////// */
-  .EFormWrapper {
-    padding: 1rem 18%;
-  }
+/* ////////////////EmpFomrs///////////// */
+.EFormWrapper {
+  padding: 1rem 18%;
+}
 
-  .EFormHead>h3 {
-    text-align: center;
-    color: var(--white);
-    font-weight: bolder;
-    background-color: var(--blue2);
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-  }
+.EFormHead>h3 {
+  text-align: center;
+  color: var(--white);
+  font-weight: bolder;
+  background-color: var(--blue2);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 
-  .filesubmit::file-selector-button {
-    border-radius: 2px;
-    padding: 0.5rem 1rem;
-    background: var(--blue2);
-    color: var(--white);
-    font-weight: bold;
-    border: none;
-    >>>>>>>024c3c06038181355f249c6e9aa445cc71cf7471
-  }
+.filesubmit::file-selector-button {
+  border-radius: 2px;
+  padding: 0.5rem 1rem;
+  background: var(--blue2);
+  color: var(--white);
+  font-weight: bold;
+  border: none;
+}
