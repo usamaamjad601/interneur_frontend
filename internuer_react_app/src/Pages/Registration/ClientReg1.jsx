@@ -1,5 +1,5 @@
 import React from 'react'
-import reg1 from '../../css/app2.module.css'
+import reg1 from '../../css/App3.module.css'
 
 const ClientReg1 = () => {
     return (

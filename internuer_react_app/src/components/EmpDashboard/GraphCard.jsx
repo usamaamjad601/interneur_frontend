@@ -1,5 +1,5 @@
 import React from 'react';
-import jCard from '../../css/app2.module.css';
+import jCard from '../../css/App3.module.css';
 import Chart from 'react-apexcharts';
 
 export default function GraphCard() {
