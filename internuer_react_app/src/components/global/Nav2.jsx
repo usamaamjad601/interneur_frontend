@@ -9,7 +9,6 @@ import Select from '@mui/material/Select';
 
 
 const Nav2 = (props) => {
-
     return (
         <div>
             <div className={`${nav.dashboard1navbar} d-flex col-md-12 pb-2`}>
@@ -65,21 +64,18 @@ const Nav2 = (props) => {
                                 displayEmpty
                                 inputProps={{ 'aria-label': 'Without label' }}
                                 defaultValue="More Actions"
-
                             >
-                                {props.moreActions.map((action) => {
+                                {props.moreActions.map((action, i) => {
                                     return (
-                                        <MenuItem value={action}>{action}</MenuItem>
+                                        <MenuItem key={i} value={action}>{action}</MenuItem>
                                     )
                                 }
                                 )}
-
-
                             </Select>
                         </FormControl>
                         <Link to={props.rejectbutton === 0 ? null : props.link2}>
                             <button type="button" className={`${nav.nav2btn}  p-3 + ${props.rejectbutton === 0 ? nav.disableClass : props.btn2class}
-                                `}  >{props.btn2} {props.reject}</button>
+                              ${props.blurClass} `}  >{props.btn2}</button>
                         </Link>
                         {/* {console.log(props.button1, 'Button 1 TXT')} */}
                     </div>

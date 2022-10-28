@@ -2,7 +2,6 @@ import React from 'react'
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
 
-import DApproved from '../css/App.module.css';
 import Nav2 from '../components/global/Nav2';
 import Deadline from '../components/JobLive/JobDeadline';
 import DateObject from "react-date-object";
@@ -10,10 +9,12 @@ import JobDesc from '../components/JobLive/JobDesc';
 import JobSkills from '../components/JobLive/JobSkills';
 import JobSchedule from '../components/JobLive/JobSchedule';
 
+import DApproved from '../css/App.module.css';
 
 
 
-const JobDisapproved = () => {
+
+const JobInReview = () => {
 
     var skillTags = ['HTML', 'CSS', 'Graphic Designing', 'UI/UX']
     var moreActions = ['More Actions', 'Share on job boards', 'View as applicant', 'Re-open this position', 'Copy link']
@@ -29,8 +30,8 @@ const JobDisapproved = () => {
         <div>
             <Sidebar user={profile} />
             <div className={DApproved.content}>
-                <Nav2 title="UI/UX Designing" btn2="Edit Job Post" btn2class={DApproved.navBtn4} status="Disapproved" color="#d55f73" days='12'
-                    views="0" candidates="0" jobtype="remote" stage="Declined" displayClass={DApproved.displayNone} moreActions={moreActions} />
+                <Nav2 title="UI/UX Designing" btn2="Edit Job Post" btn2class={DApproved.navBtn4} status="In Review" color="#f9a121" days='12'
+                    views="0" candidates="0" jobtype="Lahore" stage="Approval Pending" moreActions={moreActions} displayClass={DApproved.disableButton} blurClass={DApproved.disableClass} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8 p-4">
@@ -50,8 +51,8 @@ const JobDisapproved = () => {
                                 <div className='pt-3 d-flex flex-column gap-2'>
                                     <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#0D6EFD" Number="1" txt=" sit amet consectetur adipisicing elit. Qui tempora quas vel iusto autem exercitationem tempore quasi eligendi modi possimus stinctio pariatur" title="Job Submited" />
 
-                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#d55f73" Number='2' txt={`sit amet consectetur adipisicing elit. Qui tempora igendi modi 
-                                    possimus  stinctio pariatur`} title="Declined" linktxt="Whats app Support" link="https://wa.me/923125113231" />
+                                    <JobSchedule date={date.format("DD MMM YYYY")} BorderColor="#7b7b7b" Number='2' txt={`sit amet consectetur adipisicing elit. Qui tempora igendi modi 
+                                    possimus  stinctio pariatur`} title="Approve/Decline" />
                                 </div>
                             </div>
                         </div>
@@ -62,4 +63,4 @@ const JobDisapproved = () => {
     )
 }
 
-export default JobDisapproved
+export default JobInReview
