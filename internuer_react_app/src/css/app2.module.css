@@ -3,8 +3,7 @@
     background-color: #F3F8FF;
     border-radius: 20px;
     padding-right: 10vw;
-    /* color: black; */
-    /* float: right */
+
 }
 
 .uName {
@@ -95,9 +94,6 @@
       text-align: centre;
   } */
 
-.RegForm {
-    /* padding: 5% 20%; */
-}
 
 /* Progress bar */
 .top .stepperWrapper {
