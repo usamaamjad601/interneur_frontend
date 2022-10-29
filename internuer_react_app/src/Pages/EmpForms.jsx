@@ -8,10 +8,15 @@ const EmpForms = () => {
 
     return (
         <div>
-            <div className={EForm.EFormWrapper}>
-                {/* <CompDetails /> */}
-                {/* <InternshipMeta /> */}
-                <InternshipDetail />
+            <div className='col-md-12 d-flex'>
+                <div className="col-md-2"></div>
+                <div className={`col-md-8  ${EForm.EFormWrapper}`}>
+                    {/* <CompDetails /> */}
+                    {/* <InternshipMeta /> */}
+                    <InternshipDetail /></div>
+                <div className="col-md-2"></div>
+
+
 
             </div>
         </div>

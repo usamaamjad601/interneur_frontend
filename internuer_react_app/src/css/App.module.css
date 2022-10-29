@@ -97,9 +97,6 @@ p {
   height: 30px;
 }
 
-.logo {}
-
-
 /* Sidebar links */
 .sidebar a {
   display: block;
@@ -922,7 +919,7 @@ li a:hover {
 
 /* ////////////////EmpFomrs///////////// */
 .EFormWrapper {
-  padding: 1rem 18%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .EFormHead>h3 {

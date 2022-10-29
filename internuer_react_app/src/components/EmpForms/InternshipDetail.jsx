@@ -1,5 +1,5 @@
 import React from 'react'
-import { Autocomplete, FormControl, FormControlLabel, FormLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField } from '@mui/material'
+import { Autocomplete, Checkbox, FormControl, FormControlLabel, FormLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField } from '@mui/material'
 import Intern from '../../css/App.module.css'
 
 
@@ -40,19 +40,28 @@ const InternshipDetail = () => {
     const [InternType, setInternType] = React.useState('Regular');
 
     const catag1 = [
-        { name: 'Afghanistan' },
-        { name: 'Albania' },
-        { name: 'Algeria' },
-        { name: 'Andorra' },
-        { name: 'Angola' },
-    ]
-
-
-
-
+        { label: 'Afghanistan' },
+        { label: 'Albania' },
+        { label: 'Algeria' },
+        { label: 'Andorra' },
+        { label: 'Angola' },
+        { label: 'Antigua and Barbuda' },
+        { label: 'Argentina' },
+        { label: 'Armenia' },
+        { label: 'Australia' },
+        { label: 'Austria' },
+        { label: 'Azerbaijan' },
+        { label: 'Bahamas' },
+        { label: 'Bahrain' },
+        { label: 'Bangladesh' },
+        { label: 'Barbados' },
+        { label: 'Belarus' },
+        { label: 'Belgium' },
+        { label: 'Belize' },
+        { label: 'Benin' },
+    ];
     return (
         <div>
-
             <div>
                 <div className={`${Intern.EFormHead} col-md-12 `}>
                     <h3 className='py-2'>Internship Details</h3>
@@ -60,11 +69,9 @@ const InternshipDetail = () => {
                         <div>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <strong><strong className='text-danger'>*</strong> Title</strong>
-
                             </div>
                             <OutlinedInput
                                 sx={{ padding: '0 !important', margin: '0 !important' }}
-
                                 fullWidth
                                 placeholder='SEO Title?'
                                 id="outlined-adornment-weight"
@@ -73,11 +80,10 @@ const InternshipDetail = () => {
                                     'aria-label': 'weight',
                                 }}
                                 required
-
                             />
                         </div>
                         <div className='pt-4'>
-                            <div className='d-flex justify-content-between align-items-center'>
+                            <div >
                                 <strong><strong className='text-danger'>*</strong> Catagory</strong>
 
                             </div>
@@ -89,7 +95,6 @@ const InternshipDetail = () => {
                             />
                         </div>
                         <div className="pt-4">
-
                             <strong>Internship Type</strong>
                             <RadioGroup
                                 aria-labelledby="demo-row-radio-buttons-group-label"
@@ -102,7 +107,7 @@ const InternshipDetail = () => {
 
                             </RadioGroup>
                             <div className='pt-1'>
-                                <div className='d-flex justify-content-between align-items-center'>
+                                <div >
                                     <strong>Location</strong>
 
                                 </div>
@@ -113,37 +118,43 @@ const InternshipDetail = () => {
                                     renderInput={(params1) => <TextField {...params1} placeholder="Select Country" />}
                                 />
                             </div>
-
-
                         </div>
+                        <div className='pt-2 px-2'>
+                            <FormControlLabel control={<Checkbox defaultChecked />} label="Decline applicant from the neighbouring cities" />
+                        </div>
+                        <div>
+                            <div >
+                                <strong>No. of Post</strong>
+                            </div>
+                            <OutlinedInput
+                                sx={{ padding: '0 !important', margin: '0 !important' }}
+                                fullWidth
+                                placeholder='eg: 103'
+                                id="outlined-adornment-weight"
+                                aria-describedby="outlined-weight-helper-text"
+                                inputProps={{
+                                    'aria-label': 'weight',
+                                }}
+                                required
+                            />
+                        </div>
+                    </div>
+                    <div className='pt-1'>
+                        <div >
+                            <strong>Location</strong>
+                        </div>
+                        <div>
+                            <div className='d-flex gap-5 px-3'>
+                                <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
+                                <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
+                                <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
+                                <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
 
+                            </div>
+                        </div>
                     </div>
 
-                    <div className='px-4'>
-                        <div className='d-flex justify-content-between align-items-center'>
-                            <strong>Additional Internship Detail</strong>
 
-                        </div>
-
-                        <TextField
-                            sx={{ padding: 0 }}
-
-                            fullWidth
-                            multiline={true}
-
-
-                            variant="outlined"
-                        />
-                    </div>
-                    <div className='px-4 pt-4'>
-                        <div className='d-flex gap-3 align-items-center'>
-                            <strong><strong className='text-danger'>*</strong> Logo</strong>
-                            <input type="file" className={Intern.filesubmit} />
-
-
-                        </div>
-
-                    </div>
 
                 </div>
             </div>

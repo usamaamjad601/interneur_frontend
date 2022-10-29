@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import jCard from '../../css/App3.module.css';
-import jTag from '../../css/App3.module.css';
+import jCard from '../../css/App2.module.css';
+import jTag from '../../css/App2.module.css';
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import jSep from '../../css/App3.module.css';
-import jSep2 from '../../css/App3.module.css';
+import jSep from '../../css/App2.module.css';
+import jSep2 from '../../css/App2.module.css';
 
 export default function JobCard({ time, link, title, tag, views, viewsNo, no1, text1, no2, text2, no3, text3, no4, text4 }) {
 
