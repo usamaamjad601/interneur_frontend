@@ -1,6 +1,7 @@
 import React from 'react'
-import { Autocomplete, Checkbox, FormControl, FormControlLabel, FormLabel, makeStyles, OutlinedInput, Radio, RadioGroup, TextField } from '@mui/material'
+import { Autocomplete, Box, Checkbox, Chip, FormControlLabel, FormLabel, OutlinedInput, Radio, RadioGroup, Stack, TextField, Typography } from '@mui/material'
 import Intern from '../../css/App.module.css'
+import { Cancel } from '@mui/icons-material';
 
 
 const InternshipDetail = () => {
@@ -60,12 +61,36 @@ const InternshipDetail = () => {
         { label: 'Belize' },
         { label: 'Benin' },
     ];
+
+    const Tags = () => {
+        return (
+            <Box
+                sx={{
+                    background: "#283240",
+                    height: "100%",
+                    display: "flex",
+                    padding: "0.4rem",
+                    margin: "0 0.5rem 0 0",
+                    justifyContent: "center",
+                    alignContent: "center",
+                    color: "#ffffff",
+                }}
+            >
+                <Stack direction='row' gap={1}>
+                    <Typography>Tags</Typography>
+                    <Cancel />
+
+                </Stack>
+            </Box>
+        );
+    };
+
     return (
         <div>
             <div>
                 <div className={`${Intern.EFormHead} col-md-12 `}>
                     <h3 className='py-2'>Internship Details</h3>
-                    <div className="col-md-8 p-4">
+                    <div className="col-md-8 p-4 pb-1">
                         <div>
                             <div className='d-flex justify-content-between align-items-center'>
                                 <strong><strong className='text-danger'>*</strong> Title</strong>
@@ -139,16 +164,86 @@ const InternshipDetail = () => {
                             />
                         </div>
                     </div>
-                    <div className='pt-1'>
-                        <div >
-                            <strong>Location</strong>
+                    <div className=' p-4'>
+                        <div className=''>
+                            <div >
+                                <strong>Stipend</strong>
+                            </div>
+                            <div className={Intern.EmpFormBox}>
+                                <div className='d-flex gap-5 px-3'>
+                                    <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
+                                    <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
+                                    <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
+                                    <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <div className='d-flex gap-5 px-3'>
-                                <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
-                                <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
-                                <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
-                                <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
+                        <div className='pt-4'>
+                            <div >
+                                <strong>Perks</strong> <span>(Optional)</span>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} `}>
+                                <div className={`px-3 `}>
+                                    <div className={`d-flex justify-content-between`}>
+                                        <div className='d-flex flex-column'>
+                                            <FormControlLabel control={<Checkbox />} label="Certificates" />
+                                            <FormControlLabel control={<Checkbox defaultChecked />} label="Free snaks & bevrages" />
+                                            <FormControlLabel control={<Checkbox defaultChecked />} label="Flexible work hours" />
+                                        </div>
+                                        <div className='d-flex flex-column'>
+                                            <FormControlLabel control={<Checkbox />} label="5 Day a week" />
+                                            <FormControlLabel control={<Checkbox />} label="Informal dress Code" />
+                                            <FormControlLabel control={<Checkbox defaultChecked />} label="Career development" />
+                                        </div>
+                                        <div className='d-flex flex-column'>
+                                            <FormControlLabel control={<Checkbox />} label="Remote Work" />
+                                            <FormControlLabel control={<Checkbox />} label="Transport allowance" />
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <FormControlLabel
+                                    value="start"
+                                    control={<Checkbox />}
+                                    label="Does this Internship offer future job?"
+                                    labelPlacement="start"
+                                />
+
+
+                            </div>
+                        </div>
+                        <div className='pt-4'>
+                            <div >
+                                <strong>Skills</strong> <span>(Optional)</span>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} `}>
+                                <p className='fw-light'>Recomended Skills</p>
+                                <p>(Optional)</p>
+
+                                <div>
+                                    {/* <Box sx={{ flexGrow: 1 }}>
+                                        <TextField
+                                            fullWidth
+                                            variant='standard'
+                                            size='small'
+                                            sx={{ margin: "1rem 0" }}
+                                            margin='none'
+                                            placeholder="Enter Tags here"
+                                            InputProps={{
+                                                startAdornment: (
+                                                    <Box sx={{ margin: "0 0.2rem 0 0", display: "flex" }}>
+                                                        <Tags />
+                                                    </Box>
+                                                ),
+                                            }}
+                                        />
+                                    </Box> */}
+
+                                    {/* <Chip variant="outlined" label='hello' /> */}
+
+                                </div>
+
 
                             </div>
                         </div>

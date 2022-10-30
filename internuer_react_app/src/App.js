@@ -16,6 +16,7 @@ import ClientReg1 from './Pages/Registration/ClientReg1';
 import ClientReg2 from './Pages/Registration/ClientReg2';
 import PostInternship from './Pages/Registration/PostInternship';
 import EmpDash from './Pages/EmpDash';
+import Input2 from './components/InputTags/Input2';
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
         <Route path='ClientReg2' element={<ClientReg2 />} />
         <Route path='PostInternship' element={<PostInternship />} />
         <Route path='EmpDash' element={<EmpDash />} />
+        <Route path='Input2' element={<Input2 />} />
       </Routes>
     </div>
   );

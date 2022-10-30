@@ -939,3 +939,7 @@ li a:hover {
   font-weight: bold;
   border: none;
 }
+
+.EmpFormBox {
+  border: 1px solid var(--grey);
+}
