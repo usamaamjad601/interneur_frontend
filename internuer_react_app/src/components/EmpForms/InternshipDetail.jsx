@@ -1,5 +1,5 @@
 import React from 'react'
-import { Autocomplete, Box, Checkbox, Chip, FormControlLabel, FormLabel, OutlinedInput, Radio, RadioGroup, Stack, TextField, Typography } from '@mui/material'
+import { Autocomplete, Box, Checkbox, Chip, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Stack, TextField, Typography } from '@mui/material'
 import Intern from '../../css/App.module.css'
 import { Cancel } from '@mui/icons-material';
 
@@ -38,7 +38,7 @@ const InternshipDetail = () => {
         { label: '3D VR' },
     ];
 
-    const [InternType, setInternType] = React.useState('Regular');
+    const [InternType, setInternType] = React.useState('Fix');
 
     const catag1 = [
         { label: 'Afghanistan' },
@@ -83,6 +83,12 @@ const InternshipDetail = () => {
                 </Stack>
             </Box>
         );
+    };
+
+    const [age, setAge] = React.useState('USD');
+
+    const handleChange = (event) => {
+        setAge(event.target.value);
     };
 
     return (
@@ -171,11 +177,51 @@ const InternshipDetail = () => {
                             </div>
                             <div className={Intern.EmpFormBox}>
                                 <div className='d-flex gap-5 px-3'>
-                                    <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
-                                    <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
-                                    <FormControlLabel value="female" control={<Radio />} label="Regular (In office)" onClick={() => setInternType('Regular')} />
-                                    <FormControlLabel value="male" control={<Radio />} label="Work From home" onClick={() => setInternType('Home')} />
+                                    <FormControl>
+                                        <RadioGroup
+                                            row
+                                            aria-labelledby="demo-row-radio-buttons-group-label"
+                                            name="row-radio-buttons-group"
+                                        >
+                                            <FormControlLabel value="Fix" control={<Radio onChange={() => setInternType('Fix')} />} label="Fix" />
+                                            <FormControlLabel value="Negotiable" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Negotiable" />
+                                            <FormControlLabel value="Performance Based" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Performance Based" />
+                                            <FormControlLabel value="Unpaid" control={<Radio onChange={() => setInternType('Unpaid')} />} label="Unpaid" />
+
+                                        </RadioGroup>
+                                    </FormControl>
                                 </div>
+                            </div>
+                            <div className='d-flex'>
+                                <div className={InternType === 'Fix' ? Intern.displayBlock : Intern.displayNone}>
+                                    <FormControl sx={{ display: 'flex' }}>
+                                        {/* <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel> */}
+                                        <Select
+                                            labelId="demo-simple-select-autowidth-label"
+                                            id="demo-simple-select-autowidth"
+                                            value={age}
+                                            defaultValue='INR'
+                                            onChange={handleChange}
+
+                                        >
+                                            <MenuItem value={'USD'} >USD</MenuItem>
+                                            <MenuItem value={'PKR'}>PKR</MenuItem>
+                                        </Select>
+                                        <OutlinedInput
+                                            sx={{ padding: '0 !important', margin: '0 !important' }}
+                                            fullWidth
+                                            placeholder='eg: 103'
+                                            id="outlined-adornment-weight"
+                                            aria-describedby="outlined-weight-helper-text"
+                                            inputProps={{
+                                                'aria-label': 'weight',
+                                            }}
+                                            required
+                                            value="dsd"
+                                        />
+                                    </FormControl>
+                                </div>
+
                             </div>
                         </div>
                         <div className='pt-4'>
