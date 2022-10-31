@@ -1,5 +1,5 @@
 import React from 'react';
-import iCard from '../../css/App2.module.css';
+import iCard from '../../css/App3.module.css';
 
 export default function InfoCard({ name, num, pending }) {
     return (

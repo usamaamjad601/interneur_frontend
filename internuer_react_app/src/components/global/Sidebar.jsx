@@ -9,8 +9,8 @@ import logo from '../../assets/logos/Logo.png'
 import manage from '../../assets/icons/2538407 1Manage Post.svg';
 import prof from '../../assets/icons/2891526 1Progile.svg';
 import side from '../../css/App.module.css'
-import button from '../../css/App2.module.css'
-import sdButton from '../../css/App2.module.css'
+import button from '../../css/App3.module.css'
+import sdButton from '../../css/App3.module.css'
 
 
 const sidebar = (props) => {
