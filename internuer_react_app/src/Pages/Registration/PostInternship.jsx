@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import reg3 from '../../css/app2.module.css'
+import reg3 from '../../css/App3.module.css'
 
 const PostInternship = () => {
     return (
