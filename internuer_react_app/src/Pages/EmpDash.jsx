@@ -22,6 +22,7 @@ import profileImg from '../assets/img/profile.png';
 import ReviewCard from '../components/EmpDashboard/ReviewCard';
 // import jCard2 from '../../css/App2.module.css';
 import IconButton from '@mui/material/IconButton';
+import Notifications from "react-notifications-menu";
 
 
 const EmpDash = (props) => {
@@ -29,6 +30,13 @@ const EmpDash = (props) => {
     var profile = {
         name: "John Doe",
         img: profile_img,
+    }
+    const data = {
+        image: <img
+            src={profileImg}
+            alt="Profile"
+            height="50px"
+            width="70px" />,
     }
 
     const userName = 'Muhammad Bin Kashif';
@@ -42,7 +50,6 @@ const EmpDash = (props) => {
     const viewer2 = {
         views: false,
         viewsNo: 0,
-
     }
 
     const clickHandler = () => {
@@ -61,22 +68,23 @@ const EmpDash = (props) => {
                             <h6 className="mt-4 mx-2">Dashboard</h6>
                         </span>
                         <span className="d-flex align-items-center gap-3">
-                            <IconButton aria-label="notification" size="small" onClick={clickHandler}>
-                                <NotificationsIcon sx={{ color: '222222', fontSize: 30 }} />
-                            </IconButton>
+                            {/* <IconButton aria-label="notification" size="small" onClick={clickHandler}>
+                                {/* <NotificationsIcon sx={{ color: '222222', fontSize: 30 }} /> 
+                            </IconButton> */}
+                            <Notifications data={data} />
                             <ChatBubbleOutlineIcon sx={{ color: '222222', fontSize: 30 }} />
-                            <a href="#profile" className="mx-3">
+                            <Link to="#profile" className="mx-3">
                                 <img
                                     src={profileImg}
                                     alt="Profile"
                                     height="50px"
                                     width="70px" />
-                            </a>
+                            </Link>
                         </span>
                     </div>
                 </div>
 
-                <div className={`${Mainbody.Mainbody} mx-2 `}>
+                <div className={`${Mainbody.Mainbody} mx-1 `}>
                     <div className="d-flex justify-content-between">
                         <h1 className="m-4 " style={{ color: '#545454' }}>Welcome, <strong className={nameStyle.uName}>{userName}</strong></h1>
                         <button className={`${button.edbutton} float-right mt-3 mx-4`}>+ Create Jobs</button>
@@ -89,16 +97,16 @@ const EmpDash = (props) => {
                             num='265'
                         />
                         <InfoCard
-                            name="Luqman"
-                            num='1'
+                            name="Candidates"
+                            num='12,457'
                         />
                         <InfoCard
-                            name="Luqman"
-                            num='1'
+                            name="Job View"
+                            num='3359'
                         />
                         <InfoCard
-                            name="Luqman"
-                            num='1'
+                            name="Interviews"
+                            num='986'
                             pending="pending"
                         />
                     </div>
@@ -110,7 +118,7 @@ const EmpDash = (props) => {
                         <JobCard
                             time="6 hours ago"
                             link="view job post"
-                            title="Phi Training Developer"
+                            title="Java Developer"
                             tag="Sourcing Stage"
                             {...viewer}
                             no1={265}
@@ -162,7 +170,7 @@ const EmpDash = (props) => {
                         <JobCard
                             time="6 hours ago"
                             link="Review interview"
-                            title="Phi Training Developer"
+                            title="Java Developer"
                             tag="2 Questions"
                             {...viewer2}
                             no1={30}

@@ -1,11 +1,11 @@
 import React from 'react'
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
+import DateObject from "react-date-object";
 
 import DApproved from '../css/App.module.css';
 import Nav2 from '../components/global/Nav2';
 import Deadline from '../components/JobLive/JobDeadline';
-import DateObject from "react-date-object";
 import JobDesc from '../components/JobLive/JobDesc';
 import JobSkills from '../components/JobLive/JobSkills';
 import JobSchedule from '../components/JobLive/JobSchedule';
