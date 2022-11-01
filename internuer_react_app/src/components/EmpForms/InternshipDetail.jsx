@@ -1,7 +1,10 @@
 import React from 'react'
-import { Autocomplete, Box, Checkbox, Chip, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Stack, TextField, Typography } from '@mui/material'
+import { Autocomplete, Box, Checkbox, Chip, createStyles, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Stack, TextField, Typography } from '@mui/material'
 import Intern from '../../css/App.module.css'
 import { Cancel } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
+
+
 
 
 const InternshipDetail = () => {
@@ -90,6 +93,13 @@ const InternshipDetail = () => {
     const handleChange = (event) => {
         setAge(event.target.value);
     };
+    const [pay, setPay] = React.useState('Per Month');
+
+    const handleChange1 = (event) => {
+        setPay(event.target.value);
+    };
+
+
 
     return (
         <div>
@@ -141,6 +151,7 @@ const InternshipDetail = () => {
                                 <div >
                                     <strong>Location</strong>
 
+
                                 </div>
                                 <Autocomplete
                                     disablePortal
@@ -177,51 +188,147 @@ const InternshipDetail = () => {
                             </div>
                             <div className={Intern.EmpFormBox}>
                                 <div className='d-flex gap-5 px-3'>
-                                    <FormControl>
-                                        <RadioGroup
-                                            row
-                                            aria-labelledby="demo-row-radio-buttons-group-label"
-                                            name="row-radio-buttons-group"
-                                        >
+                                    <RadioGroup
+                                        aria-labelledby="demo-row-radio-buttons-group-label"
+                                        name="row-radio-buttons-group"
+                                        defaultValue="Fix"
+                                    >
+                                        <div className='d-flex gap-5 px-3'>
                                             <FormControlLabel value="Fix" control={<Radio onChange={() => setInternType('Fix')} />} label="Fix" />
                                             <FormControlLabel value="Negotiable" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Negotiable" />
-                                            <FormControlLabel value="Performance Based" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Performance Based" />
+                                            <FormControlLabel value="Performance Based" control={<Radio onChange={() => setInternType('Performance')} />} label="Performance Based" />
                                             <FormControlLabel value="Unpaid" control={<Radio onChange={() => setInternType('Unpaid')} />} label="Unpaid" />
-
-                                        </RadioGroup>
-                                    </FormControl>
+                                        </div>
+                                    </RadioGroup>
                                 </div>
-                            </div>
-                            <div className='d-flex'>
+
+
                                 <div className={InternType === 'Fix' ? Intern.displayBlock : Intern.displayNone}>
-                                    <FormControl sx={{ display: 'flex' }}>
-                                        {/* <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel> */}
-                                        <Select
-                                            labelId="demo-simple-select-autowidth-label"
-                                            id="demo-simple-select-autowidth"
-                                            value={age}
-                                            defaultValue='INR'
-                                            onChange={handleChange}
+                                    <div className='d-flex gap-5 p-3'>
+                                        <div className='d-flex'>
+                                            <select class={`${Intern.selectStipend}`} aria-label="Default select example">
+                                                <option value="USD">USD</option>
+                                                <option value="PKR">PKR</option>
+                                            </select>
+                                            <div class="input-group p-0 m-0">
+                                                <input type="text" class="px-3" style={{ width: '8vw' }} aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='eg: 1000' />
+                                            </div>
+                                        </div>
 
-                                        >
-                                            <MenuItem value={'USD'} >USD</MenuItem>
-                                            <MenuItem value={'PKR'}>PKR</MenuItem>
-                                        </Select>
-                                        <OutlinedInput
-                                            sx={{ padding: '0 !important', margin: '0 !important' }}
-                                            fullWidth
-                                            placeholder='eg: 103'
-                                            id="outlined-adornment-weight"
-                                            aria-describedby="outlined-weight-helper-text"
-                                            inputProps={{
-                                                'aria-label': 'weight',
-                                            }}
-                                            required
-                                            value="dsd"
-                                        />
-                                    </FormControl>
+                                        <select class={`${Intern.selectStipend} p-0 m-0`} aria-label="Default select example">
+                                            <option value="Per Month">Per Month</option>
+                                            <option value="Per Week">Per Week</option>
+                                            <option value="Per Project">Per Project</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div className={InternType === 'Negotiable' ? Intern.displayBlock : Intern.displayNone}>
+                                    <div className='d-flex gap-5 p-3 '>
+
+                                        <div className='d-flex align-items-center'>
+                                            <div className='d-flex align-items-center'>
+                                                <p className='px-3'>From</p>
+                                                <select class={`${Intern.selectStipend}`} aria-label="Default select example">
+                                                    <option value="USD">USD</option>
+                                                    <option value="PKR">PKR</option>
+                                                </select>
+                                                <div class="input-group p-0 m-0">
+                                                    <input type="text" class="" style={{
+                                                        width: '8vw', padding: '8px 7px'
+                                                    }} aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='eg: 1000' />
+                                                </div>
+                                            </div>
+                                            <div className='d-flex align-items-center'>
+                                                <p className='px-3'>To</p>
+                                                <select class={`${Intern.selectStipend}`} aria-label="Default select example">
+                                                    <option value="USD">USD</option>
+                                                    <option value="PKR">PKR</option>
+                                                </select>
+                                                <div class="input-group p-0 m-0">
+                                                    <input type="text" class="" style={{
+                                                        width: '8vw', padding: '8px 7px'
+                                                    }} aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" placeholder='eg: 1000' />
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                        <select class={`${Intern.selectStipend} p-0 m-0`} aria-label="Default select example">
+                                            <option value="Per Month">Per Month</option>
+                                            <option value="Per Week">Per Week</option>
+                                            <option value="Per Project">Per Project</option>
+                                        </select>
+
+                                    </div>
                                 </div>
 
+                                {/* //Preformance */}
+                                <div className={InternType === 'Performance' ? Intern.displayBlock : Intern.displayNone}>
+                                    <p className='px-3'>For performance-based internships, such as Business Development(sales), etc, we  insist
+                                        on minimum assured stipend e.g 5000 and the rest could be incentive-based (commisions)</p>
+
+                                    <div className='d-flex gap-5 m-3 '>
+
+                                        <div className='d-flex flex-column gap-3 '>
+                                            <div className='d-flex flex-column gap-2'>
+                                                <p className='mx-3'>Minimum Assured</p>
+                                                <div className="d-flex gap-5">
+                                                    <div className="d-flex">
+                                                        <select class={`${Intern.selectStipend}`} aria-label="Default select example">
+                                                            <option value="USD">USD</option>
+                                                            <option value="PKR">PKR</option>
+                                                        </select>
+                                                        <div class="input-group p-0 m-0">
+                                                            <input type="text" class="" style={{
+                                                                width: '8vw', padding: '8px 7px'
+                                                            }} placeholder='eg: 1000' />
+                                                        </div>
+                                                    </div>
+                                                    <select class={`${Intern.selectStipend} p-0 m-0`} aria-label="Default select example">
+                                                        <option value="Per Month">Per Month</option>
+                                                        <option value="Per Week">Per Week</option>
+                                                        <option value="Per Project">Per Project</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className='d-flex flex-column gap-2'>
+                                                <p className='mx-3'>Commission Based</p>
+                                                <div className="d-flex gap-5">
+                                                    <div className="d-flex">
+                                                        <select class={`${Intern.selectStipend}`} aria-label="Default select example">
+                                                            <option value="USD">USD</option>
+                                                            <option value="PKR">PKR</option>
+                                                        </select>
+                                                        <div class="input-group p-0 m-0">
+                                                            <input type="text" class="" style={{
+                                                                width: '8vw', padding: '8px 7px'
+                                                            }} placeholder='eg: 1000' />
+                                                        </div>
+                                                    </div>
+                                                    <select class={`${Intern.selectStipend} p-0 m-0`} aria-label="Default select example">
+                                                        <option value="Per Month">Choose Scale</option>
+                                                        <option value="Per Week">Per Week</option>
+                                                        <option value="Per Project">Per Project</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+                                {/* Unpaid */}
+                                <div className={InternType === 'Unpaid' ? Intern.displayBlock : Intern.displayNone}>
+                                    <div className='p-3 d-flex'>
+                                        <p>We allow unpaid internships only in case of NGOs or </p>
+                                        <Link to='#' style={{ color: 'black' }}>niche Internship</Link>
+
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div className='pt-4'>
@@ -293,6 +400,46 @@ const InternshipDetail = () => {
 
                             </div>
                         </div>
+                        <div className='pt-4'>
+                            <div >
+                                <strong>Internship Duration</strong> <span></span>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} `}>
+                                <div className='d-flex justify-content-between p-3'>
+                                    <div className='d-flex align-items-center gap-3'>
+                                        <p className='px-3'>From</p>
+                                        <select style={{ width: '10vw' }} className='fw-light'>
+                                            <option className='fw-light' value="USD">USD</option>
+                                            <option value="PKR">PKR</option>
+                                        </select>
+
+                                    </div>
+                                    <div className='d-flex align-items-center'>
+                                        <p className='px-3'>Last date
+                                            to apply</p>
+                                        <input type="date" name="j" id="" />
+                                        {/* <select className='fw-light' style={{ width: '10vw' }}>
+                                            <option className='fw-light' value="USD">USD</option>
+                                            <option value="PKR">PKR</option>
+                                        </select> */}
+
+                                    </div>
+                                    <div className='d-flex align-items-center'>
+                                        <p className='px-3'>Joining date</p>
+                                        <input type="date" name="j" id="" />
+
+                                        {/* <select className='fw-light' style={{ width: '10vw' }}>
+                                            <option className='fw-light' value="USD">USD</option>
+                                            <option value="PKR">PKR</option>
+                                        </select> */}
+
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+
                     </div>
 
 
