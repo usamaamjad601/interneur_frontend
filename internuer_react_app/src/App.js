@@ -17,6 +17,9 @@ import ClientReg2 from './Pages/Registration/ClientReg2';
 import PostInternship from './Pages/Registration/PostInternship';
 import EmpDash from './Pages/EmpDash';
 import Input2 from './components/InputTags/Input2';
+import OpenJobs from './Pages/ManageJobs/OpenJobs';
+import ClosedJobs from './Pages/ManageJobs/ClosedJobs';
+import PendingJobs from './Pages/ManageJobs/PendingJobs';
 
 
 function App() {
@@ -38,6 +41,9 @@ function App() {
         <Route path='PostInternship' element={<PostInternship />} />
         <Route path='Input2' element={<Input2 />} /> */}
         <Route path='EmpDash' element={<EmpDash />} />
+        <Route path='OpenJobs' element={<OpenJobs />} />
+        <Route path='ClosedJobs' element={<ClosedJobs />} />
+        <Route path='PendingJobs' element={<PendingJobs />} />
       </Routes>
     </div>
   );
