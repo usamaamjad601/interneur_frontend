@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import DateObject from "react-date-object";
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
-import axios from "axios";
-
-
-
+// import axios from "axios";
 import Dash from '../css/App.module.css';
 import Nav2 from '../components/global/Nav2';
 import Deadline from '../components/JobLive/JobDeadline';
@@ -12,29 +10,24 @@ import JobDesc from '../components/JobLive/JobDesc';
 import JobSkills from '../components/JobLive/JobSkills';
 import JobSchedule from '../components/JobLive/JobSchedule';
 
-import DateObject from "react-date-object";
-
 
 
 const JobLive = () => {
 
-
-
-
     const [posts, setPosts] = useState([]);
     function abc() {
-        axios({
-            method: "get",
-            url: "https://interneur.herokuapp.com/api/perk-listings/?format=api",
-            headers: { 'Access-Control-Allow-Origin': '*' }
-        })
-            .then(function (response) {
-                console.log(response)
-            })
+        // axios({
+        //     method: "get",
+        //     url: "https://interneur.herokuapp.com/api/perk-listings/?format=api",
+        //     headers: { 'Access-Control-Allow-Origin': '*' }
+        // })
+        //     .then(function (response) {
+        //         console.log(response)
+        //     })
 
-            .catch(function (response) {
-                console.log(response)
-            });
+        //     .catch(function (response) {
+        //         console.log(response)
+        //     });
     }
 
     useEffect(() => {
@@ -47,7 +40,7 @@ const JobLive = () => {
         //     })
         //     .catch(err => {
         //         console.log('erro');
-        //     })
+        // })
 
 
 
@@ -114,4 +107,4 @@ const JobLive = () => {
     )
 }
 
-export default JobLive
+export default JobLive;
