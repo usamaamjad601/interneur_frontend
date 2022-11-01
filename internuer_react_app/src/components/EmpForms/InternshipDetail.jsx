@@ -2,9 +2,37 @@ import React from 'react'
 import { Autocomplete, Box, Checkbox, Chip, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Stack, TextField, Typography } from '@mui/material'
 import Intern from '../../css/App.module.css'
 import { Cancel } from '@mui/icons-material';
+import Paper from '@mui/material/Paper';
+import { ListItem } from '@mui/material';
 
 
 const InternshipDetail = () => {
+
+    const [chipData, setChipData] = React.useState([
+    ]);
+
+    const handleDelete = (chipToDelete) => () => {
+        setChipData((chips) => chips.filter((chip) => chip.key !== chipToDelete.key));
+    };
+
+    const PushData = (e) => {
+
+        const values = document.getElementById("wage");
+        // var joined = chipData.concat([{ key: (chipData.length + 1), label: values.value }]);
+
+        //chipData.push();
+        setChipData([...chipData, { key: chipData.length + 1, label: values.value }])
+        //setChipData({ chipData: joined });
+
+
+        console.log(e.target.value)
+        //console.log(joined, 'chipData');
+
+
+    }
+
+
+
     const catag = [
         { label: 'Web' },
         { label: 'Mobile' },
@@ -91,6 +119,28 @@ const InternshipDetail = () => {
         setAge(event.target.value);
     };
 
+    // function search(e) {
+    //     if (e.keyCode == 13) {
+    //         alert("should get the innerHTML or text value here");
+    //     }
+    // }
+
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter') {
+            const values = document.getElementById("wage");
+            if (values.value === '') {
+                alert('Plz Insert a value first')
+            }
+            else if (chipData.find((element) => {
+                return element.label === values.value
+            })) {
+                alert('Already Exist')
+            }
+            else {
+                setChipData([...chipData, { key: chipData.length + 1, label: values.value }])
+            }
+        }
+    }
     return (
         <div>
             <div>
@@ -261,42 +311,41 @@ const InternshipDetail = () => {
                         </div>
                         <div className='pt-4'>
                             <div >
-                                <strong>Skills</strong> <span>(Optional)</span>
+                                <strong>Skills</strong>
                             </div >
-                            <div className={`${Intern.EmpFormBox} `}>
-                                <p className='fw-light'>Recomended Skills</p>
-                                <p>(Optional)</p>
-
+                            <div className={`${Intern.EmpFormBox} d-flex flex-column  p-3`}>
+                                <div className='d-flex mb-2'>
+                                    <p className='fw-light'>Recomended Skills</p>
+                                    <p>(Optional)</p>
+                                </div>
                                 <div>
-                                    {/* <Box sx={{ flexGrow: 1 }}>
-                                        <TextField
-                                            fullWidth
-                                            variant='standard'
-                                            size='small'
-                                            sx={{ margin: "1rem 0" }}
-                                            margin='none'
-                                            placeholder="Enter Tags here"
-                                            InputProps={{
-                                                startAdornment: (
-                                                    <Box sx={{ margin: "0 0.2rem 0 0", display: "flex" }}>
-                                                        <Tags />
-                                                    </Box>
-                                                ),
-                                            }}
-                                        />
-                                    </Box> */}
-
-                                    {/* <Chip variant="outlined" label='hello' /> */}
+                                    <div className={`d-flex ${Intern.EmpFormBox}`} style={{ height: '8vh' }}>
+                                        {chipData && chipData.map((data, index) => {
+                                            return (
+                                                <ListItem key={index} >
+                                                    <Chip
+                                                        sx={{ borderRadius: '5px' }}
+                                                        label={data.label}
+                                                        onDelete={data.label === '' ? undefined : handleDelete(data)}
+                                                    />
+                                                </ListItem>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
+                                <div className=' mb-2'>
+                                    <p className='fw-light'>Skills Required</p>
 
                                 </div>
+                                <div>
+                                    <input type="text" id='wage' onKeyDown={handleKeyDown} style={{ padding: '10px', width: '100%' }} />
 
+
+                                </div>
 
                             </div>
                         </div>
                     </div>
-
-
-
                 </div>
             </div>
         </div>
