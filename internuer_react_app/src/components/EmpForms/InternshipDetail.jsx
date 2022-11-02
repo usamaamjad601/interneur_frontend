@@ -4,6 +4,7 @@ import Intern from '../../css/App.module.css'
 import { Cancel } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 import { ListItem } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 
 const InternshipDetail = () => {
@@ -232,46 +233,118 @@ const InternshipDetail = () => {
                                             row
                                             aria-labelledby="demo-row-radio-buttons-group-label"
                                             name="row-radio-buttons-group"
+                                            defaultValue="Fix"
                                         >
                                             <FormControlLabel value="Fix" control={<Radio onChange={() => setInternType('Fix')} />} label="Fix" />
                                             <FormControlLabel value="Negotiable" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Negotiable" />
-                                            <FormControlLabel value="Performance Based" control={<Radio onChange={() => setInternType('Negotiable')} />} label="Performance Based" />
+                                            <FormControlLabel value="Performance Based" control={<Radio onChange={() => setInternType('Performance')} />} label="Performance Based" />
                                             <FormControlLabel value="Unpaid" control={<Radio onChange={() => setInternType('Unpaid')} />} label="Unpaid" />
 
                                         </RadioGroup>
                                     </FormControl>
                                 </div>
-                            </div>
-                            <div className='d-flex'>
-                                <div className={InternType === 'Fix' ? Intern.displayBlock : Intern.displayNone}>
-                                    <FormControl sx={{ display: 'flex' }}>
-                                        {/* <InputLabel id="demo-simple-select-autowidth-label">Age</InputLabel> */}
-                                        <Select
-                                            labelId="demo-simple-select-autowidth-label"
-                                            id="demo-simple-select-autowidth"
-                                            value={age}
-                                            defaultValue='INR'
-                                            onChange={handleChange}
 
-                                        >
-                                            <MenuItem value={'USD'} >USD</MenuItem>
-                                            <MenuItem value={'PKR'}>PKR</MenuItem>
-                                        </Select>
-                                        <OutlinedInput
-                                            sx={{ padding: '0 !important', margin: '0 !important' }}
-                                            fullWidth
-                                            placeholder='eg: 103'
-                                            id="outlined-adornment-weight"
-                                            aria-describedby="outlined-weight-helper-text"
-                                            inputProps={{
-                                                'aria-label': 'weight',
-                                            }}
-                                            required
-                                            value="dsd"
-                                        />
-                                    </FormControl>
+                                <div className=''>
+                                    <div className={InternType === 'Fix' ? Intern.displayBlock : Intern.displayNone}>
+                                        <div className='d-flex justify-content-around p-3'>
+                                            <div className='d-flex gap-3 align-items-center'>
+                                                <p className=' fw-bold'>From</p>
+                                                <div className='d-flex'>
+                                                    <select className={Intern.EmpFormSelect}>
+                                                        <option selected>PKR</option>
+                                                        <option value="1">USD</option>
+                                                    </select>
+                                                    <input type="text" style={{ width: '10vw' }} />
+                                                </div>
+                                            </div>
+
+
+                                            <select className={Intern.EmpFormSelect} >
+                                                <option selected>Per month</option>
+                                                <option value="1">USD</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div className={InternType === 'Negotiable' ? Intern.displayBlock : Intern.displayNone}>
+                                        <p className='px-3 '>The Stipend must be negotiated and finalized before the internship starts</p>
+                                        <div className='d-flex justify-content-around p-3'>
+                                            <div className='d-flex gap-3 align-items-center'>
+                                                <p className=' fw-bold'>From</p>
+                                                <div className='d-flex'>
+                                                    <select className={Intern.EmpFormSelect}>
+                                                        <option selected>PKR</option>
+                                                        <option value="1">USD</option>
+                                                    </select>
+                                                    <input type="text" style={{ width: '10vw' }} />
+                                                </div>
+                                            </div>
+                                            <div className='d-flex gap-3 align-items-center'>
+                                                <p className=' fw-bold'>To</p>
+                                                <div className='d-flex'>
+                                                    <select className={Intern.EmpFormSelect}>
+                                                        <option selected>PKR</option>
+                                                        <option value="1">USD</option>
+                                                    </select>
+                                                    <input type="text" style={{ width: '10vw' }} placeholder='5000.0' />
+                                                </div>
+                                            </div>
+
+
+                                            <select className={Intern.EmpFormSelect} >
+                                                <option selected>Per month</option>
+                                                <option value="1">USD</option>
+                                            </select>
+
+                                        </div>
+                                    </div>
+                                    <div className={InternType === 'Performance' ? Intern.displayBlock : Intern.displayNone}>
+                                        <p className='px-3 '>For performance-based internships, such as Business Development(sales), etc, we  insist
+                                            on minimum assured stipend e.g 5000 and the rest could be incentive-based (commisions)</p>
+                                        <div className='d-flex justify-content-around p-3'>
+                                            <div className='d-flex gap-3 flex-column '>
+                                                <p className=' fw-bold'>Minimum Assured</p>
+                                                <div className='d-flex gap-3'>
+                                                    <div className='d-flex'>
+                                                        <select className={Intern.EmpFormSelect}>
+                                                            <option selected>PKR</option>
+                                                            <option value="1">USD</option>
+                                                        </select>
+                                                        <input type="text" style={{ width: '10vw' }} />
+                                                    </div>
+                                                    <select className={Intern.EmpFormSelect} style={{ width: '100%' }}>
+                                                        <option selected>Per month</option>
+                                                        <option value="1">USD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div className='d-flex gap-3 flex-column '>
+                                                <p className=' fw-bold'>Minimum Assured</p>
+                                                <div className='d-flex gap-3'>
+                                                    <div className='d-flex'>
+                                                        <select className={Intern.EmpFormSelect}>
+                                                            <option selected>PKR</option>
+                                                            <option value="1">USD</option>
+                                                        </select>
+                                                        <input type="text" style={{ width: '10vw' }} />
+                                                    </div>
+                                                    <select className={Intern.EmpFormSelect} style={{ width: '100%' }}>
+                                                        <option selected>Choose Scale</option>
+                                                        <option value="1">USD</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+                                    <div className={InternType === 'Unpaid' ? Intern.displayBlock : Intern.displayNone}>
+                                        <div className="d-flex gap-1 p-3">
+                                            <p>We allow unpaid internships only in case of NGOs or </p>
+                                            <Link to='#' style={{ color: 'black', }}> niche internships</Link>
+                                        </div>
+                                    </div>
                                 </div>
-
                             </div>
                         </div>
                         <div className='pt-4'>

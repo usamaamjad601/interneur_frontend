@@ -943,3 +943,21 @@ li a:hover {
 .EmpFormBox {
   border: 1px solid var(--grey);
 }
+
+.EmpFormSelect {
+  background-color: #4794ec;
+  color: white;
+  padding: 0.5rem 1.5 rem;
+  border: none;
+  /* width: 7vw; */
+}
+
+.EmpFormSelect:focus {
+  border: none;
+}
+
+.EmpFormSelect option {
+  background-color: white;
+  color: black;
+  border: none;
+}
