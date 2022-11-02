@@ -15,14 +15,15 @@ export default function OpenJobs() {
         <div>
             <Sidebar user={profile} />
             <div className={`${Dash.content}`}>
-                <Nav3></Nav3>
+                <Nav3 colorOpen="#D8ECF3" />
                 <div className={`${oScroll.openScroll} col-md-12 d-flex`} >
-                    <div className="col-md-9 py-3 px-4 d-flex flex-column gap-4">
-                        <OpenJobCard />
-                        <OpenJobCard />
-                        <OpenJobCard />
+                    <div className="col-md-1"></div>
+                    <div className="col-md-10 py-3 px-4 d-flex flex-column gap-4">
+                        <OpenJobCard color='green' dottext="Post live" cardText="Sourcing Stage" title="UI/UX Designing" />
+                        <OpenJobCard color='green' dottext="Post live" cardText="Sourcing Stage" title="UI/UX Designing" />
+                        <OpenJobCard color='green' dottext="Post live" cardText="Sourcing Stage" title="UI/UX Designing" />
                     </div>
-                    <div className="col-md-3"></div>
+                    <div className="col-md-1"></div>
                 </div>
 
             </div>
