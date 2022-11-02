@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Autocomplete, Box, Checkbox, Chip, FormControl, FormControlLabel, FormLabel, InputLabel, MenuItem, OutlinedInput, Radio, RadioGroup, Select, Stack, TextField, Typography } from '@mui/material'
 import Intern from '../../css/App.module.css'
 import { Cancel } from '@mui/icons-material';
@@ -142,6 +142,44 @@ const InternshipDetail = () => {
             }
         }
     }
+    const AddInfoBox = () => {
+
+    }
+    const [inputList, setInputList] = useState([
+        <div>
+            <OutlinedInput
+                sx={{ padding: '0 !important', margin: '0 !important' }}
+                fullWidth
+                placeholder='SEO Title?'
+                id="outlined-adornment-weight"
+                aria-describedby="outlined-weight-helper-text"
+                inputProps={{
+                    'aria-label': 'weight',
+                }}
+                required
+            />
+        </div>
+    ]);
+    const onAddBtnClick = event => {
+        setInputList(inputList.concat(<Input key={inputList.length} />));
+    };
+
+    const Input = () => {
+        return <div>
+            <OutlinedInput
+                sx={{ padding: '0 !important', margin: '0 !important' }}
+                fullWidth
+                placeholder='SEO Title?'
+                id="outlined-adornment-weight"
+                aria-describedby="outlined-weight-helper-text"
+                inputProps={{
+                    'aria-label': 'weight',
+                }}
+                required
+            />
+
+        </div>;
+    };
     return (
         <div>
             <div>
@@ -416,6 +454,51 @@ const InternshipDetail = () => {
 
                                 </div>
 
+                            </div>
+                        </div>
+                        <div className='pt-4'>
+                            <div >
+                                <strong>Internship Duration</strong>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} d-flex flex-column  p-3`}>
+                                <div className='d-flex justify-content-around p-3'>
+                                    <div className='d-flex gap-2 align-items-center'>
+                                        <p className='fw-light'>Duration</p>
+                                        <select style={{ width: '7vw' }}>
+                                            <option selected>2 Weeks</option>
+                                            <option value="1">1 month</option>
+                                            <option value="1">3 month</option>
+
+                                        </select>
+                                    </div>
+                                    <div className='d-flex gap-2 align-items-center'>
+                                        <p className='fw-light'>Last Date to Apply</p>
+                                        <input type="date" style={{ width: '7vw' }} />
+
+                                    </div>
+                                    <div className='d-flex gap-2 align-items-center'>
+                                        <p className='fw-light'>Joining date</p>
+                                        <input type="date" style={{ width: '7vw' }} />
+
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div className='pt-4'>
+                            <div className='d-flex gap-2'>
+                                <strong>Education</strong>
+                                <p>(Optional)</p>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} d-flex flex-column  p-3 px-5`}>
+                                <div className='d-flex flex-column gap-3'>
+                                    {inputList}
+                                </div>
+                                <div className='d-flex justify-content-end p-1'>
+                                    <p className='text-align-center fw-bolder' onClick={onAddBtnClick} style={{ cursor: 'pointer', color: 'blue' }}>+ Add info</p>
+                                </div>
                             </div>
                         </div>
                     </div>
