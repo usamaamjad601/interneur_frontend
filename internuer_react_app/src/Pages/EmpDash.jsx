@@ -5,7 +5,7 @@ import profile_img from '../assets/img/profile.png'
 // import DashboardTable from '../components/dashboard/DashboardTable'
 // import DashboardInfo from '../components/dashboard/DashboardInfo';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import jCard from '../css/App3.module.css';
 import Dash from '../css/App.module.css';
