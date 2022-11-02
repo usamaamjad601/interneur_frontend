@@ -501,6 +501,14 @@ const InternshipDetail = () => {
                                 </div>
                             </div>
                         </div>
+                        <div className='pt-4'>
+                            <div>
+                                <strong>Responsibilities</strong>
+                            </div >
+                            <div className={`${Intern.EmpFormBox} d-flex flex-column  p-3 px-5`}>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
