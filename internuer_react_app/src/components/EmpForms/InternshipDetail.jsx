@@ -5,11 +5,14 @@ import { Cancel } from '@mui/icons-material';
 import Paper from '@mui/material/Paper';
 import { ListItem } from '@mui/material';
 import { Link } from 'react-router-dom';
+import $ from 'jquery';
 
 
 const InternshipDetail = () => {
 
     const [chipData, setChipData] = React.useState([
+        { key: 1, label: 'MS-Word' },
+        { key: 2, label: 'Presentation' },
     ]);
 
     const handleDelete = (chipToDelete) => () => {
@@ -142,9 +145,7 @@ const InternshipDetail = () => {
             }
         }
     }
-    const AddInfoBox = () => {
 
-    }
     const [inputList, setInputList] = useState([
         <div>
             <OutlinedInput
@@ -180,6 +181,68 @@ const InternshipDetail = () => {
 
         </div>;
     };
+
+
+    ///Hello =Numbr
+
+    var strings = [];
+    strings.push(
+        "Selected candidate’s day to day responsibilities include;"
+    );
+
+    var htmlContent = '';
+    var textAreaContent = '';
+    $(document).ready(function () {
+
+        strings.forEach(element => htmlContent += "<li>" + element + "</li>");
+        $("#display").html(htmlContent);
+        var i = 1;
+        strings.forEach(function (element) {
+            if (strings.length === i)
+                textAreaContent += "" + element;
+            else
+                textAreaContent += "" + element + "\n";
+            i++;
+        });
+        $("#banner-message").val(textAreaContent);
+    })
+    var num = 1
+    const HandleBullets = (event) => {
+
+        // $("#display").click(function () {
+        //     $(this).css("display", "none");
+        //     $("#banner-message").css("display", "");
+        //     var currentText = $("#banner-message").val();
+        //     //currentText+="\n>";
+        //     $("#banner-message").val(currentText);
+        //     $("#banner-message").focus();
+        // });
+
+        // $("#banner-message").blur(function () {
+        //     var currentText = $("#banner-message").val();
+        //     var plainText = currentText.replace(/>/g, "")
+        //     var splitText = plainText.split("\n");
+        //     console.log(splitText);
+        //     htmlContent = '';
+        //     splitText.forEach(element => htmlContent += "<li>" + element + "</li>");
+        //     $("#display").html(htmlContent);
+
+        //     $(this).css("display", "none");
+        //     $("#display").css("display", "");
+        // })
+
+        $("#banner-message").keyup(function (e) {
+            // var code = e.keyCode ? e.keyCode : e.which;
+            if (event.key === 'Enter') {
+                // var text = $(this).val();
+                // text += num;
+                // num = num + 1
+                // $(this).val(num);
+                console.log('banner messge');
+            }
+        });
+    }
+
     return (
         <div>
             <div>
@@ -446,12 +509,9 @@ const InternshipDetail = () => {
                                 </div>
                                 <div className=' mb-2'>
                                     <p className='fw-light'>Skills Required</p>
-
                                 </div>
                                 <div>
                                     <input type="text" id='wage' onKeyDown={handleKeyDown} style={{ padding: '10px', width: '100%' }} />
-
-
                                 </div>
 
                             </div>
@@ -506,7 +566,17 @@ const InternshipDetail = () => {
                                 <strong>Responsibilities</strong>
                             </div >
                             <div className={`${Intern.EmpFormBox} d-flex flex-column  p-3 px-5`}>
+                                {/* <TextField type="text" id="fname" name="fname"
+                                    multiline={true}
+                                    defaultValue="Selected candidate’s day to day responsibilities include:"
+                                    contentEditable={true}
+                                    rows={5}
+                                /> */}
+                                <textarea id="banner-message" class="message" onKeyDown={HandleBullets} >
+                                </textarea>
 
+                                <div id="display" class="mejssage" style={{ display: 'none' }}>
+                                </div>
                             </div>
                         </div>
                     </div>
