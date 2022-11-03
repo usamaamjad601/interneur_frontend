@@ -5,7 +5,7 @@ import profile_img from '../assets/img/profile.png'
 // import DashboardTable from '../components/dashboard/DashboardTable'
 // import DashboardInfo from '../components/dashboard/DashboardInfo';
 import DashboardIcon from '@mui/icons-material/Dashboard';
-import NotificationsIcon from '@mui/icons-material/Notifications';
+// import NotificationsIcon from '@mui/icons-material/Notifications';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 import jCard from '../css/App3.module.css';
 import Dash from '../css/App.module.css';
@@ -85,7 +85,7 @@ const EmpDash = (props) => {
                 </div>
 
                 <div className={`${Mainbody.Mainbody} mx-1 `}>
-                    <div className="d-flex justify-content-between">
+                    <div className="d-flex justify-content-between align-items-center">
                         <h1 className="m-4 " style={{ color: '#545454' }}>Welcome, <strong className={nameStyle.uName}>{userName}</strong></h1>
                         <button className={`${button.edbutton} float-right mt-3 mx-4`}>+ Create Jobs</button>
                     </div>
