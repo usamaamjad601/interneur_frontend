@@ -20,6 +20,9 @@ import Input2 from './components/InputTags/Input2';
 import OpenJobs from './Pages/ManageJobs/OpenJobs';
 import ClosedJobs from './Pages/ManageJobs/ClosedJobs';
 import PendingJobs from './Pages/ManageJobs/PendingJobs';
+import EmpSignUp from './Pages/EmpSignUp';
+import EmpSignUpError from './Pages/EmpSignUpError';
+import EmpSignUpVerification from './Pages/EmpSignUpVerification';
 
 
 function App() {
@@ -44,6 +47,9 @@ function App() {
         <Route path='OpenJobs' element={<OpenJobs />} />
         <Route path='ClosedJobs' element={<ClosedJobs />} />
         <Route path='PendingJobs' element={<PendingJobs />} />
+        <Route path='EmpSignUp' element={<EmpSignUp />} />
+        <Route path='EmpSignUpError' element={<EmpSignUpError />} />
+        <Route path='EmpSignUpVerification' element={<EmpSignUpVerification />} />
       </Routes>
     </div>
   );

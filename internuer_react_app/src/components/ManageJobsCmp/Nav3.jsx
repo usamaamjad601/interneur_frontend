@@ -13,8 +13,8 @@ export default function Nav3({ colorOpen, colorPending, colorClosed }) {
                     <Link to="/PendingJobs"><button type="button" className={`${jobButton.jbutton} px-2 py-1`} style={{ backgroundColor: colorPending, borderColor: colorPending }}>Pending </button></Link>
                     <Link to="/ClosedJobs"><button type="button" className={`${jobButton.jbutton} px-2 py-1`} style={{ backgroundColor: colorClosed, borderColor: colorClosed }}>Closed </button></Link>
                 </div>
-            </div>
-            <button type="button" className={`${nav.navbtn}  p-2 + ${nav.navBtn4} `}>+ Create</button>
+            </div >
+            <button style={{ marginRight: "3rem" }} type="button" className={`${nav.navbtn}  p-2 + ${nav.navBtn4} `}>+ Create</button>
         </div>
         </div>
     )
