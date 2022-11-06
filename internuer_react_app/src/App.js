@@ -20,13 +20,10 @@ import Input2 from './components/InputTags/Input2';
 import OpenJobs from './Pages/ManageJobs/OpenJobs';
 import ClosedJobs from './Pages/ManageJobs/ClosedJobs';
 import PendingJobs from './Pages/ManageJobs/PendingJobs';
-<<<<<<< HEAD
-import AfterApply from './Pages/AfterApply/AfterApply';
-=======
 import EmpSignUp from './Pages/EmpSignUp';
 import EmpSignUpError from './Pages/EmpSignUpError';
 import EmpSignUpVerification from './Pages/EmpSignUpVerification';
->>>>>>> 6d08ef2c3af4831c17d26ce0fe9325990e2a3d37
+import AfterApply from './Pages/AfterApply/AfterApply';
 
 
 function App() {
@@ -50,16 +47,9 @@ function App() {
         <Route path='EmpDash' element={<EmpDash />} />
         <Route path='OpenJobs' element={<OpenJobs />} />
         <Route path='ClosedJobs' element={<ClosedJobs />} />
-<<<<<<< HEAD
         <Route path='PendingJobs' element={<PendingJobs />} /> */}
         <Route path='AfterApply' element={<AfterApply />} />
 
-=======
-        <Route path='PendingJobs' element={<PendingJobs />} />
-        <Route path='EmpSignUp' element={<EmpSignUp />} />
-        <Route path='EmpSignUpError' element={<EmpSignUpError />} />
-        <Route path='EmpSignUpVerification' element={<EmpSignUpVerification />} />
->>>>>>> 6d08ef2c3af4831c17d26ce0fe9325990e2a3d37
       </Routes>
     </div>
   );
