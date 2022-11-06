@@ -22,6 +22,26 @@
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
+.edbutton2 {
+    border-radius: 7px;
+    background-color: #1F8EE4;
+    color: white;
+    /* height: 5vh;  */
+    border: none;
+    padding: 0.5rem 1rem;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
+.edbutton3 {
+    border-radius: 7px;
+    background-color: white;
+    color: #1F8EE4;
+    /* height: 5vh;  */
+    border: none;
+    padding: 0.5rem 1rem;
+    /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); */
+}
+
 .sdbutton {
     margin-top: 10vh;
 }
@@ -107,4 +127,26 @@
 
 .colorTag2 {
     color: #F0BB83;
+}
+
+.signUpCard {
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.signUpButton {
+    border-radius: 7px;
+    background-color: #1F8EE4;
+    color: white;
+    /* height: 5vh;  */
+    border: none;
+    padding: 0.5rem 1rem;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.textBody {
+    background-color: #E7F1FF;
+    width: 55vw;
+    border-radius: 10px;
+    border: 2px solid #007BBE;
 }
