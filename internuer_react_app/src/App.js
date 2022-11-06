@@ -20,14 +20,15 @@ import Input2 from './components/InputTags/Input2';
 import OpenJobs from './Pages/ManageJobs/OpenJobs';
 import ClosedJobs from './Pages/ManageJobs/ClosedJobs';
 import PendingJobs from './Pages/ManageJobs/PendingJobs';
+import AfterApply from './Pages/AfterApply/AfterApply';
 
 
 function App() {
   return (
     <div>
       <Routes>
-        {/* <Route path="/" element={<Dashboard />} />
-        <Route path="DashDeclined" element={<DashDeclined />} />
+        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
         <Route path='joblive' element={<JobLive />} />
@@ -35,7 +36,7 @@ function App() {
         <Route path='JobInReview' element={<JobInReview />} />
         <Route path='JobClosed' element={<JobClosed />} />
         <Route path='JobPost' element={<JobPost />} /> */}
-        <Route path='EmpForms' element={<EmpForms />} />
+        {/* <Route path='EmpForms' element={<EmpForms />} />
         <Route path='ClientReg1' element={<ClientReg1 />} />
         <Route path='ClientReg2' element={<ClientReg2 />} />
         <Route path='PostInternship' element={<PostInternship />} />
@@ -43,7 +44,9 @@ function App() {
         <Route path='EmpDash' element={<EmpDash />} />
         <Route path='OpenJobs' element={<OpenJobs />} />
         <Route path='ClosedJobs' element={<ClosedJobs />} />
-        <Route path='PendingJobs' element={<PendingJobs />} />
+        <Route path='PendingJobs' element={<PendingJobs />} /> */}
+        <Route path='AfterApply' element={<AfterApply />} />
+
       </Routes>
     </div>
   );

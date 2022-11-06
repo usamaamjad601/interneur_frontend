@@ -1,0 +1,21 @@
+.back {
+    background-color: #F3F8FF;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #48ACFA;
+}
+
+.AfterShadow {
+    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.07);
+}
+
+.TopAfter {
+    border-bottom: 2px dashed #B0B0B0;
+}
+
+.afterSelect {
+    background-color: #F3F8FF;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+}
