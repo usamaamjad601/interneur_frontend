@@ -49,6 +49,9 @@ function App() {
         <Route path='ClosedJobs' element={<ClosedJobs />} />
         <Route path='PendingJobs' element={<PendingJobs />} /> */}
         <Route path='AfterApply' element={<AfterApply />} />
+        <Route path='EmpSignUp' element={<EmpSignUp />} />
+        <Route path='EmpSignUpError' element={<EmpSignUpError />} />
+        <Route path='EmpSignUpVerification' element={<EmpSignUpVerification />} />
 
       </Routes>
     </div>

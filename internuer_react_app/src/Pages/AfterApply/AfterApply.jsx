@@ -118,7 +118,7 @@ const AfterApply = () => {
                         </div>
 
                         <div className="col-md-11 d-flex justify-content-between gap-2 pt-3">
-                            <div>
+                            <div className='col-md-5 d-flex flex-column gap-2'>
                                 <label className='fw-bolder' >Location<span className="text-danger fw-bolder"> *</span></label>
                                 <TextField id="outlined-basic"
                                     variant="outlined"
@@ -132,7 +132,7 @@ const AfterApply = () => {
                                     onChange={wordLimit("name")}
                                 />
                             </div>
-                            <div>
+                            <div className='col-md-5 d-flex flex-column gap-2'>
                                 <label className='fw-bolder' >Location<span className="text-danger fw-bolder"> *</span></label>
                                 <TextField id="outlined-basic"
                                     variant="outlined"
@@ -146,6 +146,20 @@ const AfterApply = () => {
                                     onChange={wordLimit("name")}
                                 />
                             </div>
+                        </div>
+                        <div className="col-md-11 d-flex flex-column gap-2 pt-3">
+                            <label className='fw-bolder' >Projects/Portfolio<span className="text-danger fw-bolder"> *</span></label>
+                            <TextField id="outlined-basic"
+                                variant="outlined"
+                                rows={5} multiline={true}
+                                placeholder="Characters"
+                                inputProps={{
+                                    maxlength: CHARACTER_LIMIT
+                                }}
+                                value={values.name}
+                                helperText={`${values.name.length}/${CHARACTER_LIMIT}`}
+                                onChange={wordLimit("name")}
+                            />
                         </div>
                     </div>
                 </div>
