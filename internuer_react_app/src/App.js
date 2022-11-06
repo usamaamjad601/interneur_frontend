@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        {/* <Route path="/" element={<Dashboard />} />
         <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
@@ -34,7 +34,7 @@ function App() {
         <Route path='jobDisapproved' element={<JobDisapproved />} />
         <Route path='JobInReview' element={<JobInReview />} />
         <Route path='JobClosed' element={<JobClosed />} />
-        <Route path='JobPost' element={<JobPost />} />
+        <Route path='JobPost' element={<JobPost />} /> */}
         <Route path='EmpForms' element={<EmpForms />} />
         <Route path='ClientReg1' element={<ClientReg1 />} />
         <Route path='ClientReg2' element={<ClientReg2 />} />
