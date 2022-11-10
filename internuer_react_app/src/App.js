@@ -39,19 +39,20 @@ function App() {
         <Route path='JobInReview' element={<JobInReview />} />
         <Route path='JobClosed' element={<JobClosed />} />
         <Route path='JobPost' element={<JobPost />} /> */}
-        {/* <Route path='EmpForms' element={<EmpForms />} />
+        <Route path='EmpForms' element={<EmpForms />} />
         <Route path='ClientReg1' element={<ClientReg1 />} />
         <Route path='ClientReg2' element={<ClientReg2 />} />
         <Route path='PostInternship' element={<PostInternship />} />
-        <Route path='Input2' element={<Input2 />} />
+
         <Route path='EmpDash' element={<EmpDash />} />
         <Route path='OpenJobs' element={<OpenJobs />} />
         <Route path='ClosedJobs' element={<ClosedJobs />} />
-        <Route path='PendingJobs' element={<PendingJobs />} /> */}
+        <Route path='PendingJobs' element={<PendingJobs />} />
         <Route path='AfterApply' element={<AfterApply />} />
         <Route path='EmpSignUp' element={<EmpSignUp />} />
         <Route path='EmpSignUpError' element={<EmpSignUpError />} />
         <Route path='EmpSignUpVerification' element={<EmpSignUpVerification />} />
+        <Route path='Input2' element={<Input2 />} />
 
       </Routes>
     </div>
