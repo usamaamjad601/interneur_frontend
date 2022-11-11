@@ -1,7 +1,9 @@
-import { Chip, InputAdornment, MenuItem, OutlinedInput, Paper, Select, TextField } from '@mui/material'
+import { Button, Chip, InputAdornment, MenuItem, OutlinedInput, Paper, Select, TextField } from '@mui/material'
 import React from 'react'
 import after from '../../css/AfterApply.module.css'
 import { styled } from "@mui/material/styles";
+import AIicon from '../../assets/img/AI.png'
+import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 
 const ListItem = styled("li")(({ theme }) => ({
     margin: theme.spacing(0.5)
@@ -236,7 +238,50 @@ const AfterApply = () => {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-3"></div>
+                <div className="col-md-3 p-3">
+                    <div className={after.HelpBox}>
+                        <div className={`d-flex flex-column gap-2 justify-content-center align-items-center p-2 ${after.HelpHead} `}>
+                            <img src={AIicon} alt="" />
+                            <h3 className='fw-bolder'>Let us help you!</h3>
+                            <p className='fw-bolder'>Help our AI to match you with best recruiters. </p>
+                        </div>
+                        <div className="d-flex flex-column p-2">
+                            <div className='d-flex align-items-center gap-4 mb-4'>
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <p className='fw-bold'>Speed up the application process with Quick Apply. Apply to jobs with your updated CV every time. </p>
+                            </div>
+                            <div className='d-flex align-items-center gap-4 mb-4'>
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <p className='fw-bold'>See jobs with similar skills as yours.</p>
+                            </div>
+                            <div className='d-flex align-items-center gap-4 mb-4'>
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <p className='fw-bold'>Be visible to 1000s of recruiters. </p>
+                            </div>
+                            <div className='d-flex align-items-center gap-4 mb-4'>
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <p className='fw-bold'>Virtual video interviews. Reduce pre-screening time. </p>
+                            </div>
+                        </div>
+                        <div className='p-3'>
+                            <div className={`d-flex flex-column gap-3 ${after.premium}`}>
+                                <OutlinedInput
+                                    fullWidth
+                                    placeholder='Set password'
+                                    id="outlined-adornment-weight"
+                                    aria-describedby="outlined-weight-helper-text"
+                                    inputProps={{
+                                        'aria-label': 'weight',
+                                    }}
+                                    required
+                                    size='small'
+                                />
+                                <Button variant="contained" sx={{ padding: '0.6rem 0' }}>CREATE PREMIUM PROFILE (free)</Button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </div>
         </div>
     )
