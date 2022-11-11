@@ -1,6 +1,7 @@
 import { Button, Chip, InputAdornment, MenuItem, OutlinedInput, Paper, Select, TextField } from '@mui/material'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import after from '../../css/AfterApply.module.css'
+import app1 from '../../css/App.module.css'
 import { styled } from "@mui/material/styles";
 import AIicon from '../../assets/img/AI.png'
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -50,19 +51,47 @@ const AfterApply = () => {
     const wordLimit = name => event => {
         setValues({ ...values, [name]: event.target.value });
     };
+
+    //Image Uloader
+    const [selectedFile, setSelectedFile] = useState()
+    const [preview, setPreview] = useState()
+
+    // create a preview as a side effect, whenever selected file is changed
+    useEffect(() => {
+        if (!selectedFile) {
+            setPreview(undefined)
+            return
+        }
+
+        const objectUrl = URL.createObjectURL(selectedFile)
+        setPreview(objectUrl)
+
+        // free memory when ever this component is unmounted
+        return () => URL.revokeObjectURL(objectUrl)
+    }, [selectedFile])
+
+    const onSelectFile = e => {
+        if (!e.target.files || e.target.files.length === 0) {
+            setSelectedFile(undefined)
+            return
+        }
+
+        // I've kept this example simple by using the first image instead of multiple
+        setSelectedFile(e.target.files[0])
+    }
+
     return (
         <div>
             <div className="col-md-12 d-flex ">
-                <div className="col-md-9">
+                <div className="col-md-1"></div>
+                <div className="col-md-8">
                     <div className={`${after.back} p-5`}>
                         <h1> <span style={{ color: '#48ACFA' }}> Check your CV details for </span> UI/UX Designer job</h1>
                         <p>You can update your profile information here. </p>
 
 
                         <div className={`${after.TopAfter} d-flex gap-2 align-items-center mt-4 pb-5 col-md-11 justify-content-between`}>
-                            <div className={`d-flex flex-column col-md-7`}>
-
-
+                            {/* <div className={`d-flex flex-column col-md-7`}>
                                 <label className='fw-bolder' >Your Name<span className="text-danger fw-bolder"> *</span></label>
                                 <OutlinedInput
                                     fullWidth
@@ -76,6 +105,24 @@ const AfterApply = () => {
                                     required
                                     size='small'
                                 />
+                            </div> */}
+                            <div className={`d-flex flex-column col-md-7`}>
+                                <div className="d-flex gap-4 align-items-center">
+                                    <div>
+                                        {!selectedFile &&
+                                            <div>
+                                                <input id='actual-btn' type='file' onChange={onSelectFile} hidden />
+                                                <label className={`${after.picInput} `} for="actual-btn">Edit Photo</label>
+                                            </div>
+                                        }
+                                        {selectedFile && <img src={preview} alt='img' className={after.FormProfile} />}
+                                    </div>
+                                    <div>
+                                        <h1>Wajahat Rauf</h1>
+                                        <p>UI/UX Designer</p>
+                                    </div>
+                                </div>
+
                             </div>
                             <div className="col-md-1"></div>
 
@@ -247,19 +294,19 @@ const AfterApply = () => {
                         </div>
                         <div className="d-flex flex-column p-2">
                             <div className='d-flex align-items-center gap-4 mb-4'>
-                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} />
                                 <p className='fw-bold'>Speed up the application process with Quick Apply. Apply to jobs with your updated CV every time. </p>
                             </div>
                             <div className='d-flex align-items-center gap-4 mb-4'>
-                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} />
                                 <p className='fw-bold'>See jobs with similar skills as yours.</p>
                             </div>
                             <div className='d-flex align-items-center gap-4 mb-4'>
-                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} />
                                 <p className='fw-bold'>Be visible to 1000s of recruiters. </p>
                             </div>
                             <div className='d-flex align-items-center gap-4 mb-4'>
-                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} fontSizeLarge />
+                                <CheckCircleIcon sx={{ color: '#2EA6FC', fontSize: "2rem", stroke: "#007BBE", strokeWidth: 1 }} />
                                 <p className='fw-bold'>Virtual video interviews. Reduce pre-screening time. </p>
                             </div>
                         </div>
