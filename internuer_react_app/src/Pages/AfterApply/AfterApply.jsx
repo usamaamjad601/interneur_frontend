@@ -112,7 +112,7 @@ const AfterApply = () => {
                                         {!selectedFile &&
                                             <div>
                                                 <input id='actual-btn' type='file' onChange={onSelectFile} hidden />
-                                                <label className={`${after.picInput} `} for="actual-btn">Edit Photo</label>
+                                                <label className={`${after.picInput} `} htmlFor="actual-btn">Edit Photo</label>
                                             </div>
                                         }
                                         {selectedFile && <img src={preview} alt='img' className={after.FormProfile} />}

@@ -31,7 +31,7 @@ export default function EmpSignUp() {
                 <div className={`${jCard.signUpCard} col-md-4 mt-5 p-4`}>
                     <h6 >Work Email ID</h6>
                     {/* <input type="email" placeholder="name@yourcompany.com" className='mt-2' style={{ backgroundColor: "#F5F5F5", color: "#B0B0B0", borderRadius: "12px" }} /> */}
-                    <form action='#'>
+                    <form action='/EmpDash'>
                         <OutlinedInput
                             size='small'
                             sx={{ paddingTop: '0 !important', margin: '5px !important', backgroundColor: "#F3F8FF" }}
@@ -106,8 +106,10 @@ export default function EmpSignUp() {
                             />
                         </div>
                         <p className="mt-4" style={{ fontSize: '13px' }}>By registering, you agree to our <Link to="#" style={{ textDecoration: 'none' }}>Terms of Service</Link>.</p>
-                        <div className="d-flex pt-2">
+                        <div className=" pt-2">
+                            {/* <Link to='/EmpDash' width="100%"> */}
                             <button className={`${jCard.signUpButton}`} style={{ width: '100%' }} type="submit">Register Now</button>
+                            {/* </Link> */}
                         </div>
                     </form>
                 </div>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import DateObject from "react-date-object";
 import Sidebar from '../components/global/Sidebar'
 import profile_img from '../assets/img/profile.png'
-// import axios from "axios";
+import axios from "axios";
 import Dash from '../css/App.module.css';
 import Nav2 from '../components/global/Nav2';
 import Deadline from '../components/JobLive/JobDeadline';
@@ -16,22 +16,47 @@ const JobLive = () => {
 
     const [posts, setPosts] = useState([]);
     function abc() {
-        // axios({
-        //     method: "get",
-        //     url: "https://interneur.herokuapp.com/api/perk-listings/?format=api",
-        //     headers: { 'Access-Control-Allow-Origin': '*' }
-        // })
-        //     .then(function (response) {
-        //         console.log(response)
-        //     })
+        axios({
+            method: "get",
+            url: "https://interneur.herokuapp.com/api/internship-listings/",
+            // headers: { 'Access-Control-Allow-Origin': '*' }
+        })
+            .then(function (response) {
+                console.log(response, "response");
+                console.log(response.data[0].title, "response.data");
+            })
 
-        //     .catch(function (response) {
-        //         console.log(response)
-        //     });
+            .catch(function (response) {
+                console.log(response, 'error');
+            });
+    }
+
+    function postMethod() {
+        axios({
+            method: "post",
+            url: "https://interneur.herokuapp.com/api/internship-listings/",
+            data: {
+                title: "Software Engineer",
+                company: "Google",
+                location: "Bangalore",
+                stipend: "10000",
+                duration: "3 months",
+                deadline: "2021-06-30",
+            }
+        })
+            .then(function (response) {
+                console.log(response, "response");
+                console.log(response.data[0].title, "response.data");
+            })
+
+            .catch(function (response) {
+                console.log(response, 'error');
+            });
     }
 
     useEffect(() => {
         abc();
+        postMethod();
         // axios.get(`https://interneur.herokuapp.com/api/perk-listings/?format=api`)
         //     .then(res => {
         //         console.log(res.data, 'data ');
@@ -47,7 +72,7 @@ const JobLive = () => {
 
     }, []);
 
-    console.log(posts, 'Post API')
+    // console.log(posts, 'Post API')
 
 
 
