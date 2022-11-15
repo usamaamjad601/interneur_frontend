@@ -24,6 +24,7 @@ import EmpSignUp from './Pages/EmpSignUp';
 import EmpSignUpError from './Pages/EmpSignUpError';
 import EmpSignUpVerification from './Pages/EmpSignUpVerification';
 import AfterApply from './Pages/AfterApply/AfterApply';
+import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
 
 
 function App() {
@@ -45,8 +46,7 @@ function App() {
         <Route path='ClientReg1' element={<ClientReg1 />} />
         <Route path='ClientReg2' element={<ClientReg2 />} />
         <Route path='PostInternship' element={<PostInternship />} />
-
-
+        <Route path='CandidateDashboard' element={<CanDashboard />} />
         <Route path='OpenJobs' element={<OpenJobs />} />
         <Route path='ClosedJobs' element={<ClosedJobs />} />
         <Route path='PendingJobs' element={<PendingJobs />} />
