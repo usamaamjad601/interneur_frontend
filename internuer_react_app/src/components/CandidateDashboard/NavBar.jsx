@@ -1,5 +1,5 @@
 import React from 'react'
-import company_img from '../../assets/logos/020202020.png'
+import company_img from '../../assets/logos/WhiteLogo.png'
 import profile_img from '../../assets/img/profile.png'
 import { Link } from 'react-router-dom'
 import Btn from '../../css/candDash.module.css';

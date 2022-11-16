@@ -23,12 +23,8 @@ import EmpSignUp from './Pages/EmpSignUp';
 import EmpSignUpError from './Pages/EmpSignUpError';
 import EmpSignUpVerification from './Pages/EmpSignUpVerification';
 import AfterApply from './Pages/AfterApply/AfterApply';
-<<<<<<< HEAD
-import InterviewRecord from './Pages/InterviewRecord';
-=======
 import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
->>>>>>> 9c815226f89d007f0e7da88437214db5cc94ec0b
-
+import InterviewRecord from './Pages/InterviewRecord'
 
 function App() {
   return (
@@ -68,6 +64,7 @@ function App() {
 
         {/* ///Candidate Section//// */}
         <Route path="InterviewRecord" element={<InterviewRecord />} />
+        <Route path="CanDashboard" element={<CanDashboard />} />
 
       </Routes>
     </div>
