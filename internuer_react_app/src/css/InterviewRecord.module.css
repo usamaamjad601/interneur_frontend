@@ -1,0 +1,19 @@
+.Recordhead {
+    border-bottom: 1px solid black;
+    gap: 14vw;
+}
+
+.Recordhead h5 {
+    color: #1F8EE4;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.Recordhead img {
+    border-radius: 50%;
+}
+
+.myCard {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 0.5rem;
+}
