@@ -5,13 +5,14 @@ import SearchBar from "material-ui-search-bar";
 
 export default function filterScreen() {
     return (
-        <div className={`${mBody.filScreenMainBody} p-4`} >
-            <div className='d-flex align-items-center justify-content-center'>
+        <div className={`${mBody.filScreenMainBody}`} >
+            <div className='d-flex align-items-center justify-content-center mx-2'>
                 <p><FilterAltIcon /> Filters</p>
             </div>
-            <div className="pt-4">
+            <div className="pt-4 px-4 pb-3" style={{ borderBottom: '1px solid' }}>
                 <SearchBar placeholder='Search here' />
             </div>
+
         </div>
     )
 }
