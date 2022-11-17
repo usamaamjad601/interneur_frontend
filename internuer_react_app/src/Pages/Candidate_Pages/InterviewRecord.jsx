@@ -1,8 +1,8 @@
 import React from 'react'
-import RecordHead from '../components/InterviewRecord/RecordHead'
-import logo from '../assets/logos/WhiteLogo.png'
+import RecordHead from '../../components/CandidateDashboard/InterviewRecord/RecordHead'
+import logo from '../../assets/logos/WhiteLogo.png'
 import ArrowBackIosNewOutlinedIcon from '@mui/icons-material/ArrowBackIosNewOutlined';
-import RecordDescription from '../components/InterviewRecord/RecordDescription';
+import RecordDescription from '../../components/CandidateDashboard/InterviewRecord/RecordDescription';
 
 const InterviewRecord = () => {
     const ChipArray = ['Placement', '15,000 - 20,000 monthly', 'Perk 1 XXXXXXXXXXXXX', 'Perk 2 -  XXXXXXXXXXXXX']

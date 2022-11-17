@@ -6,3 +6,9 @@
 .mainNavBar {
     border-bottom: 1px solid black;
 }
+
+.filScreenMainBody {
+    background: #F9FBFF;
+    border-radius: 10px;
+
+}

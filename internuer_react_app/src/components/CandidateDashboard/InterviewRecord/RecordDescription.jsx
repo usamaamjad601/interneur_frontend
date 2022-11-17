@@ -1,5 +1,5 @@
 import React from 'react'
-import RD from '../../css/InterviewRecord.module.css'
+import RD from '../../../css/InterviewRecord.module.css'
 
 const RecordDescription = () => {
     return (

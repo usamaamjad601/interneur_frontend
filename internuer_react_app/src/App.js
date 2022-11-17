@@ -24,7 +24,7 @@ import EmpSignUpError from './Pages/EmpSignUpError';
 import EmpSignUpVerification from './Pages/EmpSignUpVerification';
 import AfterApply from './Pages/AfterApply/AfterApply';
 import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
-import InterviewRecord from './Pages/InterviewRecord'
+import InterviewRecord from './Pages/Candidate_Pages/InterviewRecord'
 
 function App() {
   return (

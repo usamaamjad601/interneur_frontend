@@ -1,7 +1,7 @@
 import React from 'react'
 import PinDropOutlinedIcon from '@mui/icons-material/PinDropOutlined'; import { Link } from 'react-router-dom';
 import { Chip } from '@mui/material';
-import Record from '../../css/InterviewRecord.module.css'
+import Record from '../../../css/InterviewRecord.module.css'
 
 
 const RecordHead = (props) => {
