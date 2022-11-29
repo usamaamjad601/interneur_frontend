@@ -8,7 +8,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 import Slider from "react-slick";
-
+import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
+import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 
 const DashboardInfo = ({ slideMap }) => {
 
@@ -19,7 +20,7 @@ const DashboardInfo = ({ slideMap }) => {
     function Arrow(props) {
         let className = props.type === "next" ? "nextArrow" : "prevArrow";
         className += " arrow";
-        const char = props.type === "next" ? ">" : "<";
+        const char = props.type === "next" ? <ArrowCircleRightIcon /> : <ArrowCircleLeftIcon />;
         return (
             <span className={className} onClick={props.onClick}>
                 {char}

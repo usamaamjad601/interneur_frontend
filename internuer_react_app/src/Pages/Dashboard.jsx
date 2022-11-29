@@ -6,11 +6,35 @@ import DashboardTable from '../components/dashboard/DashboardTable'
 import DashboardInfo from '../components/dashboard/DashboardInfo';
 
 import Dash from '../css/App.module.css';
-
+import axios from 'axios';
 
 
 
 const Dashboard = () => {
+    useEffect(() => {
+        getData();
+    }, []);
+
+    const [Tdata, setTdata] = useState([]);
+
+
+    function getData() {
+        axios({
+            method: "get",
+            url: 'https://interneur.herokuapp.com/api/apply-listings/',
+            // headers: { 'Access-Control-Allow-Origin': '*' }
+        })
+            .then(function (response) {
+                setTdata(response.data);
+                console.log(Tdata, 'Tdata')
+            })
+
+            .catch(function (response) {
+                console.log(response, 'error');
+            });
+    }
+    // console.log(Tdata, 'Tdaata 39')
+
 
     // useEffect(() => {
     //     window.addEventListener("beforeunload", alertUser);
@@ -51,10 +75,8 @@ const Dashboard = () => {
 
     var optionsArray = ['Shorlist', 'Reject'];
 
-    // const [drop, setdrop] = useState(() => () => console.log("default ooops"));
-    // const dropFunction = (i) => {
-    //     setdrop(i);
-    // }
+
+
 
     const [statusArray, setStatusArray] = React.useState([]);
 
@@ -123,29 +145,57 @@ const Dashboard = () => {
     ]
 
     const [rowArray, setRowArray] = React.useState([]);
+    const [selectArray, setSelectArray] = React.useState([]);
     var tempRowArray = [];
+    var tempSelectArray = [];
 
     const rowFunction = (i) => {
         var row = document.getElementById(`tr${i}`)
         // console.log(i);
 
         tempRowArray = [...rowArray];
+        tempSelectArray = [...selectArray];
+
 
         if (tempRowArray.includes(`tr${i}`) === true || row.checked) {
             row.classList.remove(Dash.trActive);
             document.getElementById(`check${i}`).checked = false;
             const index = tempRowArray.indexOf(`tr${i}`)
             tempRowArray.splice(index, 1)
+            tempSelectArray.splice(index, 1)
             // console.log("exist")
         }
         else {
             row.classList.add(Dash.trActive);
             document.getElementById(`check${i}`).checked = true;
             tempRowArray.push(`tr${i}`);
+            console.log('tr pused');
+            tempSelectArray.push(`select${i}`);
+            console.log('select', i)
+
             // console.log("not exist")
         }
         setRowArray(tempRowArray);
+        setSelectArray(tempSelectArray);
         // console.log(tempRowArray, 'tempArray')
+    }
+    const [drop, setdrop] = useState();
+    const dropFunction = (i) => {
+        if (i === 0) {
+            setDecision();
+        }
+    }
+
+    const setDecision = () => {
+        console.log(rowArray, 'rowArray')
+        console.log(selectArray, 'tempSelectArray')
+
+        for (var i = 0; i <= selectArray.length; i++) {
+            const $select = document.querySelector(`#select${i}`);
+            $select.value = 'ShortList'
+        }
+        // $('select0').attr('selected', 'selected');
+        // selectd.options['shortlist'].selected = true;
     }
     const selectAll = () => {
         var check = document.getElementById('Allcheck');
@@ -168,8 +218,8 @@ const Dashboard = () => {
     }
 
     useEffect(() => {
-        document.getElementById(`tr${0}`).classList.add(Dash.trActive);
-        document.getElementById(`check${0}`).checked = true;
+        // document.getElementById(`tr${0}`).classList.add(Dash.trActive);
+        // document.getElementById(`check${0}`).checked = true;
     })
     /// From Backend
 
@@ -193,11 +243,13 @@ const Dashboard = () => {
         <div>
             <Sidebar user={profile} />
             <div className={Dash.content}>
-                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} optionsArray={optionsArray} />
+                <DashboardNav title="UI/UX Designing" applicants={31} applicantstxt="Applicants" btn1="Shortlisted" btn2="Declined" btn1class={Dash.navBtn1} btn2class={Dash.navBtn2} link1="/DashShortlisted" link2="/DashDeclined" shortlist={`(${count})`} reject={`(${count2})`} shortbutton={firstButton} rejectbutton={secondButton} optionsArray={optionsArray}
+                    dropFunction={dropFunction} />
                 <div className="col-md-12">
                     <div className="d-flex">
                         <div className="col-md-8">
-                            <DashboardTable changeBorder1={changeBorder1} rowFunction={rowFunction} button1={button1} button2={button2} selectAll={selectAll} />
+                            {console.log(Tdata, 'Tdata Dashboard Main')}
+                            <DashboardTable changeBorder1={changeBorder1} rowFunction={rowFunction} button1={button1} button2={button2} selectAll={selectAll} Tdata={Tdata} />
                         </div>
                         <div className="col-md-4">
                             <DashboardInfo slideMap={slideMap} />

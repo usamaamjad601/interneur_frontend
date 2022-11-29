@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 
 
-const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBorder1, rowFunction, selectAll }) => {
+const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBorder1, rowFunction, selectAll, Tdata }) => {
 
 
     // console.log(data[0].who_can_apply, 'Data 0');
@@ -49,7 +49,8 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBor
                     </tr>
                 </thead>
                 <tbody className={DTable.dTableBodyy}>
-                    {[...Array(20)].map((x, i) =>
+                    {console.log(Tdata[0], 'Tdata')}
+                    {Tdata && Tdata.map((x, i) =>
                         <tr className={`${DTable.dTableBody}`} key={i} id={`tr${i}`}>
                             <td className={DTable.tableCheck} onClick={() => rowFunction(i)}>
                                 <input type="checkbox" name=""
@@ -83,7 +84,7 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBor
                                     id={`td${i}`}>
 
                                     <select className={DTable.decisionSelect}
-                                        name="sd" id={`select`} onChange={(e) => changeBorder1(i, e)}>
+                                        name="sd" id={`select${i}`} onChange={(e) => changeBorder1(i, e)}>
                                         <option value="Moveto">Move
                                             to
                                         </option>
@@ -98,7 +99,7 @@ const DashboardTable = ({ handleClick, handleClick2, button1, button2, changeBor
                                 <div className={`${DTable.decision} d-flex 
                                         align-items-center`}>
                                     <button className={DTable.CVbtn}>
-                                        <Link to={cv1} target='_blank'>View CV</Link>
+                                        <Link to={x.file} target='_blank'>View CV</Link>
                                     </button>
                                 </div>
                             </td>

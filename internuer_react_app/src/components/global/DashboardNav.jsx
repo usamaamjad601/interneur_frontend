@@ -5,6 +5,25 @@ import nav from '../../css/App.module.css';
 
 
 const DashboardNav = (props) => {
+
+    function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName(nav.dropdownContent);
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+
     return (
         <div>
             <div className={`${nav.dashboard1navbar} d-flex col-md-12 pb-2`}>
@@ -18,7 +37,7 @@ const DashboardNav = (props) => {
                     <div className="d-flex gap-2">
                         <p>Bulk Action</p>
                         <div className={nav.dropdown}>
-                            <MenuIcon />
+                            <MenuIcon onclick="myFunction()" />
                             <div className={nav.dropdowncontent}>
                                 {props.optionsArray.map((x, i) =>
                                     <p onClick={() => props.dropFunction(i)} key={i}>{x}</p>
@@ -27,6 +46,7 @@ const DashboardNav = (props) => {
                         </div>
                     </div>
                 </div>
+
 
                 <div className="col-md-5 p-1">
                     <div className="d-flex justify-content-end gap-5 pt-5 px-5">

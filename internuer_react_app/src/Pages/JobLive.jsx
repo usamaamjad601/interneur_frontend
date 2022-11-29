@@ -18,7 +18,7 @@ const JobLive = () => {
     function abc() {
         axios({
             method: "get",
-            url: "https://interneur.herokuapp.com/api/internship-listings/",
+            url: 'https://interneur.herokuapp.com/api/interview-listings/',
             // headers: { 'Access-Control-Allow-Origin': '*' }
         })
             .then(function (response) {
@@ -31,32 +31,32 @@ const JobLive = () => {
             });
     }
 
-    function postMethod() {
-        axios({
-            method: "post",
-            url: "https://interneur.herokuapp.com/api/internship-listings/",
-            data: {
-                title: "Software Engineer",
-                company: "Google",
-                location: "Bangalore",
-                stipend: "10000",
-                duration: "3 months",
-                deadline: "2021-06-30",
-            }
-        })
-            .then(function (response) {
-                console.log(response, "response");
-                console.log(response.data[0].title, "response.data");
-            })
+    // function postMethod() {
+    //     axios({
+    //         method: "post",
+    //         url: "https://interneur.herokuapp.com/api/internship-listings/",
+    //         data: {
+    //             title: "Software Engineer",
+    //             company: "Google",
+    //             location: "Bangalore",
+    //             stipend: "10000",
+    //             duration: "3 months",
+    //             deadline: "2021-06-30",
+    //         }
+    //     })
+    //         .then(function (response) {
+    //             console.log(response, "response");
+    //             console.log(response.data[0].title, "response.data");
+    //         })
 
-            .catch(function (response) {
-                console.log(response, 'error');
-            });
-    }
+    //         .catch(function (response) {
+    //             console.log(response, 'error');
+    //         });
+    // }
 
     useEffect(() => {
         abc();
-        postMethod();
+        // postMethod();
         // axios.get(`https://interneur.herokuapp.com/api/perk-listings/?format=api`)
         //     .then(res => {
         //         console.log(res.data, 'data ');

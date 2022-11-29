@@ -25,6 +25,7 @@ import EmpSignUpVerification from './Pages/EmpSignUpVerification';
 import AfterApply from './Pages/AfterApply/AfterApply';
 import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
 import InterviewRecord from './Pages/Candidate_Pages/InterviewRecord'
+import MyContext from './Context/MyContext';
 
 function App() {
   return (
@@ -65,6 +66,9 @@ function App() {
         {/* ///Candidate Section//// */}
         <Route path="InterviewRecord" element={<InterviewRecord />} />
         <Route path="CanDashboard" element={<CanDashboard />} />
+
+
+        <Route path='MyContext' element={<MyContext />} />
 
       </Routes>
     </div>

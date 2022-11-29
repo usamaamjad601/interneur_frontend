@@ -176,11 +176,12 @@ p {
   position: absolute;
   background-color: #fff;
   /* min-width: 160px; */
-  border-radius: 5px;
-  left: 20px;
-  top: 20px;
+  border: none;
+  /* border-radius: 5px; */
+  left: 10px;
+  top: 18px;
   z-index: 1;
-  border: 1px solid var(--black);
+  border: 1px solid var(--grey);
 
 }
 
@@ -347,41 +348,11 @@ p {
   display: inline-block;
 }
 
-.dropdowncontent {
-  display: none;
-  position: absolute;
-  background-color: #fff;
-  /* min-width: 160px; */
-  border-radius: 5px;
-  left: 20px;
-  top: 20px;
-  z-index: 1;
-  border: 1px solid var(--black);
 
-}
 
 .disableClass {
   background-color: var(--grey);
   pointer-events: none;
-}
-
-.dropdown:hover .dropdowncontent {
-  display: flex;
-  flex-direction: column;
-}
-
-.dropdowncontent p {
-  text-decoration: none;
-  color: var(--black);
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-
-
-}
-
-.dropdowncontent p:hover {
-  background-color: #e1e1e1;
 }
 
 .navbtn {
@@ -573,8 +544,11 @@ li a:hover {
 }
 
 .dTableBodyy {
-  height: 80vh;
+  /* height: 80vh; */
   overflow-y: scroll;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
 }
 
 .dTableBody td {
