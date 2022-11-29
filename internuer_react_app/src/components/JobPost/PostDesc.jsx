@@ -12,16 +12,17 @@ const PostDesc = (props) => {
                     <h5 className='fw-bolder'>About</h5>
                     <h5 className='fw-bold'>{props.cmpName}:</h5>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti omnis possimus delectus mollitia aperiam magnam architecto tenetur iusto, maiores unde quasi, ipsam facilis pariatur sed modi suscipit tempore odio commodi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, nobis!</p>
+                <p>{props.cmpDesc}</p>
             </div>
             <div>
                 <div className='d-flex align-items-center gap-2 pt-4'>
                     <h5 className='fw-bolder'>UI/UX Designer Internship Details:</h5>
                 </div>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti omnis possimus delectus mollitia aperiam magnam architecto tenetur iusto, maiores unde quasi, ipsam facilis pariatur sed modi suscipit tempore odio commodi. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, nobis!</p>
+                <div dangerouslySetInnerHTML={{ __html: props.addInternDetail }} ></div>
+
             </div>
             <div className='pt-4'>
-                <JobDesc />
+                <JobDesc responsibilities={props.responsibilities} whoCanApply={props.whoCanApply} />
             </div>
             <div className='pt-4'>
                 <JobSkills skillTags={props.skillTags} title={props.title1} />

@@ -22,7 +22,7 @@ const Deadline = (props) => {
                             <LocalAtmIcon />
                             <h6>Duration</h6>
                         </div>
-                        <strong>{props.months} months</strong>
+                        <strong>{props.months}</strong>
                     </div>
                     <div className={Dead.deadlines}>
                         <div className='d-flex gap-2 align-items-center justify-content-center'>
