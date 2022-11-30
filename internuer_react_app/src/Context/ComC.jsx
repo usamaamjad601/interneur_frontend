@@ -7,7 +7,6 @@ const ComC = () => {
             <Firstname.Consumer>
                 {(fname) => {
                     return <h1>My name is {fname}</h1>
-
                 }}
             </Firstname.Consumer>
         </>
