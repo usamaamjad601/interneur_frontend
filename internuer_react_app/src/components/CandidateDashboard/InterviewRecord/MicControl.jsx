@@ -12,11 +12,11 @@ const MicControl = () => {
 
     const CameraControl = () => {
         setVideo(!video);
-        ReactDOM.render(<Webcam />, document.getElementById("cam"));
+        ReactDOM.render(<Webcam style={{ width: '100px' }} />, document.getElementById("cam"));
     }
     return (
         <div className='p-4 d-flex flex-column gap-4 '>
-            <div id='cam' style={{ backgroundColor: '#D9D9D9', height: '200px', width: '300px' }} ></div>
+            <div id='cam' style={{ backgroundColor: '#D9D9D9', height: '100px', width: '200px' }} ></div>
             <div className='d-flex gap-3 align-items-center'>
                 <div className={`${Mic.Mic} ${video ? Mic.Enable : Mic.Disable}`} onClick={CameraControl} ><VideocamIcon sx={{ color: 'white', width: '30px' }} /></div>
                 <div className='d-flex flex-column gap-1'>

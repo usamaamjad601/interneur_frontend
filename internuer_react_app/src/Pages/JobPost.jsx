@@ -10,9 +10,7 @@ import OpenPosition from '../components/JobPost/OpenPosition';
 import axios from 'axios';
 
 
-
 const JobPost = () => {
-
     useEffect(() => {
         getData();
         getPerks();
