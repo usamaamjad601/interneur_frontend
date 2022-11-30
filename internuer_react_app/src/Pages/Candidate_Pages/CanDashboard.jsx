@@ -2,6 +2,7 @@ import React from 'react'
 import NavBar from '../../components/CandidateDashboard/NavBar'
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import FilterScreen from '../../components/CandidateDashboard/filterScreen'
+import JobTag from '../../components/CandidateDashboard/JobTag';
 
 
 export default function CanDashboard() {
@@ -16,7 +17,9 @@ export default function CanDashboard() {
                 <div className="col-md-3 ">
                     <FilterScreen />
                 </div>
-                <div className="col-md-9"></div>
+                <div className="col-md-9">
+                    <JobTag />
+                </div>
             </div>
         </div>
     )
