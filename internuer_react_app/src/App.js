@@ -26,13 +26,15 @@ import AfterApply from './Pages/AfterApply/AfterApply';
 import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
 import InterviewRecord from './Pages/Candidate_Pages/InterviewRecord'
 import MyContext from './Context/MyContext';
+import Login from './Pages/Login';
 
 function App() {
   return (
     <div>
       <Routes>
         {/* //Forms// */}
-        <Route path='/' element={<EmpSignUp />} />
+        <Route path='EmpSignUp' element={<EmpSignUp />} />
+        <Route path='Login' element={<Login />} />
 
         <Route path='ClientReg1' element={<ClientReg1 />} />
         <Route path='ClientReg2' element={<ClientReg2 />} />
@@ -65,7 +67,7 @@ function App() {
 
         {/* ///Candidate Section//// */}
         <Route path="InterviewRecord" element={<InterviewRecord />} />
-        <Route path="CanDashboard" element={<CanDashboard />} />
+        <Route path="/" element={<CanDashboard />} />
 
 
         <Route path='MyContext' element={<MyContext />} />
