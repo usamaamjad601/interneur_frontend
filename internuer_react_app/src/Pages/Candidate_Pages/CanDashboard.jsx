@@ -17,7 +17,9 @@ export default function CanDashboard() {
                 <div className="col-md-3 ">
                     <FilterScreen />
                 </div>
-                <div className="col-md-9">
+                <div className="d-flex flex-column gap-4 col-md-8">
+                    <JobTag />
+                    <JobTag />
                     <JobTag />
                 </div>
             </div>
