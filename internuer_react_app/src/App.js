@@ -33,25 +33,28 @@ function App() {
     <div>
       <Routes>
         {/* //Forms// */}
-        <Route path='EmpSignUp' element={<EmpSignUp />} />
+        <Route path='EmpSignUp' element={<EmpSignUp />} /> // Signup
         <Route path='Login' element={<Login />} />
 
-        <Route path='ClientReg1' element={<ClientReg1 />} />
+        <Route path='ClientReg1' element={<ClientReg1 />} /> //Emp Section
         <Route path='ClientReg2' element={<ClientReg2 />} />
         <Route path='EmpForms' element={<EmpForms />} />
-
-        <Route path='AfterApply' element={<AfterApply />} />
 
         <Route path='EmpSignUpError' element={<EmpSignUpError />} />
         <Route path='EmpSignUpVerification' element={<EmpSignUpVerification />} />
 
-
-
-        <Route path='EmpDash' element={<EmpDash />} />
         <Route path="Dashboard" element={<Dashboard />} />
         <Route path="DashDeclined" element={<DashDeclined />} />
         <Route path="DashShortlisted" element={<DashShortlisted />} />
         <Route path='DashSubmited' element={<DashSubmited />} />
+
+        <Route path='AfterApply' element={<AfterApply />} /> // Candidate Section
+
+
+
+        <Route path='EmpDash' element={<EmpDash />} />
+
+
 
         <Route path='joblive' element={<JobLive />} />
         <Route path='jobDisapproved' element={<JobDisapproved />} />
@@ -68,7 +71,6 @@ function App() {
         {/* ///Candidate Section//// */}
         <Route path="InterviewRecord" element={<InterviewRecord />} />
         <Route path="/" element={<CanDashboard />} />
-
 
         <Route path='MyContext' element={<MyContext />} />
 

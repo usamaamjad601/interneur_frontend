@@ -38,3 +38,30 @@
 .Disable {
     background-color: #D9D9D9;
 }
+
+.MicRecord {
+    border-radius: 7px;
+
+}
+
+.ReadyBtn {
+    border: 2px solid #1F8EE4;
+    border-radius: 1rem;
+    color: #1F8EE4;
+    background-color: #fff;
+    padding: 5px 15px;
+    font-weight: bold;
+}
+
+.ReadyBtn:hover {
+    background-color: #1F8EE4;
+    color: #fff;
+
+}
+
+.AllowAccess {
+    background-color: #EEEE;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+
+}
