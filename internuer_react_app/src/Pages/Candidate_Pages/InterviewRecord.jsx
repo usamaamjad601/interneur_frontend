@@ -10,6 +10,8 @@ import { Link } from 'react-router-dom';
 
 const InterviewRecord = () => {
     const ChipArray = ['Placement', '15,000 - 20,000 monthly', 'Perk 1 XXXXXXXXXXXXX', 'Perk 2 -  XXXXXXXXXXXXX']
+    const [InterviewStarted, setInterviewStarted] = React.useState(false)
+
     return (
         <div className='d-flex flex-column'>
             <div className="col-md-12 row">
@@ -25,14 +27,13 @@ const InterviewRecord = () => {
                 <div className="col-md-7 pt-4">
                     <RecordDescription />
                 </div>
-                <div className="col-md-3"><MicControl /></div>
+                <div className="col-md-3"><MicControl InterviewStarted={InterviewStarted} webcam={true} /></div>
             </div>
             <div className="col-md-12 row">
                 <div className="col-md-2">2</div>
                 <div className="col-md-7 pt-4">
                     <RecordDescription />
                 </div>
-                <div className="col-md-3"><MicControl /></div>
             </div>
             <div className='col-md-12 pt-4 d-flex'>
                 <div className="col-md-2"></div>
@@ -43,7 +44,6 @@ const InterviewRecord = () => {
                         <div className='d-flex justify-content-end'>
                             <p className='fw-bolder' style={{ color: '#1F8EE4' }}>Allow Access {'>'}{'>'} </p>
                         </div>
-
                     </div>
                     <div className="col-md-1"></div>
                 </div>

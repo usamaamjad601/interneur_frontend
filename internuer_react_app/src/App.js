@@ -27,6 +27,7 @@ import CanDashboard from './Pages/Candidate_Pages/CanDashboard';
 import InterviewRecord from './Pages/Candidate_Pages/InterviewRecord'
 import MyContext from './Context/MyContext';
 import Login from './Pages/Login';
+import InterviewQuestions from './Pages/Candidate_Pages/InterviewQuestions';
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
 
         {/* ///Candidate Section//// */}
         <Route path="InterviewRecord" element={<InterviewRecord />} />
+        <Route path="InterviewQuestions" element={<InterviewQuestions />} />
         <Route path="/" element={<CanDashboard />} />
 
         <Route path='MyContext' element={<MyContext />} />
